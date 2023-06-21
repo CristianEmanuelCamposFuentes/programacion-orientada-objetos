@@ -19,7 +19,7 @@ public class Main {
 		LibroServices SV = new LibroServices();
 		Libro libro = SV.crearLibro();
 
-		libro.toString();
+		SV.devolverLibro(libro);
 
 	}
 }

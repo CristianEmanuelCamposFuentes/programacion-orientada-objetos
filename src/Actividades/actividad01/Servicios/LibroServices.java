@@ -25,8 +25,11 @@ public class LibroServices {
 		return new Libro(ISBN,titulo,autor,cantidadPaginas);
 	}
 
-	@Override
-	public String toString() {
-		return super.toString();
+	public void devolverLibro(Libro libro){
+		System.out.println("Lectura del libro:");
+		System.out.println("Titulo: " + libro.getTitulo());
+		System.out.println("Autor: " + libro.getAutor());
+		System.out.println("Codigo ISBN: " + libro.getISBN());
+		System.out.println("Cantidad de paginas: " + libro.getCantidadPaginas());
 	}
 }
