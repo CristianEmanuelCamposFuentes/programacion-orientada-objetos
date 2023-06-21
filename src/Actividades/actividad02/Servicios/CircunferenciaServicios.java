@@ -9,13 +9,13 @@ public class CircunferenciaServicios {
 
 	public double area(int radioC){
 		double areaTotal = radioC * Math.PI;
-		System.out.println("El area de la circunferencia es de: " + areaTotal);
+//		System.out.println("El area de la circunferencia es de: " + areaTotal);
 		return areaTotal;
 	}
 
 	public double perimetro(int radioC){
         double perimetroTotal = 2 * Math.PI * radioC;
-        System.out.println("El perimetro de la circunferencia es de: " + perimetroTotal);
+//        System.out.println("El perimetro de la circunferencia es de: " + perimetroTotal);
         return perimetroTotal;
     }
 }

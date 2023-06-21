@@ -28,8 +28,12 @@ public class ejercicio02 {
 		// Creamos la circunferencia enviando como parametro
 		SV.crearCircunferencia(radio);
 
-		SV.area(radio);
-		SV.perimetro(radio);
+		System.out.println("Circunferencia de radio: " + radio + ".");
+		double areaCalculada = SV.area(radio);
+		double perimetroCalculado = SV.perimetro(radio);
+		System.out.println("El área es: " + areaCalculada);
+		System.out.println("El perímetro es: " + perimetroCalculado);
+
 
     }
 }
