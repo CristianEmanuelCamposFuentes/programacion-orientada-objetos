@@ -3,20 +3,18 @@ package Actividades.actividadExtra02.Entidad;
 public class Figura {
 	private int base;
 	private int altura;
-	private int radio;
-
+	private double radio;
 
 	public Figura() {
 	}
 
-	public Figura(int base, int altura, int radio) {
+	public Figura(int base, int altura, double radio) {
         this.base = base;
         this.altura = altura;
         this.radio = radio;
     }
 
-
-	public int getBase() {
+    public int getBase() {
 		return base;
 	}
 
@@ -24,24 +22,28 @@ public class Figura {
 		this.base = base;
 	}
 
-	public int getAltura() {
-		return altura;
-	}
+    public int getAltura() {
+        return altura;
+    }
 
-	public void setAltura(int altura) {
-		this.altura = altura;
-	}
+    public void setAltura(int altura) {
+        this.altura = altura;
+    }
 
-	public int getRadio() {
-		return radio;
-	}
+    public double getRadio() {
+        return radio;
+    }
 
-	public void setRadio(int radio) {
-		this.radio = radio;
-	}
+    public void setRadio(double radio) {
+        this.radio = radio;
+    }
 
-	@Override
+    @Override
     public String toString() {
-        return "Figura [base=" + base + ", altura=" + altura + ", radio=" + radio + "]";
+        return "Figura{" +
+                "base=" + base +
+                ", altura=" + altura +
+                ", radio=" + radio +
+                '}';
     }
 }
