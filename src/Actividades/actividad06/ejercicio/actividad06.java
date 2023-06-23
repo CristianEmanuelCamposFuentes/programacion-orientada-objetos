@@ -27,7 +27,7 @@ import java.util.Scanner;
 public class actividad06 {
 
     public static void main(String[] args){
-        Scanner lector = new Scanner(System.in).useDelimiter("\n");
+//        Scanner lector = new Scanner(System.in).useDelimiter("\n");
     // Inicializa instancia de los servicios
         CafeteraServicios servicios = new CafeteraServicios();
 
