@@ -22,13 +22,37 @@ package Actividades.actividad06.ejercicio;
 import Actividades.actividad06.Entidades.Cafetera;
 import Actividades.actividad06.Servicios.CafeteraServicios;
 
+import java.util.Scanner;
+
 public class actividad06 {
+
     public static void main(String[] args){
+        Scanner lector = new Scanner(System.in).useDelimiter("\n");
     // Inicializa instancia de los servicios
         CafeteraServicios servicios = new CafeteraServicios();
 
         // Crear una cafetera
         Cafetera cafeteraNueva = servicios.crearCafetera();
         System.out.println(cafeteraNueva);
+
+
+        // Llenar la cafetera
+        servicios.llenarCafetera(cafeteraNueva);
+        System.out.println(cafeteraNueva);
+//
+//        // Vaciar la cafetera
+//        servicios.vaciarCafetera();
+//        System.out.println(cafeteraNueva);
+//
+//        // Agregar una cafe
+//        servicios.agregarCafe(10);
+//        System.out.println(cafeteraNueva);
+
+        // Servir una taza
+//        System.out.println("Ingrese el tamanio de la taza: ");
+//        int taza = lector.nextInt();
+//        int cantidadServida = servicios.servirTaza(taza, cafeteraNueva);
+//        System.out.println(cafeteraNueva);
+
     }
 }

@@ -4,12 +4,15 @@ public class Cafetera {
     private int cantidadActual;
     private int capacidadMaxima;
 
+    private int cantidadCafe;
+
     public Cafetera() {
     }
 
     public Cafetera(int cantidadActual, int capacidadMaxima) {
         this.cantidadActual = cantidadActual;
         this.capacidadMaxima = capacidadMaxima;
+        this.cantidadCafe = 10;
     }
 
     public int getCantidadActual() {
@@ -26,6 +29,14 @@ public class Cafetera {
 
     public void setCapacidadMaxima(int capacidadMaxima) {
         this.capacidadMaxima = capacidadMaxima;
+    }
+
+    public int getCantidadCafe() {
+        return cantidadCafe;
+    }
+
+    public void setCantidadCafe(int cantidadCafe) {
+        this.cantidadCafe = cantidadCafe;
     }
 
     @Override
