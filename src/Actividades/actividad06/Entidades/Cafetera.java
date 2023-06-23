@@ -44,6 +44,7 @@ public class Cafetera {
         return "Cafetera{" +
                 "cantidadActual=" + cantidadActual +
                 ", capacidadMaxima=" + capacidadMaxima +
+                ", cantidadCafe=" + cantidadCafe +
                 '}';
     }
 }

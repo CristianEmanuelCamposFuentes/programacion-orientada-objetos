@@ -31,28 +31,59 @@ public class actividad06 {
     // Inicializa instancia de los servicios
         CafeteraServicios servicios = new CafeteraServicios();
 
-        // Crear una cafetera
-        Cafetera cafeteraNueva = servicios.crearCafetera();
-        System.out.println(cafeteraNueva);
+        System.out.println("COMIENZO DEL PROGRAMA NESPRESSO:");
 
+        // Ingresar el menu
+        menu(servicios);
+    }
 
-        // Llenar la cafetera
-        servicios.llenarCafetera(cafeteraNueva);
-        System.out.println(cafeteraNueva);
-//
-//        // Vaciar la cafetera
-//        servicios.vaciarCafetera();
-//        System.out.println(cafeteraNueva);
-//
-//        // Agregar una cafe
-//        servicios.agregarCafe(10);
-//        System.out.println(cafeteraNueva);
-
-        // Servir una taza
-//        System.out.println("Ingrese el tamanio de la taza: ");
-//        int taza = lector.nextInt();
-//        int cantidadServida = servicios.servirTaza(taza, cafeteraNueva);
-//        System.out.println(cafeteraNueva);
-
+    public static void menu(CafeteraServicios SV){
+        Scanner lector = new Scanner(System.in).useDelimiter("\n");
+        boolean opcion = true;
+        Cafetera nuevaCafetera = SV.crearCafetera();
+        System.out.println(nuevaCafetera);
+//      * MENU
+        while(opcion){
+            System.out.println("=================================");
+            System.out.println("====  ==== === MENU === ==== ====");
+            System.out.println("1. Crear una cafetera nueva.");
+            System.out.println("2. Llenar la cafetera.");
+            System.out.println("3. Vaciar la cafetera.");
+            System.out.println("4. Agregar granos de cafe.");
+            System.out.println("5. Servir una taza.");
+            System.out.println("6. Salir.");
+            System.out.println("=================================");
+            System.out.println("Ingrese una opcion: ");
+            int opcionMenu = lector.nextInt();
+//      * OPCIONES
+            switch (opcionMenu){
+                case 1:
+                    nuevaCafetera = SV.crearCafetera();
+                    System.out.println(nuevaCafetera);
+                    break;
+                case 2:
+                    SV.llenarCafetera(nuevaCafetera);
+                    System.out.println(nuevaCafetera);
+                    break;
+                case 3:
+                    SV.vaciarCafetera(nuevaCafetera);
+                    System.out.println(nuevaCafetera);
+                    break;
+                case 4:
+                    SV.agregarCafe(nuevaCafetera);
+                    System.out.println(nuevaCafetera);
+                    break;
+                case 5:
+                    SV.servirTaza(nuevaCafetera);
+                    System.out.println(nuevaCafetera);
+                    break;
+                case 6:
+                    opcion = false;
+                    break;
+                default:
+                    System.out.println("Opcion no válida. Ingrese una opcion correcta.");
+                    break;
+            }
+        }
     }
 }
