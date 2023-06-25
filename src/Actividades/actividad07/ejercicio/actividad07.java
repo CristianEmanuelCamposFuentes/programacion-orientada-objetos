@@ -39,23 +39,15 @@ public class actividad07 {
 		// Creamos nueva instancia de persona
 		Persona persona1 = servicios.crearPersona();
 		System.out.println(persona1);
-		double imc1 = servicios.calcularIMC(persona1);
-		boolean mayor1 = servicios.esMayorDeEdad(persona1);
 
 		Persona persona2 = servicios.crearPersona();
 		System.out.println(persona2);
-		servicios.calcularIMC(persona2);
-		servicios.esMayorDeEdad(persona2);
 
 		Persona persona3 = servicios.crearPersona();
 		System.out.println(persona3);
-		servicios.calcularIMC(persona3);
-		servicios.esMayorDeEdad(persona3);
 
 		Persona persona4 = servicios.crearPersona();
 		System.out.println(persona4);
-		servicios.calcularIMC(persona4);
-		servicios.esMayorDeEdad(persona4);
 
 		// Se crea el array de las personas para calcular los datos
 		Persona[] personas = new Persona[] { persona1, persona2, persona3, persona4 };
