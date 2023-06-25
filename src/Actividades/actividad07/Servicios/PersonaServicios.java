@@ -125,6 +125,8 @@ public class PersonaServicios {
 
 		// Foreach para recorrer cada elemento del array
 		for(Persona persona : personas){
+			System.out.println("-------------------------------------------");
+			System.out.println("Persona: " + persona.getNombre());
 			int imc = calcularIMC(persona);
 
             if (imc == 0){
@@ -134,6 +136,7 @@ public class PersonaServicios {
             }
 
 			sumaIMC += imc;
+			System.out.println("-------------------------------------------");
 		}
 		double promedioIMC = sumaIMC / cantPersonas;
 		double promedioSobrepeso = (double) cantSobrepeso / cantPersonas * 100;
@@ -157,6 +160,8 @@ public class PersonaServicios {
                 cantMenores++;
             }
 		}
+		System.out.println("-------------------------------------------");
+
 		System.out.println("Cantidad de personas mayores de edad: " + cantMayores);
 		System.out.println("Cantidad de personas menores de edad: " + cantMenores);
 
@@ -164,5 +169,6 @@ public class PersonaServicios {
 		double porcentajeMenores = (double) cantMenores / cantPersonas * 100;
 		System.out.println("Porcentaje de personas mayores de edad: " + porcentajeMayores);
 		System.out.println("Porcentaje de personas menores de edad: " + porcentajeMenores);
+		System.out.println("-------------------------------------------");
 	}
 }

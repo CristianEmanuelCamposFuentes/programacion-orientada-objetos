@@ -51,7 +51,7 @@ public class actividad07 {
 
 		// Se crea el array de las personas para calcular los datos
 		Persona[] personas = new Persona[] { persona1, persona2, persona3, persona4 };
-
+		System.out.println("=============== PROCESO =================");
 		// Se llama a los metodos de la Clase PersonaServicios y se envia el array como parametro
         servicios.calcularPromedios(personas);
 		servicios.calcularMayoresMenores(personas);
