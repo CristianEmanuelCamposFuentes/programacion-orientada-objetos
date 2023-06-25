@@ -8,10 +8,6 @@ public class PersonaServicios {
 	Scanner scanner = new Scanner(System.in).useDelimiter("\n");
 
 	public Persona crearPersona(){
-		int edadStr;
-		char sexoStr;
-		double pesoStr;
-		double alturaStr;
 
 		// Validar el nombre
 		System.out.println("Ingrese el nombre: ");
