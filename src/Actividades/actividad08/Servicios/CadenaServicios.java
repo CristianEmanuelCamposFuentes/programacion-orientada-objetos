@@ -1,5 +1,9 @@
 package Actividades.actividad08.Servicios;
 
-public class CadenaServicios {
+import Actividades.actividad08.Entidades.Cadena;
 
+public class CadenaServicios {
+	public Cadena crearCadena(){
+		return new Cadena();
+	}
 }

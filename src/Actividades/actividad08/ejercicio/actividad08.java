@@ -23,13 +23,26 @@ package Actividades.actividad08.ejercicio;
 //		h) Método contiene(String letra), deberá comprobar si la frase contiene una letra que
 //		ingresa el usuario y devuelve verdadero si la contiene y falso si no.
 
+import Actividades.actividad08.Entidades.Cadena;
+import Actividades.actividad08.Servicios.CadenaServicios;
+
 import java.util.Scanner;
 
 public class actividad08 {
 	public static void main(String[] args) {
-		//
+		// Lector
 		Scanner lector = new Scanner(System.in).useDelimiter("\n");
+		CadenaServicios SC = new CadenaServicios();
+		Cadena frase = SC.crearCadena();
 
+
+		System.out.println("Ingrese la frase deseada: ");
+		String fraseAleatoria = lector.nextLine();
+		frase.setFrase(fraseAleatoria);
+		frase.setLongitud(fraseAleatoria.length());
+
+		System.out.println(frase);
+		System.out.println("La longitud de la frase es: " + frase.getLongitud());
 
 	}
 }
