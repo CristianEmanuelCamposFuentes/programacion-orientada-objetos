@@ -31,6 +31,6 @@ public class ejercicio04 {
         // Dibujar el rectángulo
 //        String dibujar = SV.dibujarRectangulo(rectangulo);
 //        System.out.println(dibujar);
-		SV.dibujarRectangulo(rectangulo);
+		System.out.println(SV.dibujarRectangulo(rectangulo));
     }
 }

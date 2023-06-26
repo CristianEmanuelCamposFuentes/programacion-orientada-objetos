@@ -25,25 +25,20 @@ public class RectanguloServices {
         return (rectangulo.getBase()+rectangulo.getAltura()) * 2;
     }
 
-	public void dibujarRectangulo(Rectangulo rectangulo){
+	public String dibujarRectangulo(Rectangulo rectangulo){
 		int base = rectangulo.getBase();
 		int altura = rectangulo.getAltura();
 
 //		StringBuilder dibujo = new StringBuilder();
+		String dibujito = "";
 
 		for (int i = 0; i < altura; i++) {
 			for (int j = 0; j < base; j++) {
-				if (i == 0 || j == 0 || i == altura - 1 || j == base -1 ) {
-					System.out.print("*");
-				} else {
-					System.out.print(" ");
-				}
-//				dibujo.append("|*|");
+				dibujito += "|*|";
 			}
-			System.out.print("\n");
-//			dibujo.append("\n");
-		}
+			dibujito += "\n";
 
-//		return dibujo.toString();
+		}
+		return dibujito;
 	}
 }
