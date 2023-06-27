@@ -44,5 +44,32 @@ public class actividad08 {
 		System.out.println(frase);
 		System.out.println("La longitud de la frase es: " + frase.getLongitud());
 
+		SC.mostrarVocales(frase);
+
+		SC.invertirFrase(frase);
+
+		System.out.print("Ingrese un carácter: ");
+		String letra = lector.nextLine();
+		SC.vecesRepetido(letra, frase);
+
+		System.out.print("Ingrese una nueva frase: ");
+		String nuevaFrase = lector.nextLine();
+		SC.compararLongitud(nuevaFrase, frase);
+
+		System.out.print("Ingrese una frase para unir: ");
+		String fraseUnir = lector.nextLine();
+		SC.unirFrases(fraseUnir, frase);
+
+		System.out.print("Ingrese un carácter para reemplazar: ");
+		String letraReemplazar = lector.nextLine();
+		System.out.print("Ingrese el nuevo carácter: ");
+		String nuevoCaracter = lector.nextLine();
+		SC.reemplazar(letraReemplazar, nuevoCaracter,frase);
+
+		System.out.print("Ingrese una letra: ");
+		String letraBuscar = lector.nextLine();
+		boolean contieneLetra = SC.contiene(letraBuscar,frase);
+		System.out.println("La frase contiene la letra '" + letraBuscar + "': " + contieneLetra);
+
 	}
 }
