@@ -22,15 +22,21 @@ public class actividad09 {
 
 		System.out.println("Comienzo del programa: ");
 
-		Matematica num1 = MS.crearNumero();
-		System.out.println("Numero aleatorio numero 1: ");
-		double valor1 = Math.random();
-		num1.setNumero1(valor1);
+		Matematica valores = MS.crearNumero();
 
-		Matematica num2 = MS.crearNumero();
-		System.out.println("Numero aleatorio numero 2: ");
-		double valor2 = Math.random();
-		num2.setNumero2(valor2);
+		int valor1 = (int) (Math.random() * 10);
+		System.out.println("Numero aleatorio numero 1: " + valor1);
+		valores.setNumero1(valor1);
+
+
+		int valor2 = (int) (Math.random() * 10);
+		System.out.println("Numero aleatorio numero 2: " + valor2);
+		valores.setNumero2(valor2);
+
+		System.out.println(MS.devolverMayor(valores));
+		System.out.println(MS.calcularPotencia(valores));
+		System.out.println(MS.calculaRaiz(valores));
+		System.out.println("Fin del programa. ");
     }
 
 }

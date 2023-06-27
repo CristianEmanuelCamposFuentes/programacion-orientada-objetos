@@ -1,13 +1,13 @@
 package Actividades.actividad09.Entidades;
 
 public class Matematica {
-	private double numero1;
-	private double numero2;
+	private int numero1;
+	private int numero2;
 
 	public Matematica() {
 	}
 
-    public Matematica(double numero1, double numero2) {
+    public Matematica(int numero1, int numero2) {
         this.numero1 = numero1;
         this.numero2 = numero2;
     }
@@ -16,7 +16,7 @@ public class Matematica {
 		return numero1;
 	}
 
-	public void setNumero1(double numero1) {
+	public void setNumero1(int numero1) {
 		this.numero1 = numero1;
 	}
 
@@ -24,7 +24,7 @@ public class Matematica {
 		return numero2;
 	}
 
-	public void setNumero2(double numero2) {
+	public void setNumero2(int numero2) {
 		this.numero2 = numero2;
 	}
 
