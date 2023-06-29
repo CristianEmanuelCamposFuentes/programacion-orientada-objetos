@@ -1,4 +1,4 @@
-package Actividades.actividadExtra01.Entidad;
+package Actividades.actividadExtra1_01.Entidad;
 
 public class Vehiculo {
 	private String marca;

@@ -1,4 +1,4 @@
-package Actividades.actividadExtra01.ejercicio;
+package Actividades.actividadExtra1_01.ejercicio;
 /* * EJERCICIO EXTRA01
 		Crear una clase "Vehículo" con atributos como "marca", "modelo", "año" y "tipo" (En tipo, vamos a indicar si es un
 	automóvil, una motocicleta, o una bicicleta).
@@ -19,8 +19,8 @@ package Actividades.actividadExtra01.ejercicio;
 	avanzó.*/
 
 
-import Actividades.actividadExtra01.Entidad.Vehiculo;
-import Actividades.actividadExtra01.Servicios.VehiculoServicios;
+import Actividades.actividadExtra1_01.Entidad.Vehiculo;
+import Actividades.actividadExtra1_01.Servicios.VehiculoServicios;
 
 public class actividadExtra01 {
 	public static void main(String[] args) {

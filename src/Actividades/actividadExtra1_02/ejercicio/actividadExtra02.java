@@ -1,4 +1,4 @@
-package Actividades.actividadExtra02.ejercicio;
+package Actividades.actividadExtra1_02.ejercicio;
 
 /*  Se está realizando una calculadora grafica, y se requiere calcular algunas áreas y perímetros de unas figuras
 geométricas. Las figuras son las siguientes:
@@ -16,7 +16,7 @@ geométricas. Las figuras son las siguientes:
 		para luego mostrar en pantalla.*/
 
 
-import Actividades.actividadExtra02.Servicios.FiguraServicios;
+import Actividades.actividadExtra1_02.Servicios.FiguraServicios;
 
 import java.util.Scanner;
 

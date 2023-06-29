@@ -1,4 +1,4 @@
-package Actividades.actividadExtra02.Entidad;
+package Actividades.actividadExtra1_02.Entidad;
 
 public class Figura {
 	private int base;

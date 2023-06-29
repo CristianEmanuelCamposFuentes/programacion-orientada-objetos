@@ -1,6 +1,6 @@
-package Actividades.actividadExtra02.Servicios;
+package Actividades.actividadExtra1_02.Servicios;
 
-import Actividades.actividadExtra02.Entidad.Figura;
+import Actividades.actividadExtra1_02.Entidad.Figura;
 
 import java.util.Scanner;
 

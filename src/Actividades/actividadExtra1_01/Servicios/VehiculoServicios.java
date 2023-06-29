@@ -1,6 +1,6 @@
-package Actividades.actividadExtra01.Servicios;
+package Actividades.actividadExtra1_01.Servicios;
 
-import Actividades.actividadExtra01.Entidad.Vehiculo;
+import Actividades.actividadExtra1_01.Entidad.Vehiculo;
 
 import java.util.Scanner;
 
