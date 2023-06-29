@@ -1,5 +1,6 @@
 package Actividades.actividad12.Entidades;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Persona {
@@ -31,6 +32,8 @@ public class Persona {
 
 	@Override
 	public String toString() {
+		SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+		String fechaNacimientoFormateada = formatoFecha.format(nacimiento);
 		return "Persona{" +
 				"nombre='" + nombre + '\'' +
 				", nacimiento=" + nacimiento +
