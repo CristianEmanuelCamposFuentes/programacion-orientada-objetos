@@ -1,6 +1,7 @@
 package Actividades.actividad11.ejercicio;
 
-import Actividades.actividad11.Servicios.FechaServicios;
+import Actividades.actividad11.Entidades.Fecha;
+import Actividades.actividad11.Servicios.FechaServices;
 
 import java.util.Date;
 
@@ -14,14 +15,25 @@ import java.util.Date;
 //		Ejemplo fecha actual: Date fechaActual = new Date();
 public class actividad11 {
 	public static void main(String[] args) {
-		FechaServicios servicios = new FechaServicios();
+		FechaServices servicios = new FechaServices();
 
 		// Instancia nueva fecha
-		Date fechaNueva = servicios.;
+		Fecha fechaNueva = servicios.crearFecha();
 
 
-        // Mostrar cuantos años hay entre esa fecha y la fecha actual
-        System.out.println("Cuantos años hay entre esa fecha y la fecha actual");
-        System.out.println(servicios.getDias(fecha, fecha));
+		// Pasandola a Date
+		System.out.println("Fecha indicada: ");
+		System.out.println(servicios.convertirFecha(fechaNueva));
+
+
+		// Saco la fecha actual
+		Date fechaActual = new Date();
+		System.out.println("Fecha actual:");
+        System.out.println(servicios.convertirDate(fechaActual));
+
+
+		// Mostrar cuantos años hay entre esa fecha y la fecha actual
+		System.out.println("Cuantos años hay entre esa fecha y la fecha actual");
+		System.out.println(servicios.calcularAnios(fechaNueva, fechaActual));
 	}
 }

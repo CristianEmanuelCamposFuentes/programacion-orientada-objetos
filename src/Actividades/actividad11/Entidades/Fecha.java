@@ -1,5 +1,6 @@
 package Actividades.actividad11.Entidades;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Fecha {
@@ -42,10 +43,7 @@ public class Fecha {
 
 	@Override
 	public String toString() {
-		return "Fecha{" +
-				"dia=" + dia +
-				", mes=" + mes +
-				", anio=" + anio +
-				'}';
+		String formattedDate = String.format("%02d/%02d/%04d", dia, mes, anio);
+		return "Fecha: " + formattedDate;
 	}
 }
