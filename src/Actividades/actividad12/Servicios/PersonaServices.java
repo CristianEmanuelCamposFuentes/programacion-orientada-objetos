@@ -8,6 +8,8 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class PersonaServices {
+
+
 	public Persona crearPersona(){
 		Scanner lector = new Scanner(System.in);
 
