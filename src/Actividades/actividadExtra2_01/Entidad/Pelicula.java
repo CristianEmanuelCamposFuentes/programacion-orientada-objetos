@@ -11,12 +11,12 @@ public class Pelicula {
 	public Pelicula() {
 	}
 
-	public Pelicula(String titulo, String genero, int anio, int duracion, boolean estaAlquilada) {
+	public Pelicula(String titulo, String genero, int anio, int duracion) {
 		this.titulo = titulo;
 		this.genero = genero;
 		this.anio = anio;
 		this.duracion = duracion;
-		this.estaAlquilada = estaAlquilada;
+		this.estaAlquilada = false;
 	}
 
 	public String getTitulo() {

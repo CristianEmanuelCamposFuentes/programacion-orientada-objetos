@@ -90,7 +90,7 @@ public class actividadExtra2_01 {
 					servicioA.calcularIngresoTotal();
 					break;
 				case 9:
-					servicioA.devolverPelicula();
+					servicioP.devolverPelicula();
 
 				case 0:
 					salir = true;

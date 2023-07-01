@@ -31,11 +31,22 @@ public class PeliculaService {
 		System.out.println("Ingrese la duración de la película en minutos: ");
 		int duracion = scanner.nextInt();
 
-		Pelicula pelicula = new Pelicula(titulo, genero, anio, duracion, estaAlquilada);
+		Pelicula pelicula = new Pelicula(titulo, genero, anio, duracion);
 		peliculas.add(pelicula);
 
 		System.out.println("La película se ha cargado exitosamente.");
 	}
+
+	//	public void cargarPelicula(String titulo, String genero, int anio, int duracion) {
+//		if (peliculasCount < peliculas.length) {
+//			Pelicula pelicula = new Pelicula(titulo, genero, anio, duracion);
+//			peliculas[peliculasCount] = pelicula;
+//			peliculasCount++;
+//			System.out.println("La película se ha cargado exitosamente.");
+//		} else {
+//			System.out.println("No se pueden cargar más películas. La lista está llena.");
+//		}
+//	}
 
 	public void listarPeliculasDisponibles() {
 		System.out.println("Películas disponibles:");
@@ -44,55 +55,31 @@ public class PeliculaService {
 		}
 	}
 
-	public void cargarAlquiler() {
-		Scanner scanner = new Scanner(System.in);
-
-		System.out.println("Ingrese el título de la película a alquilar: ");
-		String titulo = scanner.nextLine();
-
-		Pelicula pelicula = buscarPeliculaPorTitulo(titulo);
-		if (pelicula != null) {
-			System.out.println("Ingrese la fecha de inicio del alquiler (dd/MM/yyyy): ");
-			String fechaInicioStr = scanner.nextLine();
-
-			System.out.println("Ingrese la fecha de fin del alquiler (dd/MM/yyyy): ");
-			String fechaFinStr = scanner.nextLine();
-
-			// Convertir las fechas a objetos Date usando SimpleDateFormat
-			SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-			Date fechaInicio, fechaFin;
-			try {
-				fechaInicio = dateFormat.parse(fechaInicioStr);
-				fechaFin = dateFormat.parse(fechaFinStr);
-			} catch (ParseException e) {
-				System.out.println("Formato de fecha incorrecto. El alquiler no se pudo registrar.");
-				return;
-			}
-
-			// Calcular el precio del alquiler
-			double precioAlquiler = calcularPrecioAlquiler(pelicula.getDuracion(), fechaInicio, fechaFin);
-
-			// Crear un objeto Alquiler con los datos ingresados
-			Alquiler alquiler = new Alquiler(pelicula, fechaInicio, fechaFin, precioAlquiler);
-
-			// Agregar el objeto Alquiler a la lista de alquileres
-			alquileres.add(alquiler);
-
-			System.out.println("El alquiler se ha registrado exitosamente.");
-		} else {
-			System.out.println("La película no está disponible para alquilar.");
-		}
-	}
+	//	public void listarPeliculasDisponibles() {
+//		if (peliculasCount > 0) {
+//			System.out.println("Películas disponibles:");
+//			for (int i = 0; i < peliculasCount; i++) {
+//				System.out.println(peliculas[i]);
+//			}
+//		} else {
+//			System.out.println("No hay películas disponibles.");
+//		}
+//	}
 
 	public void buscarPeliculaPorTitulo(String tituloPelicula) {
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Ingrese el título de la película a buscar: ");
-		String titulo = scanner.nextLine();
+		// Buscar la película por título
+		Pelicula peliculaEncontrada = null;
+		for (Pelicula pelicula : peliculas) {
+			if (pelicula.getTitulo().equalsIgnoreCase(tituloPelicula)) {
+				peliculaEncontrada = pelicula;
+				break;
+			}
+		}
 
-		Pelicula pelicula = buscarPeliculaPorTitulo(titulo);
-		if (pelicula != null) {
+		// Mostrar el resultado de la búsqueda
+		if (peliculaEncontrada != null) {
 			System.out.println("La película existe.");
-			System.out.println(pelicula);
+			System.out.println(peliculaEncontrada);
 		} else {
 			System.out.println("La película no existe.");
 		}
@@ -116,31 +103,9 @@ public class PeliculaService {
 		}
 	}
 
-	public void listarAlquileres() {
-		System.out.println("Alquileres realizados:");
-		for (Alquiler alquiler : alquileres) {
-			System.out.println(alquiler);
-		}
+	public void devolverPelicula(){
+
 	}
-
-
-	private double calcularPrecioAlquiler(int duracion, Date fechaInicio, Date fechaFin) {
-		// Calcular la duración del alquiler en días
-		long duracionAlquiler = (fechaFin.getTime() - fechaInicio.getTime()) / (24 * 60 * 60 * 1000);
-
-		// Calcular el precio base del alquiler
-		double precioBase = 10;
-
-		// Calcular el incremento por cada día extra
-		double incrementoPorDiaExtra = 0.1 * precioBase;
-
-		// Calcular el precio total del alquiler
-		double precioTotal = precioBase + (duracionAlquiler - 3) * incrementoPorDiaExtra;
-
-		return precioTotal;
-	}
-
-
 
 
 }
