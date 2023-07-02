@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class AlquilerService {
-	private Pelicula[] peliculas;
-	private Alquiler[] alquileres;
+//	private Pelicula[] peliculas;
+	private ArrayList<Alquiler> alquileres;
 	private int peliculasCount;
 	private int alquileresCount;
 
