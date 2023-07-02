@@ -18,10 +18,11 @@ public class PeliculaService {
 	// ! puedan agregar valores, sino serian null y eso en java NO ESTA PERMITIDO
 	public PeliculaService() {
 
-	// Creo nueva lista de peliculas
+		// Creo nueva lista de peliculas
 		peliculas = new ArrayList<>();
 
 	}
+
 	public void cargarPelicula() {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Ingrese el título de la película: ");
@@ -43,21 +44,28 @@ public class PeliculaService {
 
 	public void listarPeliculasDisponibles() {
 
-	// Validacion si la lista de peliculas esta vacia
+		// Validacion si la lista de peliculas esta vacia
 		if (peliculas.isEmpty()) {
 			System.out.println("No hay películas disponibles.");
 		} else {
 			System.out.println("Películas disponibles:");
-	// El foreach recorre cada objeto "pelicula" dentro del ArrayList peliculas
+			// El foreach recorre cada objeto "pelicula" dentro del ArrayList peliculas
 			for (Pelicula pelicula : peliculas) {
 				System.out.println(pelicula);
 			}
 		}
+	}
 
-	public void buscarPeliculaPorTitulo(String tituloPelicula) {
-		// Buscar la película por título
+	public Pelicula buscarPeliculaPorTitulo() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Ingrese el título de la película: ");
+		String tituloPelicula = scanner.nextLine();
+
+		// Inicio un objeto Pelicula sin valores para compararlo con los objetos que
+		// Pelicula que esten en la lista de peliculas, sino tira ERROR porque no sabe con que compararlo
 		Pelicula peliculaEncontrada = null;
 		for (Pelicula pelicula : peliculas) {
+			// Compara el titulo nuestro con cada titulo de la lista, si encuentra la manda al nuevo objeto para trabajarlo
 			if (pelicula.getTitulo().equalsIgnoreCase(tituloPelicula)) {
 				peliculaEncontrada = pelicula;
 				break;
@@ -66,8 +74,16 @@ public class PeliculaService {
 
 		// Mostrar el resultado de la búsqueda
 		if (peliculaEncontrada != null) {
-			System.out.println("La película existe.");
+			System.out.println("Pelicula: ");
 			System.out.println(peliculaEncontrada);
+
+			System.out.println("¿Desea alquilar esta película? (S/N)");
+			String opcion = scanner.nextLine();
+
+			if (opcion.equalsIgnoreCase("S")) {
+				// Invocar función para alquilar la película
+				return peliculaEncontrada;
+			}
 		} else {
 			System.out.println("La película no existe.");
 		}
@@ -91,9 +107,14 @@ public class PeliculaService {
 		}
 	}
 
-	public void devolverPelicula(){
-
+	public void devolverPelicula() {
 	}
 
+	public List<Pelicula> getPeliculas() {
+		return peliculas;
+	}
 
+	public void setPeliculas(List<Pelicula> peliculas) {
+		this.peliculas = peliculas;
+	}
 }
