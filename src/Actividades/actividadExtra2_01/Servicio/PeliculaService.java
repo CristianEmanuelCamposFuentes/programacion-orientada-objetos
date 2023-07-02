@@ -3,10 +3,7 @@ package Actividades.actividadExtra2_01.Servicio;
 import Actividades.actividadExtra2_01.Entidad.Alquiler;
 import Actividades.actividadExtra2_01.Entidad.Pelicula;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -24,6 +21,7 @@ public class PeliculaService {
 	}
 
 	public void cargarPelicula() {
+		System.out.println("=== CARGAR PELICULA ===");
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Ingrese el título de la película: ");
 		String titulo = scanner.nextLine();
@@ -43,7 +41,7 @@ public class PeliculaService {
 	}
 
 	public void listarPeliculasDisponibles() {
-
+		System.out.println("=== LISTAR PELICULAS DISPONIBLES ===");
 		// Validacion si la lista de peliculas esta vacia
 		if (peliculas.isEmpty()) {
 			System.out.println("No hay películas disponibles.");
@@ -57,6 +55,7 @@ public class PeliculaService {
 	}
 
 	public Pelicula buscarPeliculaPorTitulo() {
+		System.out.println("=== BUSCAR PELICULA POR TITULO ===");
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Ingrese el título de la película: ");
 		String tituloPelicula = scanner.nextLine();
@@ -86,10 +85,13 @@ public class PeliculaService {
 			}
 		} else {
 			System.out.println("La película no existe.");
+
 		}
+		return null;
 	}
 
 	public void buscarPeliculaPorGenero() {
+		System.out.println("=== BUSCAR PELICULA POR GENERO ===");
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Ingrese el género de la película a buscar: ");
 		String genero = scanner.nextLine();
@@ -108,6 +110,8 @@ public class PeliculaService {
 	}
 
 	public void devolverPelicula() {
+		System.out.println("=== Devolver PELICULA ===");
+
 	}
 
 	public List<Pelicula> getPeliculas() {

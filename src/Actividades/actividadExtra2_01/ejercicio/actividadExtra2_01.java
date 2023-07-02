@@ -45,8 +45,8 @@ import java.util.Scanner;
 public class actividadExtra2_01 {
 	public static void main(String[] args) {
 		PeliculaService servicioP = new PeliculaService();
-		AlquilerService servicioA = new AlquilerService();
-		Scanner scanner = new Scanner(System.in);
+		AlquilerService servicioA = new AlquilerService(servicioP);
+		Scanner scanner = new Scanner(System.in).useDelimiter("\n");
 
 		boolean salir = false;
 		while (!salir) {
