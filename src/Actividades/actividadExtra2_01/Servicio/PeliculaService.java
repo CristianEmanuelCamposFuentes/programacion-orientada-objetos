@@ -12,13 +12,13 @@ import java.util.Scanner;
 
 public class PeliculaService {
 	private List<Pelicula> peliculas;
-	private List<Alquiler> alquileres;
+
 
 	// ! Se utiliza el constructor para que cada lista este inicializada, entonces se
 	// ! puedan agregar valores, sino serian null y eso en java NO ESTA PERMITIDO
 	public PeliculaService() {
 		peliculas = new ArrayList<>();
-		alquileres = new ArrayList<>();
+
 	}
 	public void cargarPelicula() {
 		Scanner scanner = new Scanner(System.in);
@@ -37,34 +37,15 @@ public class PeliculaService {
 		System.out.println("La película se ha cargado exitosamente.");
 	}
 
-	//	public void cargarPelicula(String titulo, String genero, int anio, int duracion) {
-//		if (peliculasCount < peliculas.length) {
-//			Pelicula pelicula = new Pelicula(titulo, genero, anio, duracion);
-//			peliculas[peliculasCount] = pelicula;
-//			peliculasCount++;
-//			System.out.println("La película se ha cargado exitosamente.");
-//		} else {
-//			System.out.println("No se pueden cargar más películas. La lista está llena.");
-//		}
-//	}
-
 	public void listarPeliculasDisponibles() {
-		System.out.println("Películas disponibles:");
-		for (Pelicula pelicula : peliculas) {
-			System.out.println(pelicula);
+		if (peliculas.isEmpty()) {
+			System.out.println("No hay películas disponibles.");
+		} else {
+			System.out.println("Películas disponibles:");
+			for (Pelicula pelicula : peliculas) {
+				System.out.println(pelicula);
+			}
 		}
-	}
-
-	//	public void listarPeliculasDisponibles() {
-//		if (peliculasCount > 0) {
-//			System.out.println("Películas disponibles:");
-//			for (int i = 0; i < peliculasCount; i++) {
-//				System.out.println(peliculas[i]);
-//			}
-//		} else {
-//			System.out.println("No hay películas disponibles.");
-//		}
-//	}
 
 	public void buscarPeliculaPorTitulo(String tituloPelicula) {
 		// Buscar la película por título

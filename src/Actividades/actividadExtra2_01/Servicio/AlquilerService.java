@@ -3,6 +3,7 @@ package Actividades.actividadExtra2_01.Servicio;
 import Actividades.actividadExtra2_01.Entidad.Alquiler;
 import Actividades.actividadExtra2_01.Entidad.Pelicula;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class AlquilerService {
@@ -12,14 +13,12 @@ public class AlquilerService {
 	private int alquileresCount;
 
 	public AlquilerService() {
-		peliculas = new Pelicula[10];
-		alquileres = new Alquiler[10];
-		peliculasCount = 0;
-		alquileresCount = 0;
+//		peliculas = new Pelicula[10];
+//		alquileres = new Alquiler[10];
+//		peliculasCount = 0;
+//		alquileresCount = 0;
+		alquileres = new ArrayList<>();
 	}
-
-
-
 
 
 	public void cargarAlquiler(int peliculaIndex, Date fechaInicio, Date fechaFin) {
@@ -92,6 +91,14 @@ public class AlquilerService {
 //			System.out.println(alquiler);
 //		}
 //	}
+
+	public void buscarAlquilerPorFecha(){
+		System.out.println("Lista de alquileres realizados por fecha: ");
+		for (alquilerFecha: alquileres) {
+			System.out.println(alquilerFecha.);
+			System.out.println(alquilerFecha.getFecha());
+		}
+	}
 
 	public double calcularIngresoTotal(int duracion, Date fechaInicio, Date fechaFin) {
 		long duracionAlquiler = (fechaFin.getTime() - fechaInicio.getTime()) / (24 * 60 * 60 * 1000);
