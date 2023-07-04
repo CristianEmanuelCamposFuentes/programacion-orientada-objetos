@@ -29,7 +29,6 @@ public class actividad13 {
 	public static void main(String[] args){
 		// Intancia de servicios
 		CursoServices CS = new CursoServices();
-
 		// Instancia de la entidad
 		Curso cursoNuevo = CS.crearCurso();
 		System.out.println("Inicio del programa:");
