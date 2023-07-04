@@ -77,12 +77,12 @@ public class Curso {
 	@Override
 	public String toString() {
 		return "Curso{" +
-				"nombreCurso='" + nombreCurso + '\'' +
-				", cantHorasPorDia=" + cantHorasPorDia +
-				", cantDiasPorSemana=" + cantDiasPorSemana +
-				", turno='" + turno + '\'' +
-				", precioPorHora=" + precioPorHora +
-				", alumnos=" + Arrays.toString(alumnos) +
+				"nombreCurso='" + nombreCurso + ",\n" +
+				" cantHorasPorDia=" + cantHorasPorDia +",\n" +
+				" cantDiasPorSemana=" + cantDiasPorSemana + ",\n" +
+				" turno='" + turno + '\'' + ",\n" +
+				" precioPorHora=" + precioPorHora + ",\n" +
+				" alumnos=" + Arrays.toString(alumnos) + "\n" +
 				'}';
 	}
 }

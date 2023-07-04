@@ -22,8 +22,24 @@ package Actividades.actividad13.ejercicio;
 		día, el precio por hora, la cantidad de alumnos y la cantidad de días a la semana que
 		se repite el encuentro.*/
 
+import Actividades.actividad13.Entidades.Curso;
+import Actividades.actividad13.Servicios.CursoServices;
+
 public class actividad13 {
 	public static void main(String[] args){
+		// Intancia de servicios
+		CursoServices CS = new CursoServices();
+
+		// Instancia de la entidad
+		Curso cursoNuevo = CS.crearCurso();
+		System.out.println("Inicio del programa:");
+		System.out.println("Detalles del curso: ");
+		System.out.println(cursoNuevo);
+
+		double costoSemanal = CS.calcularGananciaSemanal(cursoNuevo);
+		System.out.println("El costo semanal es de: " + costoSemanal);
+
+		System.out.println("Fin del programa.");
 
 	}
 }
