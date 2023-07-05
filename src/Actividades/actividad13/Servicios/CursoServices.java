@@ -58,8 +58,7 @@ public class CursoServices {
 		//en una semana por curso. Para ello, se deben multiplicar la cantidad de horas por
 		//día, el precio por hora, la cantidad de alumnos y la cantidad de días a la semana que
 		//se repite el encuentro.
-		double totalSemanal = cursoCosteado.getCantDiasPorSemana() * cursoCosteado.getCantHorasPorDia() * cursoCosteado.getPrecioPorHora() * cursoCosteado.getAlumnos().length;
-		return totalSemanal;
+		return cursoCosteado.getCantDiasPorSemana() * cursoCosteado.getCantHorasPorDia() * cursoCosteado.getPrecioPorHora() * cursoCosteado.getAlumnos().length;
 	}
 
 
