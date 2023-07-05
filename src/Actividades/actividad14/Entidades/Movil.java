@@ -5,17 +5,17 @@ import java.util.Arrays;
 public class Movil {
 
 	private String marca;
-	private String precio;
+	private int precio;
 	private String modelo;
 	private int memoriaRam;
 	private int almacenamiento;
 
-	private int[] codigo;
+	private int[] codigo = new int[7];
 
 	public Movil() {
 	}
 
-	public Movil(String marca, String precio, String modelo, int memoriaRam, int almacenamiento, int[] codigo) {
+	public Movil(String marca, int precio, String modelo, int memoriaRam, int almacenamiento, int[] codigo) {
 		this.marca = marca;
 		this.precio = precio;
 		this.modelo = modelo;
@@ -32,11 +32,11 @@ public class Movil {
 		this.marca = marca;
 	}
 
-	public String getPrecio() {
+	public int getPrecio() {
 		return precio;
 	}
 
-	public void setPrecio(String precio) {
+	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
 

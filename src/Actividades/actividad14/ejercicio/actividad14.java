@@ -1,4 +1,8 @@
 package Actividades.actividad14.ejercicio;
+
+import Actividades.actividad14.Entidades.Movil;
+import Actividades.actividad14.Servicios.MovilServices;
+
 /* * 14. Una tienda que vende teléfonos móviles quiere tener registro de cada producto que
 		posee en un sistema computacional. Para ello, crearemos un programa donde se pueda
 		almacenar cada producto con su información. Crear una entidad Movil con los atributos
@@ -14,6 +18,13 @@ package Actividades.actividad14.ejercicio;
 		números de un celular. Para ello, puede utilizarse un bucle repetitivo*/
 public class actividad14 {
 	public static void main(String[] args) {
+	// Instancia de servicios
+		MovilServices MS = new MovilServices();
 
+	// Instancia del celular y al retornar la funcion se invoca sola
+	Movil celular = MS.cargarCelular();
+
+	System.out.println("Celular creado correctamente. Datos: ");
+	System.out.println(celular);
 	}
 }
