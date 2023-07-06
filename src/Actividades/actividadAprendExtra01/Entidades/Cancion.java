@@ -4,15 +4,10 @@ public class Cancion {
 	private String titulo;
 	private String autor;
 
-	public Cancion() {
-	}
-
 	public Cancion(String titulo, String autor) {
 		this.titulo = titulo;
 		this.autor = autor;
 	}
-
-
 
 	public String getTitulo() {
 		return titulo;
