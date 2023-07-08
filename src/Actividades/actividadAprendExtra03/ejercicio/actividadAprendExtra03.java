@@ -1,4 +1,10 @@
 package Actividades.actividadAprendExtra03.ejercicio;
+
+import Actividades.actividadAprendExtra03.Entidad.Raices;
+import Actividades.actividadAprendExtra03.Servicios.RaicesServices;
+
+import java.util.Scanner;
+
 //3. Vamos a realizar una clase llamada Raices, donde representaremos los valores de una
 //        ecuación de 2o grado. Tendremos los 3 coeficientes como atributos, llamémosles a, b y c.
 //        Hay que insertar estos 3 valores para construir el objeto a través de un método
@@ -21,4 +27,31 @@ package Actividades.actividadAprendExtra03.ejercicio;
 //        Nota: Formula ecuación 2o grado: (-b±√((b^2)-(4*a*c)))/(2*a) Solo varia el signo
 //        delante de -b
 public class actividadAprendExtra03 {
+	public static void main(String[] args){
+		Scanner lector = new Scanner(System.in).useDelimiter("\n");
+
+		System.out.println("Iniciando el programa...");
+
+		// Instancia de los Servicios para acceder a los metodos
+		RaicesServices RS = new RaicesServices();
+
+		// Primero vamos a pedir los valores para despues crear el objeto Raices
+		System.out.println("Ingrese el valor de A:");
+		int valorA = lector.nextInt();
+
+		System.out.println("Ingrese el valor de B:");
+		int valorB = lector.nextInt();
+
+		System.out.println("Ingrese el valor de C:");
+		int valorC = lector.nextInt();
+
+		// Instancia del nuevo objeto de tipo Raices para analizar con los puntos dados
+		Raices nuevaEcuacion = new Raices(valorA, valorB, valorC);
+
+		// Calcular
+		RS.calcular(nuevaEcuacion);
+
+
+
+	}
 }
