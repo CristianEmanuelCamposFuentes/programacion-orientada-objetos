@@ -5,6 +5,9 @@ public class Raices {
     private int b;
     private int c;
 
+    public Raices() {
+    }
+
     public Raices(int a, int b, int c) {
         this.a = a;
         this.b = b;
