@@ -2,6 +2,9 @@ package Actividades.actividadAprendExtra03.Servicios;
 
 import Actividades.actividadAprendExtra03.Entidad.Raices;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class RaicesServices {
     public double getDiscriminante(Raices objeto){
         System.out.println("Calculando el discriminante...");
@@ -11,7 +14,7 @@ public class RaicesServices {
     public boolean tieneRaices(Raices objeto) {
         System.out.println("Evaluando si tiene raices...");
         // Aca utilizo el this, para hacer referencia a esta clase llamada RaicesServices.
-        //return this.getDiscriminante(objeto);
+        //! return this.getDiscriminante(objeto);
         /* *Por ejemplo , en vez de crear una instancia aca de esta misma clase de RaicesServices, de la forma:
         *  RaicesServices nombreServicioCualquiera = new RaicesServices();
         * Y despues usarla aca adentro de la manera:
@@ -22,7 +25,8 @@ public class RaicesServices {
         * */
         /*
          Retorno el resultado de invocar la funcion getDiscriminate(Raices objeto), una vez que tengo el valor, recien ahi lo compara con el cero , y dependiendo de esa comparacion, da verdadero o falso.
-         Veo que en Java tambien interpreta el mismo contexto sin usar el this, lo dejo en comentarios para fines informativos
+         Veo que en Java tambien interpreta el mismo contexto sin usar el this, lo dejo en comentarios para fines informativos,
+         pero queda a criterio de cada uno el usar el this o no en estos casos que es opcional.
         */
         return getDiscriminante(objeto) >= 0;
     }
@@ -32,6 +36,35 @@ public class RaicesServices {
         return getDiscriminante(objeto) == 0;
     }
 
+    public void obtenerRaices(Raices objeto) {
+        // Nota: Formula ecuación 2o grado: (-b±√((b^2)-(4*a*c)))/(2*a) Solo varia el signo
+        // delante de -b
+        // LLama a tiene raices, y si es true, imprimir ambas soluciones
+        if(tieneRaices(objeto)){
 
+            System.out.println("Obteniendo raices...");
+            // Recordar que la formula es lo mismo que decir :
+            // -b (+-) raiz del discriminante / (2*a), llevado a codigo es de la forma
+            double discriminante = getDiscriminante(objeto);
+            // Cada raiz se utiliza diferenciando el signo en cada calculo
+            // Primera raiz = -b + raiz del discriminante / (2*a)
+            double raiz1 = (-objeto.getB() + Math.sqrt(discriminante))/ (2 * objeto.getA());
 
+            // Segunda raiz = -b - raiz del discriminante / (2*a), es decir
+            double raiz2 = (-objeto.getB() - Math.sqrt(discriminante))/ (2 * objeto.getA());
+
+            // Creo un arrayLyst vacia, para ubicar las dos variables de tipo double e imprimirlas.
+            List<Double> raices = new ArrayList<>();
+            // A la lista raices le agrego la raiz 1 con el metodo add();
+            raices.add(raiz1);
+            // Agrego la segunda raiz, raiz2
+            raices.add(raiz2);
+
+            System.out.println("Las raices de la ecuacion de segundo grado son: " + raices);
+
+        } else {
+            // Caso contrario de que no existan dos raices, avisa por pantalla
+            System.out.println("La ecuacion de segundo no posee dos raices.");
+        }
+    }
 }
