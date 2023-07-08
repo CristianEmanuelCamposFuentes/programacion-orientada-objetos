@@ -80,4 +80,16 @@ public class RaicesServices {
             System.out.println("La ecuacion de segundo grado no tiene una sola raiz");
         }
     }
+
+    public void calcular(Raices objeto){
+        // Evaluar si tiene dos raices, pasar resultado
+        if(tieneRaices(objeto)){
+            obtenerRaices(objeto);
+            // Evaluar si tiene una raiz como solucion, y mostrarla
+        } else if (tieneRaiz(objeto)) {
+            obtenerRaiz(objeto);
+        } else {
+            System.out.println("No hay soluciones para la ecuacion determinada.");
+        }
+    }
 }
