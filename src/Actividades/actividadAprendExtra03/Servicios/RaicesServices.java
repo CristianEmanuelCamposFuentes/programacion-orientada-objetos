@@ -67,4 +67,17 @@ public class RaicesServices {
             System.out.println("La ecuacion de segundo no posee dos raices.");
         }
     }
+
+    public void obtenerRaiz(Raices objeto){
+        // Evaluando si tiene una sola raiz
+        if(tieneRaiz(objeto)){
+            // Cuando tiene una sola raiz sabemos que el discriminate es 0, por lo tanto queda
+            // la ecuacion (-b)/(2*a)
+            // Utilizo (double) para que no se redondee la division de enteros
+            double raizUnica = (double) (-objeto.getB())/ (2*objeto.getA());
+            System.out.println("La ecuacion de segundo tiene la raiz: " + raizUnica);
+        } else {
+            System.out.println("La ecuacion de segundo grado no tiene una sola raiz");
+        }
+    }
 }
