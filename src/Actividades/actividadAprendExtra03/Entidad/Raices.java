@@ -40,6 +40,8 @@ public class Raices {
 
     @Override
     public String toString() {
+        System.out.println("================================================");
+        System.out.println("Ecuacion de segundo grado creada: ");
         return "Ecuacion{" + a +"X^2 + "+ b +"Y + " + c + " = 0" +'}';
     }
 }
