@@ -41,7 +41,7 @@ public class RaicesServices {
         // delante de -b
         // LLama a tiene raices, y si es true, imprimir ambas soluciones
         if(tieneRaices(objeto)){
-
+            System.out.println("================================================");
             System.out.println("Obteniendo raices...");
             // Recordar que la formula es lo mismo que decir :
             // -b (+-) raiz del discriminante / (2*a), llevado a codigo es de la forma
@@ -61,10 +61,13 @@ public class RaicesServices {
             raices.add(raiz2);
 
             System.out.println("Las raices de la ecuacion de segundo grado son: " + raices);
+            System.out.println("================================================");
 
         } else {
             // Caso contrario de que no existan dos raices, avisa por pantalla
             System.out.println("La ecuacion de segundo no posee dos raices.");
+            System.out.println("================================================");
+
         }
     }
 
@@ -76,8 +79,12 @@ public class RaicesServices {
             // Utilizo (double) para que no se redondee la division de enteros
             double raizUnica = (double) (-objeto.getB())/ (2*objeto.getA());
             System.out.println("La ecuacion de segundo tiene la raiz: " + raizUnica);
+            System.out.println("================================================");
+
         } else {
             System.out.println("La ecuacion de segundo grado no tiene una sola raiz");
+            System.out.println("================================================");
+
         }
     }
 
@@ -86,11 +93,17 @@ public class RaicesServices {
         if(tieneRaices(objeto)){
             System.out.println("La ecuacion de segundo posee dos raices.");
             obtenerRaices(objeto);
+            System.out.println("================================================");
+
             // Evaluar si tiene una raiz como solucion, y mostrarla
         } else if (tieneRaiz(objeto)) {
             obtenerRaiz(objeto);
+            System.out.println("================================================");
+
         } else {
             System.out.println("No hay soluciones para la ecuacion determinada.");
+            System.out.println("================================================");
+
         }
     }
 
