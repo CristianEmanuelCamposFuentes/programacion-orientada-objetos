@@ -40,10 +40,6 @@ public class Raices {
 
     @Override
     public String toString() {
-        return "Raices{" +
-                "a=" + a +
-                ", b=" + b +
-                ", c=" + c +
-                '}';
+        return "Ecuacion{" + a +"X^2 + "+ b +"Y + " + c + " = 0" +'}';
     }
 }

@@ -47,11 +47,10 @@ public class actividadAprendExtra03 {
 
 		// Instancia del nuevo objeto de tipo Raices para analizar con los puntos dados
 		Raices nuevaEcuacion = new Raices(valorA, valorB, valorC);
+		System.out.println(nuevaEcuacion);
 
 		// Calcular
 		RS.calcular(nuevaEcuacion);
-
-
 
 	}
 }

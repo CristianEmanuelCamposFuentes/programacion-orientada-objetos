@@ -84,6 +84,7 @@ public class RaicesServices {
     public void calcular(Raices objeto){
         // Evaluar si tiene dos raices, pasar resultado
         if(tieneRaices(objeto)){
+            System.out.println("La ecuacion de segundo posee dos raices.");
             obtenerRaices(objeto);
             // Evaluar si tiene una raiz como solucion, y mostrarla
         } else if (tieneRaiz(objeto)) {
@@ -92,4 +93,6 @@ public class RaicesServices {
             System.out.println("No hay soluciones para la ecuacion determinada.");
         }
     }
+
+
 }
