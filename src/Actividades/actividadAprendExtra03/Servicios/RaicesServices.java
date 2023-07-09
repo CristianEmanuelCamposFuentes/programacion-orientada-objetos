@@ -8,7 +8,9 @@ import java.util.List;
 public class RaicesServices {
     public double getDiscriminante(Raices objeto){
         System.out.println("Calculando el discriminante...");
-        return (Math.pow(objeto.getB(),2))- (4 * objeto.getA() * objeto.getC() * objeto.getC());
+        double discriminante = (Math.pow(objeto.getB(), 2)) - (4 * objeto.getA() * objeto.getC());
+        System.out.println("El discriminante es: " + discriminante);
+        return discriminante;
     }
 
     public boolean tieneRaices(Raices objeto) {
@@ -28,12 +30,25 @@ public class RaicesServices {
          Veo que en Java tambien interpreta el mismo contexto sin usar el this, lo dejo en comentarios para fines informativos,
          pero queda a criterio de cada uno el usar el this o no en estos casos que es opcional.
         */
-        return getDiscriminante(objeto) >= 0;
+        boolean tieneDosRaices = getDiscriminante(objeto) >= 0;
+        if (tieneDosRaices){
+            System.out.println("La ecuacion tiene dos raices.");
+        } else {
+            System.out.println("La ecuacion no tiene dos raices.");
+        }
+        return tieneDosRaices;
     }
 
     public boolean tieneRaiz(Raices objeto) {
         System.out.println("Evaluando si posee una unica raiz...");
-        return getDiscriminante(objeto) == 0;
+
+        boolean unicaRaiz = getDiscriminante(objeto) == 0;
+        if (unicaRaiz){
+            System.out.println("La ecuacion tiene una unica raiz.");
+        } else {
+            System.out.println("La ecuacion no tiene una unica raiz.");
+        }
+        return unicaRaiz;
     }
 
     public void obtenerRaices(Raices objeto) {
@@ -91,7 +106,7 @@ public class RaicesServices {
     public void calcular(Raices objeto){
         // Evaluar si tiene dos raices, pasar resultado
         if(tieneRaices(objeto)){
-            System.out.println("La ecuacion de segundo posee dos raices.");
+//            System.out.println("La ecuacion de segundo grado posee dos raices.");
             obtenerRaices(objeto);
             System.out.println("================================================");
 
@@ -101,7 +116,7 @@ public class RaicesServices {
             System.out.println("================================================");
 
         } else {
-            System.out.println("No hay soluciones para la ecuacion determinada.");
+//            System.out.println("No hay soluciones para la ecuacion determinada.");
             System.out.println("================================================");
 
         }
