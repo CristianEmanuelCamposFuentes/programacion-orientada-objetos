@@ -1,5 +1,6 @@
 package Actividades.actividadAprendExtra04.ejercicio;
 
+import Actividades.actividadAprendExtra04.Entidad.NIF;
 import Actividades.actividadAprendExtra04.Servicios.NIFServices;
 
 /* 4. Dígito Verificador. Crear una clase NIF que se usará para mantener DNIs con su
@@ -49,8 +50,8 @@ public class actividadAprendExtra04 {
 		// Instancio los servicios para acceder a los metodos
 		NIFServices NS = new NIFServices();
 
+		NIF codigoNif = NS.crearNif();
 
-
-
+		System.out.println("Fin del programa.");
 	}
 }

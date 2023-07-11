@@ -18,8 +18,12 @@ public class NIFServices {
 			letraCalculada = calcularLetra(documento);
 
 			//  Valido que la variable tenga un valor, sino se vuelve a pedir el documento
-		} while (!(letraCalculada == ' '));
+			// Mientras el char sea vacio, se vuelve a repetir
+		} while (letraCalculada == ' ');
 
+		System.out.println("Datos procesados.");
+
+		System.out.println("El codigo NIF es :");
 		// Muestro el NIF
 		mostrar(documento, letraCalculada);
 
@@ -47,6 +51,7 @@ public class NIFServices {
 		// "%08d" 08 indica los lugares que busca tener como longitud, rellena con ceros a la izquiera si faltan numeros para llegar hasta 8 digitos.
 		// %d significa que lo formatea como entero. El guion (-) es eso, literal un guion.
 		// %c Indica que debe ser un caracter lo que sigue.
-		System.out.printf("%08d-%c", documento, letra);
+		System.out.printf("%08d-%c%n", documento, letra);
+		System.out.println("= = = = = = = = = = = =");
 	}
 }
