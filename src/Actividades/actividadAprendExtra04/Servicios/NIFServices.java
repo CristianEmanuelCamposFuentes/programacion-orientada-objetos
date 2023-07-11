@@ -51,6 +51,7 @@ public class NIFServices {
 		// "%08d" 08 indica los lugares que busca tener como longitud, rellena con ceros a la izquiera si faltan numeros para llegar hasta 8 digitos.
 		// %d significa que lo formatea como entero. El guion (-) es eso, literal un guion.
 		// %c Indica que debe ser un caracter lo que sigue.
+		// %n Agrego un salto de linea al final
 		System.out.printf("%08d-%c%n", documento, letra);
 		System.out.println("= = = = = = = = = = = =");
 	}
