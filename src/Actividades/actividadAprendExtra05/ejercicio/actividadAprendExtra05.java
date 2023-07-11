@@ -12,9 +12,15 @@ package Actividades.actividadAprendExtra05.ejercicio;
 */
 
 
+import Actividades.actividadAprendExtra05.Entidad.MesJuego;
+import Actividades.actividadAprendExtra05.Servicios.MesJuegoServices;
+
 public class actividadAprendExtra05 {
 	public static void main(String[] args){
+		// Iniciamos la instancia del juego
+		MesJuegoServices JS = new MesJuegoServices();
 
+		JS.adivinarMes();
 
 	}
 }
