@@ -1,4 +1,7 @@
 package Actividades.actividadAprendExtra04.ejercicio;
+
+import Actividades.actividadAprendExtra04.Servicios.NIFServices;
+
 /* 4. Dígito Verificador. Crear una clase NIF que se usará para mantener DNIs con su
 correspondiente letra (NIF). Los atributos serán el número de DNI (entero largo) y la
 letra (String o char) que le corresponde. Dispondrá de los siguientes métodos:
@@ -43,6 +46,11 @@ POSICIÓN LETRA
 * */
 public class actividadAprendExtra04 {
 	public static void main(String[] args){
+		// Instancio los servicios para acceder a los metodos
+		NIFServices NS = new NIFServices();
+
+
+
 
 	}
 }
