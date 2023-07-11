@@ -16,7 +16,6 @@ public class Libro {
         this.titulo = titulo;
         this.autor = autor;
         this.cantidadPaginas = cantidadPaginas;
-        System.out.println("Libro creado.");
 		}
 	}
 

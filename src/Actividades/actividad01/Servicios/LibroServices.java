@@ -21,7 +21,7 @@ public class LibroServices {
 		System.out.println("Ingrese la cantidad de paginas del libro");
 		int cantidadPaginas = lector.nextInt();
 
-
+		System.out.println("Libro creado.");
 		return new Libro(ISBN,titulo,autor,cantidadPaginas);
 	}
 
