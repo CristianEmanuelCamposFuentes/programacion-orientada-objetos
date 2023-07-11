@@ -21,8 +21,20 @@ public class LibroServices {
 		System.out.println("Ingrese la cantidad de paginas del libro");
 		int cantidadPaginas = lector.nextInt();
 
+		// Creamos el objeto Libro vacio
+		Libro nuevoLibro = new Libro();
+
+		// Libro creado con parametros
+		Libro libroConParametros = new Libro(ISBN, titulo, autor, cantidadPaginas);
+
+		// Asignamos valores a los atributos del libro
+		nuevoLibro.setISBN(ISBN);
+		nuevoLibro.setTitulo(titulo);
+		nuevoLibro.setAutor(autor);
+		nuevoLibro.setCantidadPaginas(cantidadPaginas);
+
 		System.out.println("Libro creado.");
-		return new Libro(ISBN,titulo,autor,cantidadPaginas);
+		return nuevoLibro;
 	}
 
 	public void devolverLibro(Libro libro){

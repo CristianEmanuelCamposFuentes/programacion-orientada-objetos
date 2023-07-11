@@ -16,10 +16,13 @@ public class Main {
 	public static void main(String[] args) {
 		System.out.println("Comienzo del programa.");
 
-		LibroServices SV = new LibroServices();
-		Libro libro = SV.crearLibro();
+		// Instancia de servicio para poder acceder a los metodos
+		LibroServices libroServicios = new LibroServices();
 
-		SV.devolverLibro(libro);
+		// Crear un libro
+		Libro libroCreado = libroServicios.crearLibro();
+
+		libroServicios.devolverLibro(libroCreado);
 
 	}
 }
