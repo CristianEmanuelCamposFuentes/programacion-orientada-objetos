@@ -1,5 +1,10 @@
 package Actividades.actividadAprendExtra06.ejercicio;
 
+import Actividades.actividadAprendExtra06.Entidad.Ahorcado;
+import Actividades.actividadAprendExtra06.Servicios.AhorcadoServices;
+
+import java.util.Arrays;
+
 /*6. Juego Ahorcado: Crear una clase Ahorcado (como el juego), la cual deberá contener
 		como atributos, un vector con la palabra a buscar, la cantidad de letras encontradas y la
 		cantidad jugadas máximas que puede realizar el usuario. Definir los siguientes métodos
@@ -61,4 +66,12 @@ package Actividades.actividadAprendExtra06.ejercicio;
 		Mensaje: Lo sentimos, no hay más oportunidades
 		*/
 public class actividadAprendExtra06 {
+	public static void main(String[] args) {
+		AhorcadoServices AS = new AhorcadoServices();
+
+		// Creamos la nueva partida
+		Ahorcado nuevaPartida = AS.crearJuego();
+		System.out.println(Arrays.toString(nuevaPartida.getPalabraBuscada()));
+	}
+
 }
