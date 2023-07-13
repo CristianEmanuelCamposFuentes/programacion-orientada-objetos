@@ -1,5 +1,8 @@
 package Actividades.actividadDesafioGrupal.ejercicio;
 
+import Actividades.actividadDesafioGrupal.Servicios.ClienteServices;
+import Actividades.actividadDesafioGrupal.Servicios.RutinaServices;
+
 /*
 Ejercicio 1 (Actividad para el día n° 18)
 
@@ -42,5 +45,25 @@ Nota adicional: Puedes agregar más funcionalidades y métodos a las clases de e
 necesario para incrementar aún más la complejidad del ejercicio.
 * */
 public class actividadDesafioGrupal {
+    public static void main(String[] args) {
+        ClienteServices servC = new ClienteServices();
+        RutinaServices servR = new RutinaServices();
 
+        servC.listaLlena();
+
+        servC.obtenerClientes();
+
+        servC.actualizarCliente(2, "pepe", 200, 2, 250, "inmortal");
+
+        servC.obtenerClientes();
+
+        servC.eliminarCliente(1);
+
+        servC.obtenerClientes();
+
+        servR.llenarRutina();
+
+        servR.obtenerRutinas();
+
+    }
 }
