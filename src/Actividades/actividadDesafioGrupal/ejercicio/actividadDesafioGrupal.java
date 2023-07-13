@@ -49,18 +49,23 @@ public class actividadDesafioGrupal {
         ClienteServices servC = new ClienteServices();
         RutinaServices servR = new RutinaServices();
 
+        System.out.println("Inicio del programa: ");
+        System.out.println("Lista de clientes activa: ");
         servC.listaLlena();
 
         servC.obtenerClientes();
 
+        System.out.println("Editar cliente Pepe: ");
         servC.actualizarCliente(2, "pepe", 200, 2, 250, "inmortal");
 
         servC.obtenerClientes();
 
+        System.out.println("Eliminar cliente con id 1: ");
         servC.eliminarCliente(1);
 
         servC.obtenerClientes();
 
+        System.out.println("Lista de rutinas activas: ");
         servR.llenarRutina();
 
         servR.obtenerRutinas();
