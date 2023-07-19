@@ -38,6 +38,7 @@ public class RectanguloTest {
 
 	@Test
 	public void deberiaCalcularArea(){
+		// El cero es un delta, es la posible variacion que puede tener el valor.
 		assertEquals(100, RS.calcularArea(new Rectangulo(10,10)), 0);
 		assertEquals(20, RS.calcularArea(new Rectangulo(4,5)), 0);
 		assertEquals(1, RS.calcularArea(new Rectangulo(1,1)), 0);
