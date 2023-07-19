@@ -4,8 +4,7 @@ import JUnit.EjemploVideo1.Entidades.Rectangulo;
 import JUnit.EjemploVideo1.Servicios.RectanguloServicios;
 import org.junit.*;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 public class RectanguloTest {
 	public RectanguloTest(){
@@ -49,5 +48,23 @@ public class RectanguloTest {
 		assertEquals(40, RS.calcularPerimetro(new Rectangulo(10,10)),0);
 		assertEquals(100, RS.calcularPerimetro(new Rectangulo(20,30)),0);
 		assertEquals(30, RS.calcularPerimetro(new Rectangulo(5,10)),0);
+	}
+
+	@Test
+	public void deberiaActivarODesactivar(){
+		// Creo una instancia del rectangulo y le doy los valores que necesita
+		Rectangulo rectangulo = new Rectangulo(5,5);
+		// Evalua si la variable active del rectangulo es verdadera
+		assertTrue(rectangulo.isActive());
+	}
+
+	@Test
+	public void deberiaDesactivar(){
+		// Creo una instancia del rectangulo y le doy los valores que necesita
+		Rectangulo rectanguloNuevo = new Rectangulo(15,5);
+		// Evalua si la variable active del rectangulo es verdadera
+		rectanguloNuevo.setActive(false);
+
+		assertFalse(rectanguloNuevo.isActive());
 	}
 }
