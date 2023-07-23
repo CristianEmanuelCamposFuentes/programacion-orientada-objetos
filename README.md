@@ -1,6 +1,5 @@
 # Proyecto de POO en Java - Actividades Prácticas
 
----
 
 ## Descripción
 
@@ -66,11 +65,13 @@ git push origin nombre_de_tu_rama
 
 7. Espera a que tus cambios sean revisados. Una vez aprobados, serán fusionados con el proyecto principal.
 
----
-## Contacto
-**¡Gracias por tu interés en este proyecto!** Si tienes alguna pregunta o sugerencia, no dudes en contactarme a través de [mi perfil de LindedIn](https://www.linkedin.com/in/cristian-emanuel-campos-fuentes/).
 
-Saludos y gracias por estar! :🎉:
+## Contacto
+**¡Gracias por tu interés en este proyecto!** Si tienes alguna pregunta o sugerencia, no dudes en contactarme a través de [mi perfil de LinkedIn](https://www.linkedin.com/in/cristian-emanuel-campos-fuentes/).
+
+---
+
+Saludos gente y suerte con ese código! Gracias por llegar hasta acá :🎉:
 
 
 **_Taba_**
