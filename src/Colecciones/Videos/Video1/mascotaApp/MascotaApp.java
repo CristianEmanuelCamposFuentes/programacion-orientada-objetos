@@ -3,12 +3,13 @@ package Colecciones.Videos.Video1.mascotaApp;
 import java.util.ArrayList;
 
 public class MascotaApp {
+	private static final String CHIQUITO = "Chiquito";
 	public static void main(String[] args) {
 		String[]nombresArray = new String[5];
 
 		// Arrays
 		for (int i = 0; i < nombresArray.length; i++){
-			nombresArray[i] = "Chiquito" + (i+1);
+			nombresArray[i] =  CHIQUITO + (i+1);
 		}
 
 		for (String variable : nombresArray){
@@ -20,11 +21,12 @@ public class MascotaApp {
 		ArrayList<String> nombresArrayList = new ArrayList<>();
 
 		// Agregar elementos
-		nombresArrayList.add("Chiquito");
-		nombresArrayList.add("Chiquito");
-		nombresArrayList.add("Chiquito");
-		nombresArrayList.add("Chiquito");
-		nombresArrayList.add("Chiquito");
+		nombresArrayList.add(CHIQUITO);
+		nombresArrayList.add(CHIQUITO);
+		nombresArrayList.add(CHIQUITO);
+		nombresArrayList.add(CHIQUITO);
+		nombresArrayList.add(CHIQUITO);
+
 
 		// Mostrar ArrayList
 		System.out.println(nombresArrayList);
@@ -36,7 +38,8 @@ public class MascotaApp {
 		nombresArrayList.remove(4);
 
 		// Eliminar elemento por objeto (En este caso "String")
-		nombresArrayList.remove("Chiquito");
+		nombresArrayList.remove(CHIQUITO);
+
 		System.out.println(nombresArrayList);
 		System.out.println(nombresArrayList.size()); // 3
 
