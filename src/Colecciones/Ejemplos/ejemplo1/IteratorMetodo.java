@@ -4,13 +4,18 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class IteratorMetodo {
+
+	// Creo una constante para el separador, esto es solo visual, no interfiere en los procesos
+	private static final String SEPARADOR = "       ===        ";
 	public static void main(String[] args) {
 		System.out.println("Comienzo del programa");
+
+
 
 		// Creo la lista vacia
 		ArrayList<String> listaNombres = new ArrayList<>();
 
-		System.out.println( "       ===       ");
+		System.out.println(SEPARADOR);
 
 		// Agrego cada nombre con .add("nombre")
 		listaNombres.add("Nico");
@@ -27,7 +32,8 @@ public class IteratorMetodo {
 		Iterator<String> iterator = listaNombres.iterator();
 
 		System.out.println(" Elementos de la lista: ");
-		System.out.println( "       ===       ");
+		System.out.println(SEPARADOR);
+
 
 		// El bucle while va a repetirse mientras el hasNext devuelva true, es decir,
 		// mientras siga existiendo un elemento mas
@@ -35,7 +41,8 @@ public class IteratorMetodo {
 			// Imprimo el elemento siguiente
 			System.out.println( iterator.next());
 		}
-		System.out.println( "       ===       ");
+		System.out.println(SEPARADOR);
+
 
 		// Ahora borramos un alumno
 		System.out.println("* Se corta la loooz *");
@@ -44,7 +51,8 @@ public class IteratorMetodo {
 		// Entonces, reasigno la variable donde almacene el iterador
 		iterator = listaNombres.iterator();
 
-		System.out.println( "       ===       ");
+		System.out.println(SEPARADOR);
+
 
 		// Ahora si puedo recorrer la lista de nuevo
 		while(iterator.hasNext()){
@@ -54,14 +62,16 @@ public class IteratorMetodo {
 			}
 		}
 
-		System.out.println( "       ===       ");
+		System.out.println(SEPARADOR);
+
 
 		System.out.println("La lista de alumnos es:");
 		for (String alumnos : listaNombres) {
 			System.out.println("- " + alumnos);
 		}
 
-		System.out.println( "       ===       ");
+		System.out.println(SEPARADOR);
+
 		System.out.println("Fin del programa.");
 	}
 }
