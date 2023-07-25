@@ -1,11 +1,9 @@
 package Colecciones.Ejemplos.ejemplo2;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
+import java.util.*;
 
-public class ejemplo2 {
+public class Ejemplo2 {
+	public static Scanner lector = new Scanner(System.in).useDelimiter("\n");
 	public static void main(String[] args) {
 		// Listas
 		ArrayList<Integer> numerosA = new ArrayList<>();

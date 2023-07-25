@@ -26,7 +26,7 @@ import java.util.Arrays;
 		 Método intentos(): para mostrar cuantas oportunidades le queda al jugador.
 		 Método juego(): el método juego se encargará de llamar todos los métodos
 		previamente mencionados e informará cuando el usuario descubra toda la palabra o
-		se quede sin intentos. Este método se llamará en el main.
+		se quede sin intentos. Este método se llamará en el Ejercicio1.
 
 		Un ejemplo de salida puede ser así:
 

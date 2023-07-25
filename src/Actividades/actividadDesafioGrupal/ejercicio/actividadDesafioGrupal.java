@@ -28,7 +28,7 @@ obtenerRutinas(): devuelve una lista con todas las rutinas registradas en el sis
 actualizarRutina(int id, String nombre, int duracion, String nivelDificultad, String descripcion): recibe el identificador
 de una rutina existente y los nuevos datos de la rutina, y actualiza la información correspondiente en el sistema.
 eliminarRutina(int id): recibe el identificador de una rutina existente y la elimina del sistema.
-En el método principal (main):
+En el método principal (Ejercicio1):
 
 Crea al menos cinco clientes con datos ficticios.
 Crea al menos cinco rutinas con datos ficticios.
