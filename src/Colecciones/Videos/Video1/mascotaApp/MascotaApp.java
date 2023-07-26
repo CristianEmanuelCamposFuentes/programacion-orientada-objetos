@@ -1,47 +1,27 @@
 package Colecciones.Videos.Video1.mascotaApp;
 
+import Colecciones.Videos.Video1.Servicios.MascotaServicios;
+
 import java.util.ArrayList;
 
 public class MascotaApp {
-	private static final String CHIQUITO = "Chiquito";
+	private static final String SEPARADOR = "      =====      ";
 	public static void main(String[] args) {
-		String[]nombresArray = new String[5];
+	// Crear la instancia del servicio
+		MascotaServicios MS = new MascotaServicios();
 
-		// Arrays
-		for (int i = 0; i < nombresArray.length; i++){
-			nombresArray[i] =  CHIQUITO + (i+1);
-		}
+		System.out.println("Inicio del programa.");
+		System.out.println(SEPARADOR);
 
-		for (String variable : nombresArray){
-			System.out.println(variable);
-		}
+		// Creamos la primera mascota
+		MS.crearMascota();
 
-		// Collections
-		System.out.println("ArrayList:");
-		ArrayList<String> nombresArrayList = new ArrayList<>();
-
-		// Agregar elementos
-		nombresArrayList.add(CHIQUITO);
-		nombresArrayList.add(CHIQUITO);
-		nombresArrayList.add(CHIQUITO);
-		nombresArrayList.add(CHIQUITO);
-		nombresArrayList.add(CHIQUITO);
+		// Agrego otra
+		MS.crearMascota();
 
 
-		// Mostrar ArrayList
-		System.out.println(nombresArrayList);
 
-		System.out.println("Tamanio de la ArrayList:");
-		System.out.println(nombresArrayList.size()); // 5
 
-		// Eliminar elemento por index
-		nombresArrayList.remove(4);
-
-		// Eliminar elemento por objeto (En este caso "String")
-		nombresArrayList.remove(CHIQUITO);
-
-		System.out.println(nombresArrayList);
-		System.out.println(nombresArrayList.size()); // 3
-
+		MS.mostrarMascotas();
 	}
 }
