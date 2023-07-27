@@ -1,14 +1,16 @@
-package Main_actividadextra__colecciones;
+package Colecciones.Ejercicios.ActividadExtra1.Main_actividadextra__colecciones;
 
-import Entidades.Producto;
-import Servicios.TiendaServicios;
+import Colecciones.Ejercicios.ActividadExtra1.Entidades.Producto;
+import Colecciones.Ejercicios.ActividadExtra1.Servicios.TiendaServicios;
+
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-public class ActividadExtra__Colecciones {
+public class ActividadExtra {
 
-    public static Scanner leer = new Scanner(System.in).useDelimiter("\n");
-    public static ArrayList<Producto> productos = new ArrayList();
+    public static final Scanner leer = new Scanner(System.in).useDelimiter("\n");
+    public static List<Producto> productos = new ArrayList<>();
 
     public static void main(String[] args) {
 
@@ -49,35 +51,31 @@ public class ActividadExtra__Colecciones {
             int opcion = leer.nextInt();
 
             switch (opcion) {
-                case 1:
+                case 1 -> {
                     System.out.println("Ingrese el nombre del producto a comprar: ");
                     String productoBuscar = leer.next();
-
                     Producto productoVenta = ts.buscarProducto(productoBuscar);
                     if (productoVenta != null) {
                         ts.venta(productoVenta);
                     }
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     System.out.println("Ingrese el nombre del producto a reponer: ");
-                    productoBuscar = leer.next();
-
+                    String productoBuscar = leer.next();
                     Producto productoReponer = ts.buscarProducto(productoBuscar);
                     if (productoReponer != null) {
                         ts.reposicion(productoReponer);
                     }
-                    break;
-                case 3:
+                }
+                case 3 -> {
                     System.out.println("La lista de productos es: ");
                     ts.mostrarProductos();
-                    break;
-                case 0:
+                }
+                case 0 -> {
                     System.out.println("Saliendo del programa");
                     respuesta = false;
-                    break;                   
-                default:
-                    System.out.println("Opción no valida");
-
+                }
+                default -> System.out.println("Opción no valida");
             }
 
         } while (respuesta);

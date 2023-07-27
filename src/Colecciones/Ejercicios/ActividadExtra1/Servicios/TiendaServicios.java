@@ -1,17 +1,14 @@
 
-package Servicios;
+package Colecciones.Ejercicios.ActividadExtra1.Servicios;
 
-import Entidades.Producto;
-import static Main_actividadextra__colecciones.ActividadExtra__Colecciones.leer;
-import static Main_actividadextra__colecciones.ActividadExtra__Colecciones.productos;
-import java.util.ArrayList;
-import java.util.Iterator;
+import Colecciones.Ejercicios.ActividadExtra1.Entidades.Producto;
 
+import static Colecciones.Ejercicios.ActividadExtra1.Main_actividadextra__colecciones.ActividadExtra.productos;
 
 public class TiendaServicios {
     
     
-    public Producto buscarProducto( String productoBuscar  ){
+    public Producto buscarProducto(String productoBuscar  ){
   
         for (Producto productoAux : productos) {
             if(productoAux.getNombreProducto().equalsIgnoreCase(productoBuscar)){

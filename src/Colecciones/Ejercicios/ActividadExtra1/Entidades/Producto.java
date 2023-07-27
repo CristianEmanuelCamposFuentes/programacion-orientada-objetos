@@ -1,9 +1,10 @@
 
-package Entidades;
+package Colecciones.Ejercicios.ActividadExtra1.Entidades;
 
 
 public class Producto {
-    private String nombreProducto, categoria;
+    private String nombreProducto;
+    private String categoria;
     private double precio;
     private int cantidad;
     
