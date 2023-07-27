@@ -10,7 +10,7 @@ import Colecciones.Ejercicios.Ejercicio1.Servicios.PerroServicios;
 import java.util.Scanner;
 
 public class Ejercicio1 {
-	public static Scanner lector = new Scanner(System.in).useDelimiter("\n");
+	public static final Scanner lector = new Scanner(System.in).useDelimiter("\n");
 	public static void main(String[] args) {
 		PerroServicios PS = new PerroServicios();
 		int opcion;
