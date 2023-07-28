@@ -1,6 +1,6 @@
 package Colecciones.Ejercicios.Ejercicio2.Ejercicio;
 
-import Colecciones.Ejercicios.Ejercicio1.Servicios.PerroServicios;
+import Colecciones.Ejercicios.Ejercicio2.Servicios.PerroServicios2;
 
 import java.util.Scanner;
 
@@ -14,7 +14,7 @@ public class Ejercicio2 {
 	public static void main(String[] args) {
 
 
-			PerroServicios PS = new PerroServicios();
+			PerroServicios2 PS = new PerroServicios2();
 			int opcion;
 
 			System.out.println("Inicio de programa.");
@@ -26,11 +26,15 @@ public class Ejercicio2 {
 				opcion = PS.preguntar();
 			} while (opcion != 0);
 
-			System.out.println("Saliendo, tu lista final es: " + PS.razasPerros);
-
-			System.out.println("Programa finalizado.");
+			System.out.println("La lista de razas es: " + PS.razasPerros);
 
 
 
+		System.out.println("Ingrese la raza de Perro que desea eliminar: ");
+		String razaElegida = lector.next();
+
+		PS.eliminarRaza(razaElegida);
+
+		System.out.println("Programa finalizado.");
 	}
 }
