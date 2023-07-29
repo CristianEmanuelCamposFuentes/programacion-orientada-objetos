@@ -29,7 +29,9 @@ public class Ejercicio4 {
 		PeliculaServicios PS = new PeliculaServicios();
 
 		System.out.println("Inicio del programa.");
-		PS.crearPelicula();
+
+		PS.mostrarMenu();
+
 
 	}
 }

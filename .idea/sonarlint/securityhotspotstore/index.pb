@@ -42,3 +42,9 @@ r
 Bsrc/Colecciones/Ejercicios/ActividadExtra1/Entidades/Producto.java,7\5\75d3cb0abe046b7699f7c054e2ac4bbf9e31efc8
 è
 _src/Colecciones/Ejercicios/ActividadExtra1/Main_actividadextra__colecciones/ActividadExtra.java,2\2\224add20c4cdf47e8a5aa75b517cb8c2c922d782
+h
+8src/Colecciones/Ejercicios/Ejercicio1/Entidad/Perro.java,9\a\9a46be128f20dd31ecc7d256c6295e00eb29688c
+s
+Csrc/Colecciones/Ejercicios/Ejercicio1/Servicios/PerroServicios.java,3\a\3a9c85d9f1fc1ebec888fcee1a98c7ecdf195f6b
+o
+?src/Colecciones/Ejercicios/Ejercicio1/Ejercicio/Ejercicio1.java,5\1\514a3a7a980a4dd589f75714b4feead70bd4b5de

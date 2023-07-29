@@ -53,7 +53,8 @@ public class PeliculaServicios {
 		// Condicion que verifica si hay un siguiente elemento
 		while(iterador.hasNext()){
 
-			// Creo un perrito que va a ser cada elemento dentro de la lista que voy iterando
+			// Creo un pelicula que va a ser cada elemento dentro de la lista que voy iterando, asi
+			// Java sabe a que elemento tiene que ir utilizando en la iteracion que sea en ese momento
 			Pelicula peliActual = iterador.next();
 
 			if(peliActual.getDuracionEnHoras() > duracionDeHoras){
@@ -64,4 +65,58 @@ public class PeliculaServicios {
 	}
 
 
+	public void mostrarMenu() {
+		// Variable de salida
+		boolean salir = false;
+		while (!salir) {
+			System.out.println("==== Menú ====");
+			System.out.println("1. Agregar película");
+			System.out.println("2. Mostrar todas las películas");
+			System.out.println("3. Mostrar películas con duración mayor a 1 hora");
+			System.out.println("4. Ordenar películas por duración (mayor a menor)");
+			System.out.println("5. Ordenar películas por duración (menor a mayor)");
+			System.out.println("6. Ordenar películas por título");
+			System.out.println("7. Ordenar películas por director");
+			System.out.println("8. Salir");
+
+			int opcion = lector.nextInt();
+
+			switch (opcion) {
+				case 1:
+					crearPelicula();
+					break;
+				case 2:
+					mostrarLista();
+					break;
+				case 3:
+					pelisMenorUnaHora();
+					break;
+				case 4:
+					ordenarPorDuracionMayorAMenor();
+					System.out.println("Películas ordenadas por duración (mayor a menor):");
+					mostrarLista();
+					break;
+				case 5:
+					ordenarPorDuracionMenorAMayor();
+					System.out.println("Películas ordenadas por duración (menor a mayor):");
+					mostrarLista();
+					break;
+				case 6:
+					ordenarPorTitulo();
+					System.out.println("Películas ordenadas por título:");
+					mostrarLista();
+					break;
+				case 7:
+					ordenarPorDirector();
+					System.out.println("Películas ordenadas por director:");
+					mostrarLista();
+					break;
+				case 8:
+					salir = true;
+					break;
+				default:
+					System.out.println("Opción inválida. Intente nuevamente.");
+			}
+		}
+	}
 }
