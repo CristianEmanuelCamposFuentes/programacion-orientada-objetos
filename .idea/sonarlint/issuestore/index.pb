@@ -48,3 +48,9 @@ s
 Csrc/Colecciones/Ejercicios/Ejercicio1/Servicios/PerroServicios.java,3\a\3a9c85d9f1fc1ebec888fcee1a98c7ecdf195f6b
 o
 ?src/Colecciones/Ejercicios/Ejercicio1/Ejercicio/Ejercicio1.java,5\1\514a3a7a980a4dd589f75714b4feead70bd4b5de
+o
+?src/Colecciones/Ejercicios/Ejercicio2/Ejercicio/Ejercicio2.java,d\a\da02305f547a07c47d71fc37df6fa56c323930cf
+k
+;src/Colecciones/Ejercicios/Ejercicio2/Entidades/Perro2.java,5\2\52a1241190d8fa22d95c5dcef864a61e6bb16ebc
+t
+Dsrc/Colecciones/Ejercicios/Ejercicio2/Servicios/PerroServicios2.java,8\8\887ff81a6dd2576994a4a64125feaf99a3ed42b3

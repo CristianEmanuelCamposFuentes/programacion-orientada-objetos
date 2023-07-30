@@ -47,6 +47,7 @@ public class PeliculaServicios {
 	}
 
 	public void pelisMenorUnaHora(){
+		List<Pelicula> pelisMenorUnaHora = new ArrayList<>();
 		Iterator<Pelicula> iterador = listaPeliculas.iterator();
 
 		// Seteo una variable con la que voy a comparar cada elemento
@@ -60,10 +61,14 @@ public class PeliculaServicios {
 			// Java sabe a que elemento tiene que ir utilizando en la iteracion que sea en ese momento
 			Pelicula peliActual = iterador.next();
 
-			if(peliActual.getDuracionEnHoras() > duracionDeHoras){
-				System.out.println(iterador);
-
+			if(peliActual.getDuracionEnHoras() < duracionDeHoras){
+				pelisMenorUnaHora.add(peliActual);
 			}
+		}
+		if (pelisMenorUnaHora.size() == 0){
+			System.out.println("No hay peliculas con duracion menor a una hora.");
+		} else {
+			System.out.println("Lista de peliculas con duracion menor a una hora: " + pelisMenorUnaHora);
 		}
 	}
 
@@ -93,7 +98,7 @@ public class PeliculaServicios {
 			System.out.println("==== Menú ====");
 			System.out.println("1. Agregar película");
 			System.out.println("2. Mostrar todas las películas");
-			System.out.println("3. Mostrar películas con duración mayor a 1 hora");
+			System.out.println("3. Mostrar películas con duración menor a 1 hora");
 			System.out.println("4. Ordenar películas por duración (mayor a menor)");
 			System.out.println("5. Ordenar películas por duración (menor a mayor)");
 			System.out.println("6. Ordenar películas por título");
@@ -134,6 +139,7 @@ public class PeliculaServicios {
 					break;
 				case 8:
 					salir = true;
+					System.out.println("Fin del programa.");
 					break;
 				default:
 					System.out.println("Opción inválida. Intente nuevamente.");
