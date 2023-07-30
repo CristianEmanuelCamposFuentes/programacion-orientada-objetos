@@ -3,6 +3,7 @@ package Colecciones.Ejercicios.Ejercicio4.Servicios;
 import Colecciones.Ejercicios.Ejercicio4.Entidades.Pelicula;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
@@ -48,9 +49,11 @@ public class PeliculaServicios {
 	public void pelisMenorUnaHora(){
 		Iterator<Pelicula> iterador = listaPeliculas.iterator();
 
+		// Seteo una variable con la que voy a comparar cada elemento
 	double duracionDeHoras = 1;
 
-		// Condicion que verifica si hay un siguiente elemento
+		// Condicion que verifica si hay un siguiente elemento para iterar, si no hay nada para analizar retorna false
+		// y sale del bucle
 		while(iterador.hasNext()){
 
 			// Creo un pelicula que va a ser cada elemento dentro de la lista que voy iterando, asi
@@ -64,6 +67,24 @@ public class PeliculaServicios {
 		}
 	}
 
+	// En este prestar atencion a como se encadena el metodo sort (ordena) y el metodo reversed (invierte los elementos)
+	public void ordenarPorDuracionMayorAMenor() {
+		// Necesita saber que atributo se va a ordenar, por eso se pide a traves del get, la misma logica
+		// Se aplica al resto
+		listaPeliculas.sort(Comparator.comparingDouble(Pelicula::getDuracionEnHoras).reversed());
+	}
+
+	public void ordenarPorDuracionMenorAMayor() {
+		listaPeliculas.sort(Comparator.comparingDouble(Pelicula::getDuracionEnHoras));
+	}
+
+	public void ordenarPorTitulo() {
+		listaPeliculas.sort(Comparator.comparing(Pelicula::getTitulo));
+	}
+
+	public void ordenarPorDirector() {
+		listaPeliculas.sort(Comparator.comparing(Pelicula::getDirector));
+	}
 
 	public void mostrarMenu() {
 		// Variable de salida
@@ -118,5 +139,19 @@ public class PeliculaServicios {
 					System.out.println("Opción inválida. Intente nuevamente.");
 			}
 		}
+	}
+
+	public void cargarPeliculasFamosas() {
+		// Crear algunas películas famosas y agregarlas a la lista para que sea interactivo desde el inicio
+		listaPeliculas.add(new Pelicula("The Shawshank Redemption", "Frank Darabont", 2.22));
+		listaPeliculas.add(new Pelicula("The Godfather", "Francis Ford Coppola", 2.55));
+		listaPeliculas.add(new Pelicula("The Dark Knight", "Christopher Nolan", 2.32));
+		listaPeliculas.add(new Pelicula("Pulp Fiction", "Quentin Tarantino", 2.34));
+		listaPeliculas.add(new Pelicula("Inception", "Christopher Nolan", 2.28));
+		listaPeliculas.add(new Pelicula("Toy Story", "John Lasseter", 1.21));
+		listaPeliculas.add(new Pelicula("Finding Nemo", "Andrew Stanton", 1.40));
+		listaPeliculas.add(new Pelicula("The Lion King", "Roger Allers", 1.29));
+		listaPeliculas.add(new Pelicula("Spirited Away", "Hayao Miyazaki", 2.05));
+		listaPeliculas.add(new Pelicula("Frozen", "Chris Buck", 1.42));
 	}
 }

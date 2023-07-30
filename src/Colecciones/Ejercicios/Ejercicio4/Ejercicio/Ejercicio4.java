@@ -30,6 +30,10 @@ public class Ejercicio4 {
 
 		System.out.println("Inicio del programa.");
 
+		// Agrego 10 peliculas random a la lista
+		PS.cargarPeliculasFamosas();
+
+		// Inicio el menu
 		PS.mostrarMenu();
 
 
