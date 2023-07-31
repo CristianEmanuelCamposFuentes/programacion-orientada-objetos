@@ -33,6 +33,9 @@ public class Ejercicio3 {
 		} else {
 			System.out.println("Alumno no encontrado en la lista.");
 		}
+
+		System.out.println("Fin del programa.");
 	}
+
 
 }

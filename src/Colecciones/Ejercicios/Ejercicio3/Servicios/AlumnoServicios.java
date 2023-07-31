@@ -3,6 +3,7 @@ package Colecciones.Ejercicios.Ejercicio3.Servicios;
 import Colecciones.Ejercicios.Ejercicio3.Entidades.Alumno;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import static Colecciones.Ejercicios.Ejercicio3.Ejercicio.Ejercicio3.lector;
@@ -47,17 +48,18 @@ public class AlumnoServicios {
 			if (alumno.getNombre().equalsIgnoreCase(nombreAlumno)) {
 				// En caso de encontrar el alumno, creamos una lista para las notas y el contador para el promedio
 				List<Integer> notas = alumno.getNotas();
-				double totalNotas = 0;
-				// Sumo las notas al contador
-				for (double nota : notas) {
-					totalNotas += nota;
+				int totalNotas = 0;
+				// Objeto Iterator para recorrer y trabajar las notas
+				Iterator<Integer> iterator = notas.iterator();
+
+				while (iterator.hasNext()) {
+					totalNotas += iterator.next();
 				}
-				// Calculo y devuelvo el promedio
-				return totalNotas / notas.size();
+
+				return (double) totalNotas / notas.size();
 			}
 		}
-		// Retorna -1 si no se encuentra al alumno en la lista
+		// En caso de no encontrar el alumno, devuelve -1
 		return -1;
 	}
-
 }
