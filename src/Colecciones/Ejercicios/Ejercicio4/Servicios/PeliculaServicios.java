@@ -10,6 +10,7 @@ import java.util.List;
 import static Colecciones.Ejercicios.Ejercicio4.Ejercicio.Ejercicio4.lector;
 
 public class PeliculaServicios {
+	public static final String SEPARADOR = "=====================";
 	public List<Pelicula> listaPeliculas = new ArrayList<>();
 	public void crearPelicula(){
 		boolean salir = true;
@@ -46,26 +47,26 @@ public class PeliculaServicios {
 		}
 	}
 
-	public void pelisMenorUnaHora(){
+	public void pelisMenorUnaHora() {
 		List<Pelicula> pelisMenorUnaHora = new ArrayList<>();
 		Iterator<Pelicula> iterador = listaPeliculas.iterator();
 
 		// Seteo una variable con la que voy a comparar cada elemento
-	double duracionDeHoras = 1;
+		double duracionDeHoras = 1;
 
 		// Condicion que verifica si hay un siguiente elemento para iterar, si no hay nada para analizar retorna false
 		// y sale del bucle
-		while(iterador.hasNext()){
+		while (iterador.hasNext()) {
 
 			// Creo un pelicula que va a ser cada elemento dentro de la lista que voy iterando, asi
 			// Java sabe a que elemento tiene que ir utilizando en la iteracion que sea en ese momento
 			Pelicula peliActual = iterador.next();
 
-			if(peliActual.getDuracionEnHoras() < duracionDeHoras){
+			if (peliActual.getDuracionEnHoras() < duracionDeHoras) {
 				pelisMenorUnaHora.add(peliActual);
 			}
 		}
-		if (pelisMenorUnaHora.size() == 0){
+		if (pelisMenorUnaHora.size() == 0) {
 			System.out.println("No hay peliculas con duracion menor a una hora.");
 		} else {
 			System.out.println("Lista de peliculas con duracion menor a una hora: " + pelisMenorUnaHora);
@@ -92,9 +93,11 @@ public class PeliculaServicios {
 	}
 
 	public void mostrarMenu() {
+
 		// Variable de salida
 		boolean salir = false;
 		while (!salir) {
+			System.out.println(SEPARADOR);
 			System.out.println("==== Menú ====");
 			System.out.println("1. Agregar película");
 			System.out.println("2. Mostrar todas las películas");
@@ -140,6 +143,7 @@ public class PeliculaServicios {
 				case 8:
 					salir = true;
 					System.out.println("Fin del programa.");
+					System.out.println(SEPARADOR);
 					break;
 				default:
 					System.out.println("Opción inválida. Intente nuevamente.");
