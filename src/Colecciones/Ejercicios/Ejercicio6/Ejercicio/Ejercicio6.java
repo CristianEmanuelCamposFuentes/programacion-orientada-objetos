@@ -1,5 +1,7 @@
 package Colecciones.Ejercicios.Ejercicio6.Ejercicio;
 
+import Colecciones.Ejercicios.Ejercicio6.Servicios.ProductoServices;
+
 import java.util.Scanner;
 
 /*6.
@@ -14,5 +16,11 @@ public class Ejercicio6 {
 	public static final Scanner lector = new Scanner(System.in).useDelimiter("\n");
 	public static void main(String[] args) {
 		System.out.println("Inicio del programa.");
+
+		ProductoServices PS = new ProductoServices();
+
+		PS.mostrarMenu();
+
+
 	}
 }
