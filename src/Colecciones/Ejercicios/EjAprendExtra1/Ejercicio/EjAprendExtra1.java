@@ -8,6 +8,7 @@ public class EjAprendExtra1 {
 		NS.leerNumeros();
 
 		// Mostrar resultados
+		System.out.println("RESULTADOS: ");
 		System.out.println("Cantidad de valores leídos: " + NS.CantidadValores());
 		System.out.println("Suma de los valores: " + NS.SumaValores());
 		System.out.println("Promedio de los valores: " + NS.PromedioValores());
