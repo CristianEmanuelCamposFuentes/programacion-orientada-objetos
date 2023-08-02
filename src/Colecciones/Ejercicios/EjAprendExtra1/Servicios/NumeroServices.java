@@ -14,23 +14,23 @@ public class NumeroServices {
 	public void leerNumeros() {
 		Scanner lector = new Scanner(System.in);
 
-		System.out.println("Ingrese valores numéricos enteros (ingrese -99 para terminar):");
-
 		int valor;
 		do {
+			System.out.println("Ingrese valores numéricos enteros (ingrese -99 para terminar):");
+
 			valor = lector.nextInt();
+
 			if (valor != -99) {
 				numeros.add(valor);
 			}
 		} while (valor != -99);
-
 	}
 
-	public int getCantidadValores() {
+	public int CantidadValores() {
 		return numeros.size();
 	}
 
-	public int getSumaValores() {
+	public int SumaValores() {
 		int suma = 0;
 		for (int num : numeros) {
 			suma += num;
@@ -38,9 +38,9 @@ public class NumeroServices {
 		return suma;
 	}
 
-	public double getPromedioValores() {
-		int cantidadValores = getCantidadValores();
-		int suma = getSumaValores();
+	public double PromedioValores() {
+		int cantidadValores = CantidadValores();
+		int suma = SumaValores();
 		return (double) suma / cantidadValores;
 	}
 }
