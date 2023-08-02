@@ -3,6 +3,7 @@ package Colecciones.Ejercicios.EjAprendExtra2.Servicios;
 import Colecciones.Ejercicios.EjAprendExtra2.Entidades.CantanteFamoso;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import static Colecciones.Ejercicios.EjAprendExtra2.Ejercicio.EjAprendExtra2.lector;
@@ -17,6 +18,8 @@ public class CantanteServicios {
 	public void agregarCantante(CantanteFamoso cantante) {
 		cantantes.add(cantante);
 	}
+
+
 
 	public void mostrarCantantes() {
 		System.out.println("Lista de Cantantes Famosos:");
@@ -42,7 +45,7 @@ public class CantanteServicios {
 		}
 	}
 
-	public CantanteFamoso crearCantanteDesdeConsola() {
+	public CantanteFamoso crearCantante() {
 
 		System.out.print("Ingrese el nombre del cantante: ");
 		String nombreCantante = lector.nextLine();
@@ -50,5 +53,15 @@ public class CantanteServicios {
 		String discoCantante = lector.nextLine();
 
 		return new CantanteFamoso(nombreCantante, discoCantante);
+	}
+
+	// Agrego funcionalidades de ordenar
+	public void ordenarPorArtista(){
+		cantantes.sort(Comparator.comparing(CantanteFamoso::getNombre));
+		System.out.println("Lista ordenada por Artista.");
+	}
+
+	public void ordenarPorDisco(){
+		cantantes.sort(Comparator.comparing(CantanteFamoso::getDiscoConMasVentas));
 	}
 }

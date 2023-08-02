@@ -60,13 +60,5 @@ k
 ;src/Colecciones/Ejercicios/Ejercicio3/Entidades/Alumno.java,0\0\0046982bf38faf3b5245d601222bb213a74c58ad
 o
 ?src/Colecciones/Ejercicios/Ejercicio3/Ejercicio/Ejercicio3.java,1\8\18c7077acd476ce090d6e12e7f0fabe4b42206bb
-m
-=src/Colecciones/Ejercicios/Ejercicio4/Entidades/Pelicula.java,c\f\cf9de566f806fb9976d4fd472f735cc73dbf3018
-o
-?src/Colecciones/Ejercicios/Ejercicio4/Ejercicio/Ejercicio4.java,4\7\47058d07fd875a8f41b5b60a8ace49d9e07f5046
-v
-Fsrc/Colecciones/Ejercicios/Ejercicio4/Servicios/PeliculaServicios.java,c\a\cab69da668a481257cdfe4d53b95666e2058f32a
 i
 9src/Colecciones/Ejercicios/Ejercicio5/Entidades/Pais.java,4\1\411a5699fe9e6a5b5865fa189c83859d09ba8faa
-q
-Asrc/Colecciones/Ejercicios/Ejercicio5/Servicios/PaisServices.java,8\d\8db40fb82d7ab635d20e09ce0b159ad16e91df0a

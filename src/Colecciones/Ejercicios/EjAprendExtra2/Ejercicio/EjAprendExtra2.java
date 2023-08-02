@@ -42,7 +42,9 @@ public class EjAprendExtra2 {
 			System.out.println("1. Agregar un cantante");
 			System.out.println("2. Mostrar todos los cantantes");
 			System.out.println("3. Eliminar un cantante");
-			System.out.println("4. Salir");
+			System.out.println("4. Ordenar por artista");
+			System.out.println("5. Ordenar por disco");
+			System.out.println("6. Salir");
 			System.out.println(SEPARADOR);
 
 			System.out.print("Ingrese una opción: ");
@@ -51,7 +53,7 @@ public class EjAprendExtra2 {
 
 			switch (opcion) {
 				case 1:
-					CantanteFamoso nuevoCantante = cantanteServices.crearCantanteDesdeConsola();
+					CantanteFamoso nuevoCantante = cantanteServices.crearCantante();
 					cantanteServices.agregarCantante(nuevoCantante);
 					break;
 				case 2:
@@ -63,6 +65,12 @@ public class EjAprendExtra2 {
 					cantanteServices.eliminarCantante(nombreEliminar);
 					break;
 				case 4:
+					cantanteServices.ordenarPorArtista();
+					break;
+				case 5:
+					cantanteServices.ordenarPorDisco();
+					break;
+				case 6:
 					System.out.println("Saliendo del programa.");
 					System.out.println(SEPARADOR);
 					break;
@@ -70,6 +78,6 @@ public class EjAprendExtra2 {
 					System.out.println("Opción inválida. Intente nuevamente.");
 					break;
 			}
-		} while (opcion != 4);
+		} while (opcion != 6);
 	}
 }
