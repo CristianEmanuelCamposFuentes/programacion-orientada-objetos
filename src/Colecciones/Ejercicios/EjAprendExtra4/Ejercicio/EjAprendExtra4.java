@@ -1,5 +1,9 @@
 package Colecciones.Ejercicios.EjAprendExtra4.Ejercicio;
 
+import Colecciones.Ejercicios.EjAprendExtra4.Servicios.CiudadServices;
+
+import java.util.Scanner;
+
 /*
 * 4.- Almacena en un HashMap los códigos postales de 10 ciudades a elección de esta
 página: https://mapanet.eu/index.htm. Nota: Poner el código postal sin la letra, solo el
@@ -14,4 +18,16 @@ número.
 
 * */
 public class EjAprendExtra4 {
+	public static final Scanner lector = new Scanner(System.in).useDelimiter("\n");
+	public static void main(String[] args) {
+		CiudadServices CS = new CiudadServices();
+
+		// Primero agrego 10 ciudades aleatorias con su codigo postal
+		CS.agregarCiudadesAleatorias();
+
+
+		System.out.println("Inicio del programa.");
+		CS.mostrarMenu();
+
+	}
 }
