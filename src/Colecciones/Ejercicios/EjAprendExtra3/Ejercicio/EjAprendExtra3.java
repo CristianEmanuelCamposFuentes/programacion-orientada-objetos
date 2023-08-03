@@ -29,8 +29,23 @@ package Colecciones.Ejercicios.EjAprendExtra3.Ejercicio;
 		Método toString para mostrar los datos de los libros.*/
 
 
-public class EjAprendExtra3 {
-	public static void main(String[] args) {
+import Colecciones.Ejercicios.EjAprendExtra3.Servicios.LibroServices;
 
+import java.util.Scanner;
+
+public class EjAprendExtra3 {
+	public static Scanner lector = new Scanner(System.in).useDelimiter("\n");
+	public static void main(String[] args) {
+		LibroServices LS = new LibroServices();
+
+		System.out.println("Inicio del programa.");
+
+		boolean salir;
+		do {
+			LS.mostrarMenu();
+			System.out.println("Elija una opcion: ");
+			int opcion = lector.nextInt();
+			salir = LS.procesarOpcion(opcion);
+		} while (salir);
 	}
 }
