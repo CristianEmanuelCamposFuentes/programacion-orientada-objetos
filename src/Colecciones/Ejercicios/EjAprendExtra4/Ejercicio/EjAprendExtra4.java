@@ -25,9 +25,12 @@ public class EjAprendExtra4 {
 		// Primero agrego 10 ciudades aleatorias con su codigo postal
 		CS.agregarCiudadesAleatorias();
 
-
 		System.out.println("Inicio del programa.");
-		CS.mostrarMenu();
 
+		boolean salir;
+		do{
+			CS.mostrarMenu();
+			salir = CS.elegirOpcion();
+		} while (salir);
 	}
 }

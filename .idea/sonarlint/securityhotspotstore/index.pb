@@ -80,3 +80,17 @@ v
 Fsrc/Colecciones/Ejercicios/Ejercicio4/Servicios/PeliculaServicios.java,c\a\cab69da668a481257cdfe4d53b95666e2058f32a
 m
 =src/Colecciones/Ejercicios/Ejercicio4/Entidades/Pelicula.java,c\f\cf9de566f806fb9976d4fd472f735cc73dbf3018
+w
+Gsrc/Colecciones/Ejercicios/EjAprendExtra2/Ejercicio/EjAprendExtra2.java,6\2\6252710b54d98995bea04a6e1fa312648ff14003
+w
+Gsrc/Colecciones/Ejercicios/EjAprendExtra2/Entidades/CantanteFamoso.java,8\5\8509735d117d79394c9f67fea94f74b0d9641a97
+z
+Jsrc/Colecciones/Ejercicios/EjAprendExtra2/Servicios/CantanteServicios.java,7\7\77d6c5afdf298b000f5b02854d888f4b8280b738
+q
+Asrc/Colecciones/Ejercicios/Ejercicio5/Servicios/PaisServices.java,8\d\8db40fb82d7ab635d20e09ce0b159ad16e91df0a
+w
+Gsrc/Colecciones/Ejercicios/EjAprendExtra3/Ejercicio/EjAprendExtra3.java,5\9\5951305a3d96f27f23ba5cafa3b7ad75bc467e12
+n
+>src/Colecciones/Ejercicios/EjAprendExtra3/Entidades/Libro.java,9\e\9ec16b276b3d824362c1984ec345619b40758cd8
+v
+Fsrc/Colecciones/Ejercicios/EjAprendExtra3/Servicios/LibroServices.java,0\d\0d97ccf94cf4bd33ac9f810ec65fe8f34e4a7b5b
