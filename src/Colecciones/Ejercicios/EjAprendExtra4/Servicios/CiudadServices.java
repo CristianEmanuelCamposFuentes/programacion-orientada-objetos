@@ -46,10 +46,19 @@ public class CiudadServices {
 	}
 
 	public void buscarCiudad(){
+		// Modificaciones para pasar un Integer a un int
 		System.out.println("Ingrese el Codigo Postal: ");
+		// Este tipo de clases aceptan null como valor
 		Integer codigo = null;
+
+		// Try sirve para intentar una accion y si funciona lo corre, y si da error se
+		// puede trabajar en vez de que se rompa la ejecucion
+
+		// try intenta asignar a codigo el valor ingresado convertido por parseInt() a un numero entero.
 		try {
 			codigo = Integer.parseInt(lector.next());
+
+		// Catch toma cuando resulta un error, y efectua el sout y el return de adentro en vez de parar tod o.
 		} catch (NumberFormatException e) {
 			System.out.println("El código postal debe ser un número entero válido.");
 			return;
@@ -105,7 +114,6 @@ public class CiudadServices {
 	private void agregarCiudad() {
 		System.out.println("Ingrese el codigo postal:");
 		int codigo = lector.nextInt();
-		lector.next(); // Limpio el buffer
 
 		System.out.println("Ingrese el nombre de la ciudad: ");
 		String nombre = lector.next();
