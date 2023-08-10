@@ -19,4 +19,12 @@ public class Alumno {
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
+
+	@Override
+	public String toString() {
+		return "Alumno{" +
+				"nombre='" + nombre + '\'' +
+				", apellido='" + apellido + '\'' +
+				'}';
+	}
 }
