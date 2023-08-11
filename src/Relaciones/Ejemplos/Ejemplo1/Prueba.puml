@@ -1,0 +1,36 @@
+@startuml
+class Profesor {
+  - nombre: String
+  - apellido: String
+  + getNombre(): String
+  + setNombre(nombre: String)
+  + getApellido(): String
+  + setApellido(apellido: String)
+  + toString(): String
+}
+
+class Alumno {
+  - nombre: String
+  - apellido: String
+  + getNombre(): String
+  + setNombre(nombre: String)
+  + getApellido(): String
+  + setApellido(apellido: String)
+}
+
+class Curso {
+  - anio: int
+  - division: char
+  - alumnos: List<Alumno>
+  - profesor: Profesor
+  + Curso()
+  + getAlumnos(): List<Alumno>
+  + setAlumnos(alumnos: List<Alumno>)
+  + getProfesor(): Profesor
+  + setProfesor(profesor: Profesor)
+  + toString(): String
+}
+
+Profesor "1" -- "0..*" Curso : enseña
+Alumno "0..*" -- "1" Curso : asiste
+@enduml
