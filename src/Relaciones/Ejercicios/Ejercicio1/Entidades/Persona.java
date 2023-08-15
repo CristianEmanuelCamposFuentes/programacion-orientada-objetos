@@ -10,12 +10,12 @@ public class Persona {
 	public Persona() {
 	}
 
-	public Persona(String nombre, String apellido, int edad, double documento, Perro perrito) {
+	public Persona(String nombre, String apellido, int edad, double documento) {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.edad = edad;
 		this.documento = documento;
-		this.perrito = perrito;
+
 	}
 
 	public String getNombre() {
@@ -56,5 +56,16 @@ public class Persona {
 
 	public void setPerrito(Perro perrito) {
 		this.perrito = perrito;
+	}
+
+	@Override
+	public String toString() {
+		return "Persona{" +
+				"nombre='" + nombre + '\'' +
+				", apellido='" + apellido + '\'' +
+				", edad=" + edad +
+				", documento=" + documento +
+				", perrito=" + perrito +
+				'}';
 	}
 }
