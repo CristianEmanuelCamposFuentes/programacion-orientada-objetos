@@ -1,4 +1,12 @@
 package Relaciones.Ejercicios.Ejercicio2.Ejercicio;
+
+import Relaciones.Ejercicios.Ejercicio2.Entidades.Juego;
+import Relaciones.Ejercicios.Ejercicio2.Entidades.Jugador;
+import Relaciones.Ejercicios.Ejercicio2.Entidades.RevolverDeAgua;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /*
 * 2. Realizar el juego de la ruleta rusa de agua en Java. Como muchos saben, el juego se trata de
 un número de jugadores, que, con un revolver de agua, el cual posee una sola carga de agua,
@@ -34,7 +42,30 @@ moja, se pasa al siguiente jugador hasta que uno se moje. Si o si alguien se tie
 mojar. Al final del juego, se debe mostrar que jugador se mojó.
 Pensar la lógica necesaria para realizar esto, usando los atributos de la clase Juego.*/
 public class Main {
+	public static final Scanner lector = new Scanner(System.in).useDelimiter("\n");
 	public static void main(String[] args) {
+		System.out.println("====== Inicio del juego ======");
+		System.out.print("Ingrese el número de jugadores (entre 1 y 6): ");
+		int numJugadores = lector.nextInt();
 
+		if (numJugadores < 1 || numJugadores > 6) {
+			System.out.println("Número de jugadores fuera del rango. Se usará 6 por defecto.");
+			numJugadores = 6;
+		}
+
+		ArrayList<Jugador> jugadores = new ArrayList<>();
+		for (int i = 1; i <= numJugadores; i++) {
+			jugadores.add(new Jugador(i));
+		}
+
+		RevolverDeAgua revolver = new RevolverDeAgua();
+		revolver.llenarRevolver();
+
+		Juego juego = new Juego();
+		juego.llenarJuego(jugadores, revolver);
+
+		juego.ronda();
+
+		System.out.println("======= Final del juego =======");
 	}
 }

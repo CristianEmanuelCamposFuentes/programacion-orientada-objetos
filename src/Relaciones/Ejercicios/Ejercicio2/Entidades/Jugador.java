@@ -24,7 +24,14 @@ public class Jugador {
 		}
 		// Si no se moja, devuelve false
 		return false;
+	}
 
-
+	@Override
+	public String toString() {
+		return "Jugador{" +
+				"ID=" + ID +
+				", nombre='" + nombre + '\'' +
+				", mojado=" + mojado +
+				'}';
 	}
 }
