@@ -2,6 +2,9 @@
 'https://plantuml.com/class-diagram
 
 class Baraja {
+    -cartas : List<Carta>
+    -mazo : List<Carta>
+    +Baraja()
     +getCartas() : List<Carta>
     +getMazo() : List<Carta>
 }
