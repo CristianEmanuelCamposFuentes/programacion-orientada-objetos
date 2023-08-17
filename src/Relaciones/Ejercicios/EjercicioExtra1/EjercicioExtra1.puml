@@ -1,0 +1,50 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Persona {
+  - nombre: String
+  - apellido: String
+  - edad: int
+  - documento: double
+  - perrito: Perro
+  + Persona()
+  + Persona(nombre: String, apellido: String, edad: int, documento: double)
+  + getNombre(): String
+  + setNombre(nombre: String): void
+  + getApellido(): String
+  + setApellido(apellido: String): void
+  + getEdad(): int
+  + setEdad(edad: int): void
+  + getDocumento(): double
+  + setDocumento(documento: double): void
+  + getPerrito(): Perro
+  + setPerrito(perrito: Perro): void
+  + toString(): String
+}
+
+class Perro {
+  - nombre: String
+  - raza: String
+  - edad: int
+  - tamanio: String
+  + Perro()
+  + Perro(nombre: String, raza: String, edad: int, tamanio: String)
+  + getNombre(): String
+  + setNombre(nombre: String): void
+  + getRaza(): String
+  + setRaza(raza: String): void
+  + getEdad(): int
+  + setEdad(edad: int): void
+  + getTamanio(): String
+  + setTamanio(tamanio: String): void
+  + toString(): String
+}
+
+class PersonaPerroServices {
+  + PersonaPerroServices()
+  + crearPersona(): Persona
+  + crearPerro(): Perro
+}
+
+Persona --> Perro: has
+@enduml
