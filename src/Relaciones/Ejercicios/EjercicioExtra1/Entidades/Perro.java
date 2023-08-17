@@ -60,7 +60,7 @@ public class Perro {
 
 	@Override
 	public String toString() {
-		return "Perro{" +
+		return "{" +
 				"nombre: '" + nombre + '\'' +
 				", raza: '" + raza + '\'' +
 				", edad: " + edad +

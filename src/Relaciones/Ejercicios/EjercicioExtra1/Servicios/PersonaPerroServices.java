@@ -77,7 +77,50 @@ public class  PersonaPerroServices {
 		}
 	}
 
+	private void adoptarPerro() {
+		mostrarPersonas();
 
+		System.out.print("Seleccione el número de la persona que quiere adoptar un perro: ");
+		int numPersona = lector.nextInt();
+
+		// Validar si el numero esta dentro de la lista
+		if (numPersona < 1 || numPersona > personas.size()) {
+			System.out.println("Número de persona inválido.");
+			return;
+		}
+
+		// El numero menos uno para obtener el indice de la lista
+		Persona personaSeleccionada = personas.get(numPersona - 1);
+
+		// Si la variable perrito no es null, significa que ya adopto un perro, por lo que sale
+		if (personaSeleccionada.getPerrito() != null) {
+			System.out.println("Esta persona ya tiene un perro.");
+			return;
+		}
+
+		System.out.println("Perros disponibles:");
+		for (int i = 0; i < perrosDisponibles.size(); i++) {
+			System.out.println((i + 1) + ". " + perrosDisponibles.get(i).getNombre());
+		}
+
+		System.out.print("Seleccione el número del perro que desea adoptar: ");
+		int numPerro = lector.nextInt();
+
+		// Misma validacion que este en ese rango dentro de la lista
+		if (numPerro < 1 || numPerro > perrosDisponibles.size()) {
+			System.out.println("Número de perro inválido.");
+			return;
+		}
+
+		Perro perroSeleccionado = perrosDisponibles.get(numPerro - 1);
+
+		// La persona elegida se le setea un Perro
+		personaSeleccionada.setPerrito(perroSeleccionado);
+		// Y se elimina el perro de los disponibles
+		perrosDisponibles.remove(perroSeleccionado);
+
+		System.out.println("¡Adopción exitosa!");
+	}
 
 	public void mostrarMenu() {
 		int opcion;
@@ -94,16 +137,18 @@ public class  PersonaPerroServices {
 
 			switch (opcion) {
 				case 1:
-					crearNuevaPersona();
+					Persona personaCreada = crearPersona();
+					personas.add(personaCreada);
 					break;
 				case 2:
-					crearNuevoPerro();
+					Perro perroCreado = crearPerro();
+					perrosDisponibles.add(perroCreado);
 					break;
 				case 3:
 					mostrarPersonas();
 					break;
 				case 4:
-					mostrarPerrosDisponibles();
+					mostrarPerros();
 					break;
 				case 5:
 					adoptarPerro();
