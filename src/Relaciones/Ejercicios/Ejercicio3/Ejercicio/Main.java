@@ -4,6 +4,7 @@ import Relaciones.Ejercicios.Ejercicio3.Entidades.Carta;
 import Relaciones.Ejercicios.Ejercicio3.Servicios.JuegoServices;
 
 import java.util.List;
+import java.util.Scanner;
 
 /*
 * 3. Realizar una baraja de cartas españolas orientada a objetos. Una carta tiene un número entre 1
@@ -24,21 +25,59 @@ indicárselo al usuario
 luego se llama al método, este no mostrara esa primera carta.
 * */
 public class Main {
+	public static final Scanner lector = new Scanner(System.in).useDelimiter("\n");
 	public static void main(String[] args) {
-
+		// Primero la instancia de servicios para obtener los metodos
 		JuegoServices juegoNuevo = new JuegoServices();
 
-		System.out.println("Inicio del juego: ");
+		int opcion;
 
-		System.out.println("Cartas disponibles: " + juegoNuevo.cartasDisponibles());
+		do {
+			System.out.println("\n*** Menú ***");
+			System.out.println("1. Barajar");
+			System.out.println("2. Siguiente Carta");
+			System.out.println("3. Dar Cartas");
+			System.out.println("4. Mostrar Montón");
+			System.out.println("5. Mostrar Baraja");
+			System.out.println("6. Salir");
+			System.out.print("Seleccione una opción: ");
+			opcion = lector.nextInt();
 
-		List<Carta> mano = juegoNuevo.darCartas(5);
-		System.out.println("Cartas en la mano:");
-		for (Carta carta : mano) {
-			System.out.println(carta);
-		}
+			switch (opcion) {
+				case 1:
+					juegoNuevo.barajar();
+					System.out.println("Barajando...");
+					break;
+				case 2:
+					Carta siguiente = juegoNuevo.siguienteCarta();
+					if (siguiente != null) {
+						System.out.println("Siguiente carta: " + siguiente);
+					}
+					break;
+				case 3:
+					System.out.print("Ingrese el número de cartas a dar: ");
+					int cantidad = lector.nextInt();
+					List<Carta> cartasDadas = juegoNuevo.darCartas(cantidad);
+					if (cartasDadas != null) {
+						System.out.println("Cartas dadas:");
+						for (Carta carta : cartasDadas) {
+							System.out.println(carta);
+						}
+					}
+					break;
+				case 4:
+					juegoNuevo.cartasMonton();
+					break;
+				case 5:
+					juegoNuevo.mostrarBaraja();
+					break;
+				case 6:
+					System.out.println("Saliendo del juego.");
+					break;
+				default:
+					System.out.println("Opción no válida.");
+			}
 
-		juegoNuevo.cartasMonton();
-		juegoNuevo.mostrarBaraja();
+		} while (opcion != 6);
 	}
 }

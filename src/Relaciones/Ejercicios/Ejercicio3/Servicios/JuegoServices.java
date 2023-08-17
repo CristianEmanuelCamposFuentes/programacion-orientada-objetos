@@ -36,14 +36,18 @@ public class JuegoServices {
 	}
 
 	public List<Carta> darCartas(int cantidad) {
+		// Tomamos la cantidad de cartas que hay disponibles y si las que el usuario pide es mayor, no se puede hacer
+		// por eso se devuelve null, despues en el menu se valida esto
 		if (cantidad > baraja.getCartas().size()) {
 			System.out.println("No hay suficientes cartas para dar.");
 			return null;
 		}
+		// Son las cartas que van al monton a medida que se va dando cartas
 		List<Carta> cartasDadas = new ArrayList<>();
 		for (int i = 0; i < cantidad; i++) {
 			cartasDadas.add(siguienteCarta());
 		}
+		// Devolvemos la lista de cartas que se dieron
 		return cartasDadas;
 	}
 
