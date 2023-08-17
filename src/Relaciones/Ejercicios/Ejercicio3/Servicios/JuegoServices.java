@@ -52,6 +52,7 @@ public class JuegoServices {
 	}
 
 	public void cartasMonton() {
+		// Verificar si el mazo esta vacio
 		if (baraja.getMazo().isEmpty()) {
 			System.out.println("Aún no ha salido ninguna carta.");
 		} else {
@@ -63,12 +64,13 @@ public class JuegoServices {
 	}
 
 	public void mostrarBaraja() {
-		System.out.println("Cartas en la baraja:");
-		for (Carta carta : baraja.getCartas()) {
-			System.out.println(carta);
+		if (baraja.getCartas().isEmpty()) {
+			System.out.println("No quedan cartas en la baraja.");
+		} else {
+			System.out.println("Cartas en la baraja:");
+			for (Carta carta : baraja.getCartas()) {
+				System.out.println(carta);
+			}
 		}
 	}
-
-
-
 }
