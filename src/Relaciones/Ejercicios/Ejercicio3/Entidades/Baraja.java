@@ -1,9 +1,7 @@
 package Relaciones.Ejercicios.Ejercicio3.Entidades;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 public class Baraja {
 	// Separamos la logica en las cartas totales y en el mazo que quede mientras se va jugando
@@ -29,8 +27,11 @@ public class Baraja {
 		}
 	}
 
-	public void barajar(){
-		Collections.shuffle(cartas, new Random());
+	public List<Carta> getCartas() {
+		return cartas;
 	}
 
+	public List<Carta> getMazo() {
+		return mazo;
+	}
 }

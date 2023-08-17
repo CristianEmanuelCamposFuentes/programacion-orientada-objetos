@@ -1,4 +1,10 @@
 package Relaciones.Ejercicios.Ejercicio3.Ejercicio;
+
+import Relaciones.Ejercicios.Ejercicio3.Entidades.Carta;
+import Relaciones.Ejercicios.Ejercicio3.Servicios.JuegoServices;
+
+import java.util.List;
+
 /*
 * 3. Realizar una baraja de cartas españolas orientada a objetos. Una carta tiene un número entre 1
 y 12 (el 8 y el 9 no los incluimos) y un palo (espadas, bastos, oros y copas). Esta clase debe
@@ -19,6 +25,20 @@ luego se llama al método, este no mostrara esa primera carta.
 * */
 public class Main {
 	public static void main(String[] args) {
+
+		JuegoServices juegoNuevo = new JuegoServices();
+
 		System.out.println("Inicio del juego: ");
+
+		System.out.println("Cartas disponibles: " + juegoNuevo.cartasDisponibles());
+
+		List<Carta> mano = juegoNuevo.darCartas(5);
+		System.out.println("Cartas en la mano:");
+		for (Carta carta : mano) {
+			System.out.println(carta);
+		}
+
+		juegoNuevo.cartasMonton();
+		juegoNuevo.mostrarBaraja();
 	}
 }
