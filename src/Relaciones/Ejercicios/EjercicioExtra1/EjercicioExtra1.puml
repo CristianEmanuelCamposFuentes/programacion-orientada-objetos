@@ -27,8 +27,9 @@ class Perro {
   - raza: String
   - edad: int
   - tamanio: String
+  - adoptado: boolean
   + Perro()
-  + Perro(nombre: String, raza: String, edad: int, tamanio: String)
+  + Perro(nombre: String, raza: String, edad: int, tamanio: String, adoptado: boolean)
   + getNombre(): String
   + setNombre(nombre: String): void
   + getRaza(): String
@@ -37,14 +38,26 @@ class Perro {
   + setEdad(edad: int): void
   + getTamanio(): String
   + setTamanio(tamanio: String): void
+  + isAdoptado(): boolean
+  + setAdoptado(adoptado: boolean): void
   + toString(): String
 }
 
 class PersonaPerroServices {
+  - perrosDisponibles: List<Perro>
+  - personas: List<Persona>
   + PersonaPerroServices()
+  + inicializarObjetosPorDefecto(): void
   + crearPersona(): Persona
   + crearPerro(): Perro
+  + mostrarPersonas(): void
+  + mostrarPerros(): void
+  + adoptarPerro(): void
+  + mostrarMenu(): void
 }
 
-Persona --> Perro: has
+Persona --> "*" Perro: has
+PersonaPerroServices --> Persona: uses
+PersonaPerroServices --> Perro: uses
+
 @enduml
