@@ -1,0 +1,36 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Baraja {
+    +getCartas() : List<Carta>
+    +getMazo() : List<Carta>
+}
+
+class JuegoServices {
+    -baraja : Baraja
+    +JuegoServices()
+    +barajar() : void
+    +siguienteCarta() : Carta
+    +darCartas(int cantidad) : List<Carta>
+    +cartasDisponibles() : int
+    +cartasMonton() : void
+    +mostrarBaraja() : void
+}
+
+class Carta {
+    -numero : int
+    -palo : String
+    +Carta(int numero, String palo)
+    +toString() : String
+}
+
+class Main {
+    public static void main(String[] args)
+}
+
+Baraja "1" -- "1" JuegoServices
+Baraja "1" *-- "40" Carta
+JuegoServices --> Carta
+Main --> JuegoServices
+
+@enduml
