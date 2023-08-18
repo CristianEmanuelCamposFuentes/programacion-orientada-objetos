@@ -13,7 +13,9 @@ public class CineServices {
 
 	public static void simularCine() {
 		// Crear una película
-		Pelicula pelicula = new Pelicula("Aventura Espacial", 120, 12, "Director XYZ");
+		Pelicula pelicula = new Pelicula("Aventura Espacial", 120, 12, "Cristian Emanuel Campos Fuentes");
+		System.out.println("La pelicula está a punto de comenzar. Ordenando espectadores.");
+		System.out.println(pelicula);
 
 		// Crear un cine con la película, sala de asientos y precio de entrada
 		Cine cine = new Cine(pelicula, 8, 6, 10.0);

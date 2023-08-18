@@ -24,16 +24,22 @@ public class Cine {
 	}
 
 	public void mostrarTablaAsientos() {
-		for (int fila = 0; fila < salaAsientos.length; fila++) {
-			for (int columna = 0; columna < salaAsientos[fila].length; columna++) {
+		System.out.println("\n------------------------");
+		System.out.println("Tabla de Asientos del Cine");
+		System.out.println("------------------------");
+
+
+		for (int fila = salaAsientos.length - 1; fila >= 0; fila--) {
+			for (int columna = 0; columna < salaAsientos[0].length; columna++) {
 				if (salaAsientos[fila][columna] != null) {
-					System.out.print("X ");
+					System.out.print((fila + 1) + " " + (char) ('A' + columna) + " X | ");
 				} else {
-					System.out.print("- ");
+					System.out.print((fila + 1) + " " + (char) ('A' + columna) + "   | ");
 				}
 			}
 			System.out.println();
 		}
+		System.out.println("------------------------\n");
 	}
 
 	public Espectador[][] getSalaAsientos() {

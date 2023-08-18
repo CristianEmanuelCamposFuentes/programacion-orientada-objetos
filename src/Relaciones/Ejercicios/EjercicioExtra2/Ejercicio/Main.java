@@ -33,6 +33,8 @@ cada asiento o solo las X y espacios vacíos.*/
 public class Main {
 	public static final Scanner lector = new Scanner(System.in).useDelimiter("\n");
 	public static void main(String[] args) {
+		System.out.println("Inicio de programa: ");
+
 		CineServices.simularCine();
 		System.out.println("Finalizando programa.");
 	}
