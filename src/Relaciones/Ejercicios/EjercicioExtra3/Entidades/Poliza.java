@@ -1,6 +1,7 @@
 package Relaciones.Ejercicios.EjercicioExtra3.Entidades;
 
 import java.util.Date;
+import java.util.List;
 
 public class Poliza {
     private String numeroPoliza;
