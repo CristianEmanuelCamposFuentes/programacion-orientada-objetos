@@ -17,7 +17,7 @@ public class ServicioVehiculo {
         vehiculos.add(vehiculo);
     }
 
-    public List<Vehiculo> obtenerVehiculos() {
+    public static List<Vehiculo> obtenerVehiculos() {
         return vehiculos;
     }
 

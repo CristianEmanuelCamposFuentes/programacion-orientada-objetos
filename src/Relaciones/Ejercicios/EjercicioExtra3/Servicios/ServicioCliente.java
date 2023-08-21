@@ -50,7 +50,7 @@ public class ServicioCliente {
         } while (opcion != 5);
     }
 
-    public void mostrarListaClientes() {
+    public static void mostrarListaClientes() {
         System.out.println("Lista de Clientes:");
         for (int i = 0; i < clientes.size(); i++) {
             Cliente cliente = clientes.get(i);
@@ -142,6 +142,15 @@ public class ServicioCliente {
         } else {
             System.out.println("Número de cliente inválido.");
         }
+    }
+
+    public static Cliente buscarClientePorDocumento(String documento) {
+        for (Cliente cliente : clientes) {
+            if (cliente.getDocumento().equals(documento)) {
+                return cliente;
+            }
+        }
+        return null;
     }
 
 
