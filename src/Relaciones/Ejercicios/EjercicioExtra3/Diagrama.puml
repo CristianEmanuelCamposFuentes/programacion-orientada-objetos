@@ -1,0 +1,42 @@
+@startuml
+class Cliente {
+  - nombre: String
+  - apellido: String
+  - documento: String
+  - correo: String
+  - domicilio: String
+  - telefono: String
+}
+class Vehiculo {
+  - marca: String
+  - modelo: String
+  - anio: int
+  - numeroMotor: String
+  - numeroChasis: String
+  - color: String
+  - tipo: String
+}
+class Poliza {
+  - numeroPoliza: String
+  - fechaInicio: Date
+  - fechaFin: Date
+  - cantidadCuotas: int
+  - formaPago: String
+  - montoTotalAsegurado: double
+  - incluyeGranizo: boolean
+  - montoMaximoGranizo: double
+  - tipoCobertura: String
+}
+class Cuota {
+  - numeroCuota: int
+  - montoTotalCuota: double
+  - pagada: boolean
+  - fechaVencimiento: Date
+  - formaPago: String
+}
+
+Cliente "1" *-- "0..*" Poliza
+Vehiculo "1" *-- "0..1" Poliza
+Poliza "1" *-- "0..*" Cuota
+
+@enduml
