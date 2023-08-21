@@ -38,5 +38,9 @@ class Cuota {
 Cliente "1" *-- "0..*" Poliza
 Vehiculo "1" *-- "0..1" Poliza
 Poliza "1" *-- "0..*" Cuota
+Cuota "1" -- "1" Poliza : pertenece a
 
+note bottom of Cliente: ServicioCliente se comunica con Cliente
+note bottom of Vehiculo: ServicioVehiculo se comunica con Vehiculo
+note bottom of Poliza: ServicioPoliza se comunica con Poliza
 @enduml
