@@ -39,10 +39,10 @@ public class Main {
     public static Scanner lector = new Scanner(System.in).useDelimiter("\n");
     public static void main(String[] args) {
 
-        ServicioCliente servicioCliente = new ServicioCliente();
-        ServicioVehiculo servicioVehiculo = new ServicioVehiculo();
-        ServicioPoliza servicioPoliza = new ServicioPoliza();
-        ServicioCuota servicioCuota = new ServicioCuota();
+        ServicioCliente SCLIENTE = new ServicioCliente();
+        ServicioVehiculo SV = new ServicioVehiculo();
+        ServicioPoliza SP = new ServicioPoliza();
+        ServicioCuota SCUOTA = new ServicioCuota();
 
         int opcion;
         do {
@@ -51,16 +51,16 @@ public class Main {
 
             switch (opcion) {
                 case 1:
-                    servicioCliente.gestionarClientes();
+                    SCLIENTE.gestionarClientes();
                     break;
                 case 2:
-                    servicioVehiculo.gestionarVehiculos();
+                    SV.gestionarVehiculos();
                     break;
                 case 3:
-                    servicioPoliza.gestionarPolizas();
+                    SP.gestionarPolizas();
                     break;
                 case 4:
-                    servicioCuota.gestionarCuotas();
+                    SCUOTA.gestionarCuotas();
                     break;
                 case 5:
                     System.out.println("Saliendo del programa.");

@@ -12,6 +12,14 @@ public class Cuota {
     public Cuota() {
     }
 
+    public Cuota(int numeroCuota, double montoTotalCuota, boolean pagada, Date fechaVencimiento, String formaPago) {
+        this.numeroCuota = numeroCuota;
+        this.montoTotalCuota = montoTotalCuota;
+        this.pagada = pagada;
+        this.fechaVencimiento = fechaVencimiento;
+        this.formaPago = formaPago;
+    }
+
     public int getNumeroCuota() {
         return numeroCuota;
     }

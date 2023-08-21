@@ -12,6 +12,16 @@ public class Vehiculo {
     public Vehiculo() {
     }
 
+    public Vehiculo(String marca, String modelo, int anio, String numeroMotor, String numeroChasis, String color, String tipo) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.anio = anio;
+        this.numeroMotor = numeroMotor;
+        this.numeroChasis = numeroChasis;
+        this.color = color;
+        this.tipo = tipo;
+    }
+
     public String getMarca() {
         return marca;
     }

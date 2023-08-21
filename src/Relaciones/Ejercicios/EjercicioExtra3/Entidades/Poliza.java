@@ -20,6 +20,21 @@ public class Poliza {
     public Poliza() {
     }
 
+    public Poliza(String numeroPoliza, Date fechaInicio, Date fechaFin, int cantidadCuotas, String formaPago, double montoTotalAsegurado, boolean incluyeGranizo, double montoMaximoGranizo, String tipoCobertura, Cliente cliente, Vehiculo vehiculo, List<Cuota> cuotas) {
+        this.numeroPoliza = numeroPoliza;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.cantidadCuotas = cantidadCuotas;
+        this.formaPago = formaPago;
+        this.montoTotalAsegurado = montoTotalAsegurado;
+        this.incluyeGranizo = incluyeGranizo;
+        this.montoMaximoGranizo = montoMaximoGranizo;
+        this.tipoCobertura = tipoCobertura;
+        this.cliente = cliente;
+        this.vehiculo = vehiculo;
+        this.cuotas = cuotas;
+    }
+
     public String getNumeroPoliza() {
         return numeroPoliza;
     }
@@ -132,8 +147,5 @@ public class Poliza {
                 ", vehiculo=" + vehiculo +
                 ", cuotas=" + cuotas +
                 '}';
-    }
-
-    public void agregarCuota(Cuota cuota) {
     }
 }

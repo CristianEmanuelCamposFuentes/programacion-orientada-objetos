@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ServicioVehiculo {
-    private List<Vehiculo> vehiculos;
+    private static List<Vehiculo> vehiculos;
 
     public ServicioVehiculo() {
         vehiculos = new ArrayList<>();
