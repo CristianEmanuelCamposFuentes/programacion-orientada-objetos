@@ -11,6 +11,15 @@ public class Cliente {
     public Cliente() {
     }
 
+    public Cliente(String nombre, String apellido, String documento, String correo, String domicilio, String telefono) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.documento = documento;
+        this.correo = correo;
+        this.domicilio = domicilio;
+        this.telefono = telefono;
+    }
+
     public String getNombre() {
         return nombre;
     }

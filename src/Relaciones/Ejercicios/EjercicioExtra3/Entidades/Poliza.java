@@ -133,4 +133,7 @@ public class Poliza {
                 ", cuotas=" + cuotas +
                 '}';
     }
+
+    public void agregarCuota(Cuota cuota) {
+    }
 }
