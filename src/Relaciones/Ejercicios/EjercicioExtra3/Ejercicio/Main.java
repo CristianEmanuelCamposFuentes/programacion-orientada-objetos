@@ -27,9 +27,53 @@ package Relaciones.Ejercicios.EjercicioExtra3.Ejercicio;
         requerimientos arriba descriptos. Modelando clases con atributos y sus correspondientes
         relaciones.*/
 
+import Relaciones.Ejercicios.EjercicioExtra3.Servicios.ServicioCliente;
+import Relaciones.Ejercicios.EjercicioExtra3.Servicios.ServicioCuota;
+import Relaciones.Ejercicios.EjercicioExtra3.Servicios.ServicioPoliza;
+import Relaciones.Ejercicios.EjercicioExtra3.Servicios.ServicioVehiculo;
+
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
+        Scanner lector = new Scanner(System.in).useDelimiter("\n");
+        ServicioCliente servicioCliente = new ServicioCliente();
+        ServicioVehiculo servicioVehiculo = new ServicioVehiculo();
+        ServicioPoliza servicioPoliza = new ServicioPoliza();
+        ServicioCuota servicioCuota = new ServicioCuota();
 
+        int opcion;
+        do {
+            System.out.println("Menu:");
+            System.out.println("1. Agregar Cliente");
+            System.out.println("2. Agregar Vehiculo y Asociar Poliza");
+            System.out.println("3. Agregar Poliza y Cuotas");
+            System.out.println("4. Marcar Cuota como Pagada");
+            System.out.println("5. Salir");
+            System.out.print("Seleccione una opcion: ");
+            opcion = lector.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    // Lógica para agregar cliente usando servicioCliente
+                    break;
+                case 2:
+                    // Lógica para agregar vehículo y asociar poliza usando servicioVehiculo
+                    break;
+                case 3:
+                    // Lógica para agregar póliza y cuotas usando servicioPoliza
+                    break;
+                case 4:
+                    // Lógica para marcar cuota como pagada usando servicioCuota
+                    break;
+                case 5:
+                    System.out.println("Saliendo del programa.");
+                    break;
+                default:
+                    System.out.println("Opción inválida.");
+                    break;
+            }
+        } while (opcion != 5);
     }
 }
