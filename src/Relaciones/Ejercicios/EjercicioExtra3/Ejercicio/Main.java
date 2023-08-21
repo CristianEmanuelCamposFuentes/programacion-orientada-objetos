@@ -28,4 +28,8 @@ package Relaciones.Ejercicios.EjercicioExtra3.Ejercicio;
         relaciones.*/
 
 public class Main {
+
+    public static void main(String[] args) {
+
+    }
 }
