@@ -5,7 +5,7 @@ public class Alumno {
     private double DNI;
     private int cantidadDeVotos;
 
-    public Alumno(String nombreCompleto, double DNI, int cantidadDeVotos) {
+    public Alumno(String nombreCompleto, double DNI) {
         this.nombreCompleto = nombreCompleto;
         this.DNI = DNI;
         this.cantidadDeVotos = 0;
