@@ -1,4 +1,11 @@
 package Relaciones.Ejercicios.EjercicioExtra4.Ejercicio;
+
+import Relaciones.Ejercicios.EjercicioExtra4.Entidades.Alumno;
+import Relaciones.Ejercicios.EjercicioExtra4.Servicios.Simulador;
+
+import java.util.List;
+import java.util.Scanner;
+
 /*4. Desarrollar un simulador del sistema de votación de facilitadores en Egg-
 El sistema de votación de Egg tiene una clase llamada Alumno con los siguientes atributos:
 
@@ -33,7 +40,64 @@ comienza a hacer el recuento de votos.
 facilitadores suplentes con los 5 segundos alumnos más votados. A continuación, mostrar
 los 5 facilitadores y los 5 facilitadores suplentes.*/
 public class Main {
+    static Scanner lector = new Scanner(System.in);
     public static void main(String[] args) {
 
+        Simulador simulador = new Simulador();
+        // La inicializo a la lista de alumnos antes del bucle para que no me genere errores
+        List<Alumno> alumnos = null;
+
+        int opcion;
+        do {
+            mostrarMenu();
+            opcion = lector.nextInt();
+            lector.nextLine(); // Consumir la nueva línea
+
+            switch (opcion) {
+                case 1:
+                    System.out.print("Ingrese la cantidad de alumnos a generar: ");
+                    int cantidadAlumnos = lector.nextInt();
+                    alumnos = simulador.generarAlumnos(cantidadAlumnos);
+                    simulador.asignarNombresYDnis(alumnos);
+                    break;
+                case 2:
+                    if (alumnos != null && !alumnos.isEmpty()) {
+                        simulador.realizarVotacion(alumnos);
+                    } else {
+                        System.out.println("Primero debe generar y asignar nombres a los alumnos.");
+                    }
+                    break;
+                case 3:
+                    if (alumnos != null && !alumnos.isEmpty()) {
+                        simulador.mostrarResultadosVotacion(alumnos);
+                    } else {
+                        System.out.println("Primero debe generar y asignar nombres a los alumnos.");
+                    }
+                    break;
+                case 4:
+                    if (alumnos != null && !alumnos.isEmpty()) {
+                        simulador.mostrarFacilitadores(alumnos);
+                    } else {
+                        System.out.println("Primero debe generar y asignar nombres a los alumnos.");
+                    }
+                    break;
+                case 5:
+                    System.out.println("Saliendo del programa...");
+                    break;
+                default:
+                    System.out.println("Opción inválida.");
+                    break;
+            }
+        } while (opcion != 5);
+    }
+
+    public static void mostrarMenu() {
+        System.out.println("Menú:");
+        System.out.println("1. Generar Alumnos");
+        System.out.println("2. Realizar Votación");
+        System.out.println("3. Mostrar Resultados de Votación");
+        System.out.println("4. Mostrar Facilitadores");
+        System.out.println("5. Salir");
+        System.out.print("Seleccione una opción: ");
     }
 }
