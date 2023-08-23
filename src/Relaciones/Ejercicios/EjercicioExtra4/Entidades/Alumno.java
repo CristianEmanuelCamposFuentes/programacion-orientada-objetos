@@ -8,7 +8,7 @@ public class Alumno {
     public Alumno(String nombreCompleto, double DNI, int cantidadDeVotos) {
         this.nombreCompleto = nombreCompleto;
         this.DNI = DNI;
-        this.cantidadDeVotos = cantidadDeVotos;
+        this.cantidadDeVotos = 0;
     }
 
     public String getNombreCompleto() {
@@ -35,6 +35,10 @@ public class Alumno {
         this.cantidadDeVotos = cantidadDeVotos;
     }
 
+    // Incrementar votos
+    public void incrementarVotos() {
+        cantidadDeVotos++;
+    }
     @Override
     public String toString() {
         return "Alumno{" +
