@@ -58,7 +58,7 @@ public class Main {
                     System.out.print("Ingrese la cantidad de alumnos a generar: ");
                     int cantidadAlumnos = lector.nextInt();
                     alumnos = simulador.generarAlumnos(cantidadAlumnos);
-                    simulador.asignarNombresYDnis(alumnos);
+                    simulador.asignarDnis(alumnos);
                     break;
                 case 2:
                     if (alumnos != null && !alumnos.isEmpty()) {
