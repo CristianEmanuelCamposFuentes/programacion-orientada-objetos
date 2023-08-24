@@ -39,12 +39,16 @@ public class Alumno {
     public void incrementarVotos() {
         cantidadDeVotos++;
     }
+
+    public String getFormattedDNI(){
+        return String.format("%.0f", DNI);
+    }
     @Override
     public String toString() {
-        return "Alumno{" +
+        return "Alumno : {" +
                 "nombreCompleto='" + nombreCompleto + '\'' +
-                ", DNI=" + DNI +
+                ", DNI=" + getFormattedDNI() +
                 ", cantidadDeVotos=" + cantidadDeVotos +
-                '}';
+                '}'+ '\n' ;
     }
 }
