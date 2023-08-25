@@ -20,6 +20,9 @@ public class Voto {
         return alumnosVotados;
     }
 
+    public void setAlumnoVotante(Alumno alumnoVotante) {
+        this.alumnoVotante = alumnoVotante;
+    }
     // Metodo para agregar cada voto del alumno votante
     public void agregarVoto(Alumno alumnoVotado) {
         alumnosVotados.add(alumnoVotado);

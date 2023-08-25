@@ -1,12 +1,19 @@
 package Relaciones.Ejercicios.EjercicioExtra4.Servicios;
 
 import Relaciones.Ejercicios.EjercicioExtra4.Entidades.Alumno;
+import Relaciones.Ejercicios.EjercicioExtra4.Entidades.Voto;
 
 import java.util.*;
 
 public class Simulador {
-    private List<String> nombres = Arrays.asList("Juan", "Maria", "Carlos", "Ana", "Luis", "Pedro", "Laura", "Eduardo", "Sofia", "Diego");
-    private List<String> apellidos = Arrays.asList("Gomez", "Perez", "Lopez", "Martinez", "Rodriguez", "Fernandez", "Gonzalez", "Diaz", "Alvarez", "Hernandez");
+    private List<String> nombres = Arrays.asList(
+            "Juan", "Maria", "Carlos", "Ana", "Luis", "Pedro", "Laura", "Eduardo", "Sofia", "Diego",
+            "Federico", "Valentina", "Miguel", "Lucia", "Mateo", "Camila", "Andres", "Martina", "Alejandro", "Isabella"
+    );
+    private List<String> apellidos = Arrays.asList(
+            "Gomez", "Perez", "Lopez", "Martinez", "Rodriguez", "Fernandez", "Gonzalez", "Diaz", "Alvarez", "Hernandez",
+            "Torres", "Ruiz", "Romero", "Sanchez", "Ramirez", "Flores", "Acosta", "Pereyra", "Molina", "Rojas"
+    );
     private List<String> dnis = generarDnis();
 
     public List<Alumno> generarAlumnos(int cantidad) {
@@ -23,7 +30,7 @@ public class Simulador {
             // dni es tipo String, asi que se convierte a Double por el atributo dni de Alumno
             alumnos.add(new Alumno(nombreCompleto, Double.parseDouble(dni)));
         }
-
+        System.out.println("Alumnos generados correctamente.");
         return alumnos;
     }
 
@@ -33,7 +40,7 @@ public class Simulador {
 
         for (int i = 0; i < 100; i++) {
             // Formatear para 8 digitos y aplicar el random de tipo int
-            String dni = String.format("%08d", random.nextInt(100000000));
+            String dni = String.format("%08d", random.nextInt(100_000_000));
             // Aca el dni no se convierte porque dnis es una lista de Strings
             dnis.add(dni);
         }
@@ -48,38 +55,51 @@ public class Simulador {
             String dni = dnis.get(random.nextInt(dnis.size()));
             alumno.setDNI(Double.parseDouble(dni));
         }
+        System.out.println("Dnis generados exitosamente.");
+        mostrarAlumnos(alumnos);
     }
 
+    public void mostrarAlumnos(List<Alumno> alumnos) {
+        for (Alumno alumno : alumnos) {
+            System.out.println(alumno);
+        }
+    }
     public void realizarVotacion(List<Alumno> alumnos) {
         Random random = new Random();
-        Set<Integer> votadosIndices = new HashSet<>(); // Para asegurarse de no votar al mismo alumno
+        Set<Voto> votados = new HashSet<>(); // Los 3 votos
 
         System.out.println("Comenzando la votacion:");
-        // Iteramos a través de cada votante en la lista de alumnos
+
+            // Ahora con un foreach recorrer los alumnos para que voten
         for (Alumno votante : alumnos) {
-            Set<Integer> votados = new HashSet<>(); // Para almacenar los índices de los alumnos votados
+            // Constructor de Voto con cada alumno que va votando en cada iteracion
+            Voto voto = new Voto(votante);
+            voto.setAlumnoVotante(votante);
 
-            // Seleccionamos 3 alumnos para votar
-            while (votados.size() < 3) {
-                int index = random.nextInt(alumnos.size()); // Generamos un índice aleatorio
-                if (index != alumnos.indexOf(votante) && !votadosIndices.contains(index)) {
-                    // Verificamos que no sea el mismo votante ni haya sido votado antes
-                    votados.add(index); // Agregamos el índice a la lista de votados
-                }
+
+            // Los votados son 0 al principio, al tercer voto se termina la iteracion
+          while(votados.size() < 3 && votados.size() < alumnos.size() - 1) {
+            int indiceAleatorio = random.nextInt(alumnos.size()-1);
+            if (indiceAleatorio != alumnos.indexOf(votante) && !votados.contains(indiceAleatorio)) {
+                votados.add(indiceAleatorio);
+                voto.agregarVoto(alumnos.get(indiceAleatorio));
             }
+        }
 
-            // Agregamos los índices de los votados a la lista general de votados
-            votadosIndices.addAll(votados);
+            // Agregar los índices de los votados a la lista general de votados
+            votados.addAll(votados);
 
-            // Incrementamos la cantidad de votos para los alumnos votados
+            // Incrementar la cantidad de votos para los alumnos votados
             for (int index : votados) {
-                Alumno votado = alumnos.get(index); // Obtenemos el alumno votado
-                votado.incrementarVotos(); // Incrementamos su contador de votos
+                Alumno votado = alumnos.get(index);
+                votado.incrementarVotos();
             }
+            System.out.println("Votante: " + votante.getNombreCompleto() + " - Votos realizados: " + votados.size());
         }
 
         System.out.println("Votación realizada exitosamente.");
     }
+
 
     public void mostrarResultadosVotacion(List<Alumno> alumnos) {
         for (Alumno alumno : alumnos) {
@@ -89,10 +109,19 @@ public class Simulador {
     }
 
     public void mostrarFacilitadores(List<Alumno> alumnos) {
-        alumnos.sort((a1, a2) -> a2.getCantidadDeVotos() - a1.getCantidadDeVotos());
+        // Primero validamos, si son menos de 5 alumnos los votados, no puede haber tantos facilitadores
+        if (alumnos.size() < 5) {
+            System.out.println("No hay suficientes alumnos para elegir a los facilitadores.");
+            return;
+        }
+
+
+        // Ordenar los alumnos segun la cantidad de votos dada vuelta, asi aparecen los de mayor votacion
+        alumnos.sort(Comparator.comparingInt(Alumno::getCantidadDeVotos).reversed());
 
         System.out.println("Facilitadores:");
-        for (int i = 0; i < alumnos.size(); i++) {
+        // Primeros 5 son facilitadores
+        for (int i = 0; i < 5; i++) {
             Alumno alumno = alumnos.get(i);
             System.out.println((i + 1) + "1. " + alumno.getNombreCompleto() +
                     ", Votos recibidos: " + alumno.getCantidadDeVotos());
