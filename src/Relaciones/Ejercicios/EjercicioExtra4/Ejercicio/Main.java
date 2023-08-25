@@ -55,13 +55,18 @@ public class Main {
 
             switch (opcion) {
                 case 1:
-                    System.out.print("Ingrese la cantidad de alumnos a generar: ");
-                    int cantidadAlumnos = lector.nextInt();
+                    int cantidadAlumnos;
+                    do {
+                        System.out.print("Ingrese la cantidad (mayor a 5) de alumnos a generar: ");
+                        cantidadAlumnos = lector.nextInt();
+                    } while (cantidadAlumnos <= 5);
+
                     alumnos = simulador.generarAlumnos(cantidadAlumnos);
                     simulador.asignarDnis(alumnos);
                     break;
                 case 2:
                     if (alumnos != null && !alumnos.isEmpty()) {
+                        System.out.println(alumnos);
                         simulador.realizarVotacion(alumnos);
                     } else {
                         System.out.println("Primero debe generar y asignar nombres a los alumnos.");
