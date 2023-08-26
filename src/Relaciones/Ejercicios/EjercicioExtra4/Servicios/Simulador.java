@@ -66,7 +66,7 @@ public class Simulador {
     }
     public void realizarVotacion(List<Alumno> alumnos) {
         Random random = new Random();
-        Set<Voto> votados = new HashSet<>(); // Los 3 votos
+        List<Voto> votosTotales = new ArrayList<>();
 
         System.out.println("Comenzando la votacion:");
 
@@ -76,25 +76,33 @@ public class Simulador {
             Voto voto = new Voto(votante);
             voto.setAlumnoVotante(votante);
 
+            // Establecer los 3 alumnos votados por el votante
+            Set<Alumno> alumnosVotados = new HashSet<>();
+
 
             // Los votados son 0 al principio, al tercer voto se termina la iteracion
-          while(votados.size() < 3 && votados.size() < alumnos.size() - 1) {
-            int indiceAleatorio = random.nextInt(alumnos.size()-1);
-            if (indiceAleatorio != alumnos.indexOf(votante) && !votados.contains(indiceAleatorio)) {
-                votados.add(indiceAleatorio);
-                voto.agregarVoto(alumnos.get(indiceAleatorio));
+          while(alumnosVotados.size() < 3) {
+            // Generar el numero aleatorio del indice para usarlo despues en la lista de alumnos
+            int indiceAleatorio = random.nextInt(alumnos.size());
+            // Crea el objeto Alumno y le asigna al que esta ubicado en el indice aleatorio en la lista de alumnos
+            Alumno alumnoVotado = alumnos.get(indiceAleatorio);
+
+            // Ahora validamos que no sea el mismo votante y que no este duplicando el voto
+            if (alumnoVotado != votante && !alumnosVotados.contains(alumnoVotado)) {
+                // Agregamos el alumno a la lista de alumnos votados
+                alumnosVotados.add(alumnoVotado);
+                // Agregar el voto en la clase de Voto
+                voto.agregarVoto(alumnoVotado);
+
+                // Incrementar la cantidad de votos para el alumno votado
+                alumnoVotado.incrementarVotos();
             }
         }
 
-            // Agregar los índices de los votados a la lista general de votados
-            votados.addAll(votados);
+            // Agregar el alumno y sus 3 votos a la lista general de votados
+            votosTotales.add(voto);
 
-            // Incrementar la cantidad de votos para los alumnos votados
-            for (int index : votados) {
-                Alumno votado = alumnos.get(index);
-                votado.incrementarVotos();
-            }
-            System.out.println("Votante: " + votante.getNombreCompleto() + " - Votos realizados: " + votados.size());
+            System.out.println("Votante: " + votante.getNombreCompleto() + " - Votos realizados: " + alumnosVotados.size());
         }
 
         System.out.println("Votación realizada exitosamente.");
