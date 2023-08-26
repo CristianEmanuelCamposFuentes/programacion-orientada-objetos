@@ -30,9 +30,6 @@ public class Voto {
 
     @Override
     public String toString() {
-        return "{" +
-                "alumnoVotante:" + alumnoVotante +
-                ", alumnosVotados:" + alumnosVotados +
-                '}';
+        return "{" + alumnoVotante + " - alumnosVotados:" + alumnosVotados + '}' + '\t';
     }
 }

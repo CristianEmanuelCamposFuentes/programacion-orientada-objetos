@@ -1,5 +1,4 @@
 package Relaciones.Ejercicios.EjercicioExtra4.Entidades;
-
 public class Alumno {
     private String nombreCompleto;
     private double DNI;
@@ -45,10 +44,10 @@ public class Alumno {
     }
     @Override
     public String toString() {
-        return "Alumno : {" +
-                "nombreCompleto='" + nombreCompleto + '\'' +
+        String SEPARADOR = "=====================================";
+        return "{ Nombre: " + nombreCompleto + '\'' +
                 ", DNI=" + getFormattedDNI() +
-                ", cantidadDeVotos=" + cantidadDeVotos +
-                '}'+ '\n' ;
+                ", cantidadDeVotos: " + cantidadDeVotos +
+                '}'+ '\n' + SEPARADOR + '\n';
     }
 }

@@ -40,7 +40,8 @@ comienza a hacer el recuento de votos.
 facilitadores suplentes con los 5 segundos alumnos más votados. A continuación, mostrar
 los 5 facilitadores y los 5 facilitadores suplentes.*/
 public class Main {
-    static Scanner lector = new Scanner(System.in);
+    public static Scanner lector = new Scanner(System.in);
+
     public static void main(String[] args) {
 
         Simulador simulador = new Simulador();
