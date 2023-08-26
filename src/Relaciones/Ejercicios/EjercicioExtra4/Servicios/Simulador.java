@@ -106,8 +106,18 @@ public class Simulador {
         }
 
         System.out.println("Votación realizada exitosamente.");
+        mostrarResultadosDetallados(votosTotales);
     }
 
+    public void mostrarResultadosDetallados(List<Voto> votosTotales) {
+        System.out.println("=====================================");
+        System.out.println("Detalle de las votaciones : ");
+        for (Voto voto : votosTotales) {
+            System.out.println("Votos de " + voto.getAlumnoVotante().getNombreCompleto() + ": " + '\n' + voto.getAlumnosVotados() + '\n');
+
+        }
+        System.out.println("=====================================");
+    }
 
     public void mostrarResultadosVotacion(List<Alumno> alumnos) {
         for (Alumno alumno : alumnos) {
