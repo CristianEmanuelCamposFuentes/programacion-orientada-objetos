@@ -27,4 +27,12 @@ public class Voto {
     public void agregarVoto(Alumno alumnoVotado) {
         alumnosVotados.add(alumnoVotado);
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "alumnoVotante:" + alumnoVotante +
+                ", alumnosVotados:" + alumnosVotados +
+                '}';
+    }
 }
