@@ -75,27 +75,63 @@ public class Main {
                     break;
                 case 7:
                     // Modificar Tienda
-                    // ... Código para modificar tienda ...
+                    System.out.print("Ingrese el ID de la tienda que desea modificar: ");
+                    int idTiendaModificar = scanner.nextInt();
+
+                    System.out.print("Ingrese la nueva dirección de la tienda: ");
+                    String nuevaDireccion = scanner.next();
+
+                    System.out.print("Ingrese el nuevo nombre de la tienda: ");
+                    String nuevoNombre = scanner.next();
+
+                    TS.modificarTienda(idTiendaModificar, nuevaDireccion, nuevoNombre);
                     break;
                 case 8:
                     // Eliminar Tienda
-                    // ... Código para eliminar tienda ...
+                    System.out.print("Ingrese el ID de la tienda que desea eliminar: ");
+                    int idTiendaEliminar = scanner.nextInt();
+
+                    TS.eliminarTienda(idTiendaEliminar);
                     break;
                 case 9:
                     // Agregar Producto a Tienda
-                    // ... Código para agregar producto a tienda ...
+                    System.out.print("Ingrese el ID de la tienda: ");
+                    int idTiendaAgregar = scanner.nextInt();
+                    System.out.print("Ingrese el ID del producto: ");
+                    int idProductoAgregar = scanner.nextInt();
+                    System.out.print("Ingrese la cantidad a agregar: ");
+                    int cantidadAgregar = scanner.nextInt();
+
+                    TS.agregarProductoATienda(idTiendaAgregar, idProductoAgregar, cantidadAgregar);
                     break;
                 case 10:
                     // Vender Producto
-                    // ... Código para vender producto ...
+                    System.out.print("Ingrese el ID de la tienda: ");
+                    int idTiendaVender = scanner.nextInt();
+                    System.out.print("Ingrese el ID del producto a vender: ");
+                    int idProductoVender = scanner.nextInt();
+                    System.out.print("Ingrese la cantidad a vender: ");
+                    int cantidadVender = scanner.nextInt();
+
+                    TS.venderProducto(idTiendaVender, idProductoVender, cantidadVender);
                     break;
                 case 11:
                     // Eliminar Producto de Tienda
-                    // ... Código para eliminar producto de tienda ...
+                    System.out.print("Ingrese el ID de la tienda: ");
+                    int idTiendaBuscada = scanner.nextInt();
+                    System.out.print("Ingrese el ID del producto a eliminar de la tienda: ");
+                    int idProductoAEliminar = scanner.nextInt();
+
+                    TS.eliminarProductoDeTienda(idTiendaBuscada, idProductoAEliminar);
                     break;
                 case 12:
                     // Stock de Producto en Tienda
-                    // ... Código para mostrar stock de producto en tienda ...
+                    System.out.print("Ingrese el ID de la tienda: ");
+                    int idTiendaStock = scanner.nextInt();
+                    System.out.print("Ingrese el ID del producto: ");
+                    int idProductoStock = scanner.nextInt();
+
+                    TS.mostrarStockProductoEnTienda(idTiendaStock, idProductoStock);
                     break;
                 case 13:
                     System.out.println("Saliendo del programa...");

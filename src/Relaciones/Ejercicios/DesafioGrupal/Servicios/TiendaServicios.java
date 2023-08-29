@@ -30,63 +30,9 @@ public class TiendaServicios {
         crearProductos();
     }
 
-    public void agregarProductoATienda(int idTienda, int idProducto, int cantidad) {
-        Tienda tienda = encontrarTiendaPorId(idTienda);
-        if (tienda != null) {
-            Producto producto = encontrarProductoPorId(idProducto);
-            if (producto != null) {
-                for (int i = 0; i < cantidad; i++) {
-                    tienda.getProductos().add(producto);
-                }
-                System.out.println("Producto agregado a la tienda exitosamente.");
-            } else {
-                System.out.println("Producto no encontrado.");
-            }
-        } else {
-            System.out.println("Tienda no encontrada.");
-        }
-    }
 
-    public Producto encontrarProductoPorId(int idProducto) {
-        for (Tienda tienda : tiendas) {
-            for (Producto producto : tienda.getProductos()) {
-                if (producto.getId() == idProducto) {
-                    return producto;
-                }
-            }
-        }
-        // Si no se encuentra el producto con el ID dado en ninguna tienda
-        return null;
-    }
 
-    public Tienda encontrarTiendaPorId(int idTienda) {
-            for (Tienda tienda : tiendas) {
-                if (tienda.getId() == idTienda) {
-                    return tienda;
-                }
-            }
-        // Si no se encuentra la tienda con el ID dado
-            return null;
-    }
 
-    public void venderProducto(int idTienda, int idProducto, int cantidad) {
-        Tienda tienda = encontrarTiendaPorId(idTienda);
-        if (tienda != null) {
-            Producto producto = encontrarProductoPorId(idProducto);
-            if (producto != null) {
-                if (cantidad <= producto.getCantidad()) {
-                    producto.setCantidad(producto.getCantidad() - cantidad);
-                    System.out.println("Venta realizada exitosamente.");
-                } else {
-                    System.out.println("No hay suficientes productos en la tienda.");
-                }
-            } else {
-                System.out.println("Producto no encontrado.");
-            }
-        } else {
-            System.out.println("Tienda no encontrada.");
-        }
-    }
 
 
 
@@ -131,6 +77,44 @@ public class TiendaServicios {
         return nuevoIdTienda;
     }
 
+    public void modificarTienda(int idTiendaModificar, String nuevaDireccion, String nuevoNombre) {
+        Tienda tiendaModificar = encontrarTiendaPorId(idTiendaModificar);
+        if (tiendaModificar != null) {
+            tiendaModificar.setDireccion(nuevaDireccion);
+            tiendaModificar.setNombre(nuevoNombre);
+            System.out.println("Tienda modificada exitosamente.");
+        } else {
+            System.out.println("Tienda no encontrada.");
+        }
+    }
+
+    public void eliminarTienda(int idTiendaEliminar) {
+        boolean tiendaEliminada = false;
+
+        Iterator<Tienda> tiendaBuscada = tiendas.iterator();
+        while (tiendaBuscada.hasNext()) {
+            Tienda tienda = tiendaBuscada.next();
+            if (tienda.getId() == idTiendaEliminar) {
+                tiendaBuscada.remove();
+                tiendaEliminada = true;
+                break;
+            }
+        }
+
+        if (tiendaEliminada) {
+            System.out.println("Tienda eliminada exitosamente.");
+        } else {
+            System.out.println("Tienda no encontrada.");
+        }
+    }
+
+    public void mostrarTiendas() {
+        System.out.println("Lista de Tiendas:");
+        for (Tienda tienda : tiendas) {
+            System.out.println("ID: " + tienda.getId() + " | Nombre: " + tienda.getNombre() + " | Dirección: " + tienda.getDireccion());
+        }
+    }
+
     public void mostrarProductos() {
         for (Tienda tienda : tiendas) {
             System.out.println("Productos en la tienda '" + tienda.getNombre() + "':");
@@ -141,12 +125,7 @@ public class TiendaServicios {
         }
     }
 
-    public void mostrarTiendas() {
-        System.out.println("Lista de Tiendas:");
-        for (Tienda tienda : tiendas) {
-            System.out.println("ID: " + tienda.getId() + " | Nombre: " + tienda.getNombre() + " | Dirección: " + tienda.getDireccion());
-        }
-    }
+
 
     public void modificarProducto(int idProducto) {
         Producto producto = encontrarProductoPorId(idProducto);
@@ -170,11 +149,11 @@ public class TiendaServicios {
         boolean productoEliminado = false;
 
         for (Tienda tienda : tiendas) {
-            Iterator<Producto> iter = tienda.getProductos().iterator();
-            while (iter.hasNext()) {
-                Producto producto = iter.next();
+            Iterator<Producto> productoBuscado = tienda.getProductos().iterator();
+            while (productoBuscado.hasNext()) {
+                Producto producto = productoBuscado.next();
                 if (producto.getId() == idProductoEliminar) {
-                    iter.remove();
+                    productoBuscado.remove();
                     productoEliminado = true;
                     break;
                 }
@@ -186,6 +165,45 @@ public class TiendaServicios {
         } else {
             System.out.println("Producto no encontrado.");
         }
+    }
+
+    public void agregarProductoATienda(int idTienda, int idProducto, int cantidad) {
+        Tienda tienda = encontrarTiendaPorId(idTienda);
+        if (tienda != null) {
+            Producto producto = encontrarProductoPorId(idProducto);
+            if (producto != null) {
+                for (int i = 0; i < cantidad; i++) {
+                    tienda.getProductos().add(producto);
+                }
+                System.out.println("Producto agregado a la tienda exitosamente.");
+            } else {
+                System.out.println("Producto no encontrado.");
+            }
+        } else {
+            System.out.println("Tienda no encontrada.");
+        }
+    }
+
+    public Producto encontrarProductoPorId(int idProducto) {
+        for (Tienda tienda : tiendas) {
+            for (Producto producto : tienda.getProductos()) {
+                if (producto.getId() == idProducto) {
+                    return producto;
+                }
+            }
+        }
+        // Si no se encuentra el producto con el ID dado en ninguna tienda
+        return null;
+    }
+
+    public Tienda encontrarTiendaPorId(int idTienda) {
+        for (Tienda tienda : tiendas) {
+            if (tienda.getId() == idTienda) {
+                return tienda;
+            }
+        }
+        // Si no se encuentra la tienda con el ID dado
+        return null;
     }
 
     public void eliminarProductoDeTienda(int idTienda, int idProducto) {
@@ -206,13 +224,17 @@ public class TiendaServicios {
         }
     }
 
-    public void mostrarStockProductoEnTienda(int idTienda, int idProducto) {
+    public void venderProducto(int idTienda, int idProducto, int cantidad) {
         Tienda tienda = encontrarTiendaPorId(idTienda);
         if (tienda != null) {
             Producto producto = encontrarProductoPorId(idProducto);
             if (producto != null) {
-                int cantidadEnTienda = contarProductosEnTienda(tienda, producto);
-                System.out.println("Cantidad de " + producto.getNombre() + " en la tienda: " + cantidadEnTienda);
+                if (cantidad <= producto.getCantidad()) {
+                    producto.setCantidad(producto.getCantidad() - cantidad);
+                    System.out.println("Venta realizada exitosamente.");
+                } else {
+                    System.out.println("No hay suficientes productos en la tienda.");
+                }
             } else {
                 System.out.println("Producto no encontrado.");
             }
@@ -221,8 +243,21 @@ public class TiendaServicios {
         }
     }
 
+    public void mostrarStockProductoEnTienda(int idTienda, int idProducto) {
+        Tienda tienda = encontrarTiendaPorId(idTienda);
+        if (tienda != null) {
+            Producto producto = encontrarProductoPorId(idProducto);
+            if (producto != null) {
 
-
+                System.out.println("Cantidad del producto '" + producto.getNombre() +
+                        "' en la tienda '" + tienda.getNombre() + "': " + producto.getCantidad());
+            } else {
+                System.out.println("Producto no encontrado.");
+            }
+        } else {
+            System.out.println("Tienda no encontrada.");
+        }
+    }
 
     public void crearProductos() {
         // Crea los productos y los agrega a la lista
@@ -254,8 +289,8 @@ public class TiendaServicios {
         tiendas.add(tienda3);
     }
 
-    public void crearTienda() {
-    }
+
+
 }
 
 
