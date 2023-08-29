@@ -31,11 +31,6 @@ public class TiendaServicios {
     }
 
 
-
-
-
-
-
     public void crearProducto(String nombreProducto, double precioProducto, int cantidadProducto) {
         // Implementa la lógica para obtener un nuevo ID único
         int nuevoId = obtenerNuevoIdProducto();
@@ -170,11 +165,14 @@ public class TiendaServicios {
     public void agregarProductoATienda(int idTienda, int idProducto, int cantidad) {
         Tienda tienda = encontrarTiendaPorId(idTienda);
         if (tienda != null) {
+            System.out.println("Tienda encontrada: " + tienda.getNombre());
+
             Producto producto = encontrarProductoPorId(idProducto);
             if (producto != null) {
-                for (int i = 0; i < cantidad; i++) {
-                    tienda.getProductos().add(producto);
-                }
+                System.out.println("Producto encontrado: " + producto.getNombre());
+
+                producto.setCantidad(cantidad);
+                tienda.agregarProducto(producto);
                 System.out.println("Producto agregado a la tienda exitosamente.");
             } else {
                 System.out.println("Producto no encontrado.");
@@ -185,14 +183,12 @@ public class TiendaServicios {
     }
 
     public Producto encontrarProductoPorId(int idProducto) {
-        for (Tienda tienda : tiendas) {
-            for (Producto producto : tienda.getProductos()) {
+            for (Producto producto : productos) {
                 if (producto.getId() == idProducto) {
                     return producto;
                 }
             }
-        }
-        // Si no se encuentra el producto con el ID dado en ninguna tienda
+        // Si no se encuentra el producto con el ID dado en la lista de productos
         return null;
     }
 
@@ -289,7 +285,20 @@ public class TiendaServicios {
         tiendas.add(tienda3);
     }
 
+    public void mostrarListaProductosDisponibles() {
+        System.out.println("Lista de productos disponibles:");
+        for (Producto producto : productos) {
+            System.out.println(producto.getId() + " - " + producto.getNombre() + " - Precio: " + producto.getPrecio());
+        }
+    }
 
+    public void mostrarListaTiendasDisponibles() {
+        System.out.println("Lista de tiendas disponibles:");
+        for (Tienda tienda : tiendas) {
+            System.out.println("ID: " + tienda.getId() + " - Nombre: " + tienda.getNombre() + " - Dirección: " + tienda.getDireccion());
+        }
+        System.out.println();
+    }
 
 }
 

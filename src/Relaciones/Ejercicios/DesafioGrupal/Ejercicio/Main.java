@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         TiendaServicios TS = new TiendaServicios();
 
-        int choice;
+        int opcion;
 
         do {
             System.out.println("========== Menú ==========");
@@ -27,9 +27,9 @@ public class Main {
             System.out.println("12. Stock de Producto en Tienda");
             System.out.println("13. Salir");
             System.out.print("Ingrese su opción: ");
-            choice = scanner.nextInt();
+            opcion = scanner.nextInt();
 
-            switch (choice) {
+            switch (opcion) {
                 case 1:
                     // Crear Producto
                     System.out.print("Ingrese el nombre del producto: ");
@@ -47,7 +47,7 @@ public class Main {
                     break;
                 case 3:
                     // Modificar Producto
-                    TS.mostrarProductos();
+                    TS.mostrarListaProductosDisponibles();
                     System.out.print("Ingrese el ID del producto a eliminar: ");
                     int idProductoModificar = scanner.nextInt();
 
@@ -55,7 +55,7 @@ public class Main {
                     break;
                 case 4:
                     // Eliminar Producto
-                    TS.mostrarProductos();
+                    TS.mostrarListaProductosDisponibles();
                     System.out.print("Ingrese el ID del producto a eliminar: ");
                     int idProductoEliminar = scanner.nextInt();
                     TS.eliminarProducto(idProductoEliminar);
@@ -75,6 +75,7 @@ public class Main {
                     break;
                 case 7:
                     // Modificar Tienda
+                    TS.mostrarListaTiendasDisponibles();
                     System.out.print("Ingrese el ID de la tienda que desea modificar: ");
                     int idTiendaModificar = scanner.nextInt();
 
@@ -88,6 +89,7 @@ public class Main {
                     break;
                 case 8:
                     // Eliminar Tienda
+                    TS.mostrarListaTiendasDisponibles();
                     System.out.print("Ingrese el ID de la tienda que desea eliminar: ");
                     int idTiendaEliminar = scanner.nextInt();
 
@@ -95,6 +97,7 @@ public class Main {
                     break;
                 case 9:
                     // Agregar Producto a Tienda
+                    TS.mostrarListaProductosDisponibles();
                     System.out.print("Ingrese el ID de la tienda: ");
                     int idTiendaAgregar = scanner.nextInt();
                     System.out.print("Ingrese el ID del producto: ");
@@ -140,7 +143,7 @@ public class Main {
                     System.out.println("Opción inválida. Intente nuevamente.");
                     break;
             }
-        } while (choice != 13);
+        } while (opcion != 13);
         System.out.println("Fin del programa.");
     }
 

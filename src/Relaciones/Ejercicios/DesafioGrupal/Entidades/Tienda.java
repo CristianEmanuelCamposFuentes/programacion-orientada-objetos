@@ -49,6 +49,10 @@ public class Tienda {
         this.productos = productos;
     }
 
+    public void agregarProducto(Producto producto){
+        this.productos.add(producto);
+    }
+
     @Override
     public String toString() {
         return "Tienda{" +
