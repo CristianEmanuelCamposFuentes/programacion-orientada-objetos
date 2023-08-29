@@ -62,11 +62,16 @@ public class Main {
                     break;
                 case 5:
                     // Crear Tienda
-                    // ... Código para crear tienda ...
+                    System.out.print("Ingrese el nombre de la tienda: ");
+                    String nombreTienda = scanner.next();
+                    System.out.print("Ingrese la dirección de la tienda: ");
+                    String direccionTienda = scanner.next();
+
+                    TS.crearTienda(nombreTienda, direccionTienda);
                     break;
                 case 6:
                     // Mostrar Tiendas
-                    // ... Código para mostrar tiendas ...
+                    TS.mostrarTiendas();
                     break;
                 case 7:
                     // Modificar Tienda

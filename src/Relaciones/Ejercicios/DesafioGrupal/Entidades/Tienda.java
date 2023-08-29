@@ -1,5 +1,6 @@
 package Relaciones.Ejercicios.DesafioGrupal.Entidades;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -9,11 +10,11 @@ public class Tienda {
     private String Nombre;
     private List<Producto> productos;
 
-    public Tienda(int id, String direccion, String Nombre, List<Producto> productos) {
+    public Tienda(int id,String direccion, String Nombre, List<Producto> productos) {
         this.id = id;
         this.direccion = direccion;
         this.Nombre = Nombre;
-        this.productos = productos;
+        this.productos = new ArrayList<>();
     }
 
     public int getId() {

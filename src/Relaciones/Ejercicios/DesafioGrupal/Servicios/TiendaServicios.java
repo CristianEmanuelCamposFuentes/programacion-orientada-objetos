@@ -12,7 +12,15 @@ import static Relaciones.Ejercicios.DesafioGrupal.Ejercicio.Main.scanner;
 public class TiendaServicios {
     private List<Tienda> tiendas;
     private List<Producto> productos;
-    private int ultimoIdProducto = productos.size();
+
+    // Creo dos listas para los ids de Tienda y de Producto, con la idea de no repetirlos
+    private List<Integer> idTiendasUtilizados = new ArrayList<>();
+    private List<Integer> idProductosUtilizados = new ArrayList<>();
+    // Inicializo dos variables que son las que voy a utilizar para los ID incrementando ambos
+    // A medida que creo y borro productos y tiendas
+    private int ultimoIdTienda = 0;
+    private int ultimoIdProducto = 0;
+
 
     // Constructor, donde inicializo las listas cuando se crea TS en el main
     public TiendaServicios() {
@@ -83,18 +91,44 @@ public class TiendaServicios {
 
 
     public void crearProducto(String nombreProducto, double precioProducto, int cantidadProducto) {
-        int nuevoId = obtenerNuevoIdProducto(); // Implementa la lógica para obtener un nuevo ID único
+        // Implementa la lógica para obtener un nuevo ID único
+        int nuevoId = obtenerNuevoIdProducto();
         Producto nuevoProducto = new Producto(nuevoId, nombreProducto, precioProducto, cantidadProducto);
 
-        for (Tienda tienda : tiendas) {
-            tienda.getProductos().add(nuevoProducto);
-        }
+        productos.add(nuevoProducto);
         System.out.println("Producto creado exitosamente.");
     }
 
-    public int obtenerNuevoIdProducto() {
-        ultimoIdProducto++;
-        return ultimoIdProducto;
+    private int obtenerNuevoIdProducto() {
+        // Primero le agrego el valor + 1 al ID, para tener un numero nuevo
+        int nuevoIdProducto = ultimoIdProducto + 1;
+        // Compara el numero nuevo con la lista de IDs usados, si ya existe, le suma otro
+        // hasta que encuentre un valor que no exista
+        while (idProductosUtilizados.contains(nuevoIdProducto)) {
+            nuevoIdProducto++;
+        }
+        // Una vez que lo encuentra agrega ese numero a la lista de IDs ya usados
+        idProductosUtilizados.add(nuevoIdProducto);
+        // Agrega ese numero al contador que hicimos al principio "ultimoIdProducto"
+        ultimoIdProducto = nuevoIdProducto;
+        return nuevoIdProducto;
+    }
+
+    public void crearTienda(String direccion, String nombre) {
+        int nuevoIdTienda = obtenerNuevoIdTienda();
+        Tienda nuevaTienda = new Tienda(nuevoIdTienda, direccion, nombre, new ArrayList<>());
+        tiendas.add(nuevaTienda);
+        System.out.println("Tienda creada exitosamente.");
+    }
+
+    private int obtenerNuevoIdTienda() {
+        int nuevoIdTienda = ultimoIdTienda + 1;
+        while (idTiendasUtilizados.contains(nuevoIdTienda)) {
+            nuevoIdTienda++;
+        }
+        idTiendasUtilizados.add(nuevoIdTienda);
+        ultimoIdTienda = nuevoIdTienda;
+        return nuevoIdTienda;
     }
 
     public void mostrarProductos() {
@@ -104,6 +138,13 @@ public class TiendaServicios {
                 System.out.println(producto);
             }
             System.out.println();
+        }
+    }
+
+    public void mostrarTiendas() {
+        System.out.println("Lista de Tiendas:");
+        for (Tienda tienda : tiendas) {
+            System.out.println("ID: " + tienda.getId() + " | Nombre: " + tienda.getNombre() + " | Dirección: " + tienda.getDireccion());
         }
     }
 
@@ -211,6 +252,9 @@ public class TiendaServicios {
         tiendas.add(tienda1);
         tiendas.add(tienda2);
         tiendas.add(tienda3);
+    }
+
+    public void crearTienda() {
     }
 }
 
