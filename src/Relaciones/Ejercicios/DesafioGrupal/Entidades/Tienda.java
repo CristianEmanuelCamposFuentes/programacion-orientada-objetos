@@ -6,13 +6,13 @@ import java.util.List;
 public class Tienda {
     private int id;
     private String direccion;
-    private String representante;
+    private String Nombre;
     private List<Producto> productos;
 
-    public Tienda(int id, String direccion, String representante, List<Producto> productos) {
+    public Tienda(int id, String direccion, String Nombre, List<Producto> productos) {
         this.id = id;
         this.direccion = direccion;
-        this.representante = representante;
+        this.Nombre = Nombre;
         this.productos = productos;
     }
 
@@ -32,12 +32,12 @@ public class Tienda {
         this.direccion = direccion;
     }
 
-    public String getRepresentante() {
-        return representante;
+    public String getNombre() {
+        return Nombre;
     }
 
-    public void setRepresentante(String representante) {
-        this.representante = representante;
+    public void setNombre(String nombre) {
+        this.Nombre = nombre;
     }
 
     public List<Producto> getProductos() {
@@ -53,7 +53,7 @@ public class Tienda {
         return "Tienda{" +
                 "id=" + id +
                 ", direccion='" + direccion + '\'' +
-                ", representante='" + representante + '\'' +
+                ", representante='" + Nombre + '\'' +
                 ", productos=" + productos +
                 '}';
     }

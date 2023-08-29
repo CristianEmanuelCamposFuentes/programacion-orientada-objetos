@@ -12,7 +12,7 @@ public class Main {
         int choice;
 
         do {
-            System.out.println("=== Menú ===");
+            System.out.println("========== Menú ==========");
             System.out.println("1. Crear Producto");
             System.out.println("2. Mostrar Productos");
             System.out.println("3. Modificar Producto");
@@ -32,19 +32,33 @@ public class Main {
             switch (choice) {
                 case 1:
                     // Crear Producto
-                    // ... Código para crear producto ...
+                    System.out.print("Ingrese el nombre del producto: ");
+                    String nombreProducto = scanner.next();
+                    System.out.print("Ingrese el precio del producto: ");
+                    double precioProducto = scanner.nextDouble();
+                    System.out.print("Ingrese la cantidad de productos: ");
+                    int cantidadProducto = scanner.nextInt();
+
+                    TS.crearProducto(nombreProducto, precioProducto, cantidadProducto);
                     break;
                 case 2:
                     // Mostrar Productos
-                    // ... Código para mostrar productos ...
+                    TS.mostrarProductos();
                     break;
                 case 3:
                     // Modificar Producto
-                    // ... Código para modificar producto ...
+                    TS.mostrarProductos();
+                    System.out.print("Ingrese el ID del producto a eliminar: ");
+                    int idProductoModificar = scanner.nextInt();
+
+                    TS.modificarProducto(idProductoModificar);
                     break;
                 case 4:
                     // Eliminar Producto
-                    // ... Código para eliminar producto ...
+                    TS.mostrarProductos();
+                    System.out.print("Ingrese el ID del producto a eliminar: ");
+                    int idProductoEliminar = scanner.nextInt();
+                    TS.eliminarProducto(idProductoEliminar);
                     break;
                 case 5:
                     // Crear Tienda
