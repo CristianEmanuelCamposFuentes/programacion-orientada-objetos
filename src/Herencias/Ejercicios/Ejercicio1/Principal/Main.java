@@ -1,4 +1,4 @@
-package Herencias.Ejercicios.Ejercicio1.Ejercicio;
+package Herencias.Ejercicios.Ejercicio1.Principal;
 
 import Herencias.Ejercicios.Ejercicio1.Entidades.Animal;
 import Herencias.Ejercicios.Ejercicio1.Entidades.Caballo;
