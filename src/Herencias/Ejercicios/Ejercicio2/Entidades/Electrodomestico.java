@@ -1,5 +1,7 @@
 package Herencias.Ejercicios.Ejercicio2.Entidades;
 
+import Herencias.Ejercicios.Ejercicio2.Servicios.ElectrodomesticoServices;
+
 public class Electrodomestico {
     private double precio;
     private String color;
@@ -7,13 +9,18 @@ public class Electrodomestico {
     private double peso;
 
     public Electrodomestico() {
+        this.precio = 1000;
+        this.color = "blanco";
+        this.consumoEnergetico = 'F';
+        this.peso = 5;
     }
 
     public Electrodomestico(double precio, String color, char consumoEnergetico, double peso) {
         this.precio = precio;
-        this.color = color;
-        this.consumoEnergetico = consumoEnergetico;
+        this.color = ElectrodomesticoServices.comprobarColor(color);
+        this.consumoEnergetico = ElectrodomesticoServices.comprobarConsumoEnergetico(consumoEnergetico);
         this.peso = peso;
+
     }
 
     public double getPrecio() {
