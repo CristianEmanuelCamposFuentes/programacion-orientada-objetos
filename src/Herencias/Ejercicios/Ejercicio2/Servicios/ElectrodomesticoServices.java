@@ -1,12 +1,10 @@
 package Herencias.Ejercicios.Ejercicio2.Servicios;
 
-
 import Herencias.Ejercicios.Ejercicio2.Entidades.Electrodomestico;
 
-import java.util.Scanner;
+import static Herencias.Ejercicios.Ejercicio2.Principal.Main.scanner;
 
 public class ElectrodomesticoServices {
-    public static final Scanner scanner = new Scanner(System.in).useDelimiter("\n");
     private static final String[] coloresDisponibles = { "blanco", "negro", "rojo", "azul","gris"};
     public static char comprobarConsumoEnergetico(char consumo) {
         if ((consumo >= 'A') && (consumo <= 'F')) {
