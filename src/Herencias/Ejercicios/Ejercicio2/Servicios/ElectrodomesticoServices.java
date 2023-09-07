@@ -22,7 +22,7 @@ public class ElectrodomesticoServices {
         return "blanco";
     }
 
-    public static Electrodomestico crearElectrodomestico(){
+    public static void llenarElectrodomestico(Electrodomestico electrodomestico) {
         System.out.println("Ingrese el color del electrodomestico: ");
         String color = scanner.next();
 
@@ -32,7 +32,11 @@ public class ElectrodomesticoServices {
         System.out.println("Ingrese el peso del electrodomestico: ");
         double peso = scanner.nextDouble();
 
-        return new Electrodomestico(1000, color, consumo, peso);
+        // Llena los atributos del electrodomestico
+        electrodomestico.setColor(comprobarColor(color));
+        electrodomestico.setConsumoEnergetico(comprobarConsumoEnergetico(consumo));
+        electrodomestico.setPeso(peso);
     }
+
 
 }
