@@ -76,7 +76,8 @@ el precio final de los dos electrodomésticos.
 
 import Herencias.Ejercicios.Ejercicio2.Entidades.Lavadora;
 import Herencias.Ejercicios.Ejercicio2.Entidades.Televisor;
-import Herencias.Ejercicios.Ejercicio2.Servicios.ElectrodomesticoServices;
+import Herencias.Ejercicios.Ejercicio2.Servicios.LavadoraServices;
+import Herencias.Ejercicios.Ejercicio2.Servicios.TelevisorServices;
 
 import java.util.Scanner;
 
@@ -85,16 +86,14 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Inicio del programa:");
 
-        // Crear una Lavadora
-        Lavadora lavadora = new Lavadora();
-        ElectrodomesticoServices.llenarElectrodomestico(lavadora);
+        // Crear una Lavadora y llenar sus atributos
+        Lavadora lavadora = LavadoraServices.crearLavadora();
         System.out.println("Precio final de la Lavadora: $" + lavadora.precioFinal());
 
-        // Crear un Televisor
-        Televisor televisor = new Televisor();
-        ElectrodomesticoServices.llenarElectrodomestico(televisor);
+        // Crear un Televisor y llenar sus atributos
+        Televisor televisor = TelevisorServices.crearTelevisor();
         System.out.println("Precio final del Televisor: $" + televisor.precioFinal());
 
-        System.out.println("Fin del programa:");
+        System.out.println("Fin del programa");
     }
 }
