@@ -1,4 +1,7 @@
 package Herencias.Ejercicios.Ejercicio2.Entidades;
+
+import Herencias.Ejercicios.Ejercicio2.Servicios.ElectrodomesticoServices;
+
 public class Televisor extends Electrodomestico{
     private int resolucion; // Resolución en pulgadas
     private boolean sintonizadorTDT;
@@ -33,7 +36,7 @@ public class Televisor extends Electrodomestico{
 
     public double precioFinal() {
         // Obtener el precio base llamando al método de la superclase
-        double precioBase = super.calcularPrecioFinal(this);
+        double precioBase = ElectrodomesticoServices.calcularPrecioFinal(this);
 
         // Aplicar aumento de precio según las condiciones específicas de Televisor
         if (resolucion > 40) {

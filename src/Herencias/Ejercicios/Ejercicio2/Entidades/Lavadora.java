@@ -1,5 +1,8 @@
 package Herencias.Ejercicios.Ejercicio2.Entidades;
 
+
+import Herencias.Ejercicios.Ejercicio2.Servicios.ElectrodomesticoServices;
+
 public class Lavadora extends Electrodomestico {
     private int carga;
 
@@ -21,10 +24,9 @@ public class Lavadora extends Electrodomestico {
     public void setCarga(int carga) {
         this.carga = carga;
     }
-
     public double precioFinal() {
         // Obtener el precio base llamando al método en la superclase (Electrodomestico)
-        double precioBase = super.precioFinal(this);
+        double precioBase = ElectrodomesticoServices.calcularPrecioFinal(this);
 
         // Aplicar aumento de precio si la carga es mayor a 30kg
         if(carga > 30) {

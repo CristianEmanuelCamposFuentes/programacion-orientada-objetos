@@ -39,4 +39,49 @@ public class ElectrodomesticoServices {
     }
 
 
+    public static double calcularPrecioFinal(Electrodomestico electrodomestico) {
+        double precioConsumo = 0;
+        double precioPeso = 0;
+
+        // Obtener los valores de consumoEnergetico, peso y precio de la instancia de Electrodomestico
+        char consumoEnergetico = electrodomestico.getConsumoEnergetico();
+        double peso = electrodomestico.getPeso();
+        double precio = electrodomestico.getPrecio();
+
+        // Calcular precio basado en el consumo energético
+        switch (consumoEnergetico) {
+            case 'A':
+                precioConsumo = 1000;
+                break;
+            case 'B':
+                precioConsumo = 800;
+                break;
+            case 'C':
+                precioConsumo = 600;
+                break;
+            case 'D':
+                precioConsumo = 500;
+                break;
+            case 'E':
+                precioConsumo = 300;
+                break;
+            case 'F':
+                precioConsumo = 100;
+                break;
+        }
+
+        // Calcular precio basado en el peso
+        if (peso >= 1 && peso <= 19) {
+            precioPeso = 100;
+        } else if (peso >= 20 && peso <= 49) {
+            precioPeso = 500;
+        } else if (peso >= 50 && peso <= 79) {
+            precioPeso = 800;
+        } else if (peso >= 80) {
+            precioPeso = 1000;
+        }
+
+        // Calcular precio final sumando ambos precios
+        return precio + precioConsumo + precioPeso;
+    }
 }
