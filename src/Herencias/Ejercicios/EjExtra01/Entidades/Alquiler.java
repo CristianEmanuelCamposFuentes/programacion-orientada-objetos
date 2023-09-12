@@ -82,19 +82,17 @@ public class Alquiler {
         this.fechaDevolucion = fechaDevolucion;
         this.posicionAmarre = posicionAmarre;
         this.barco = barco;
-
-
     }
 
     //Un alquiler se calcula multiplicando el número de días de ocupación (calculado con la fecha de
     //alquiler y devolución), por un valor módulo de cada barco (obtenido simplemente
     //multiplicando por 10 los metros de eslora).
-    public double calcularAlquier() {
-        Long aux = DAYS.between(getFechaAlquier(), getFechaDevolucion());
-        //double moduloBarco = barco.getEsloraMetros()*10;
-        double moduloBarco = barco.calcularModulo();
-        double precioFinal = moduloBarco * aux;
+    public double calcularAlquiler() {
+        Long cantidadDias = DAYS.between(getFechaAlquier(), getFechaDevolucion());
 
-        return precioFinal;
+        // Segun el tipo de "barco", va a ser diferente la implementacion de calcularModulo().
+        double moduloBarco = barco.calcularModulo();
+
+        return moduloBarco * cantidadDias;
     }
 }

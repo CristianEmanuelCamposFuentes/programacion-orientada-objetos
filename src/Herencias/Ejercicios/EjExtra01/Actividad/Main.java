@@ -1,5 +1,9 @@
 package Herencias.Ejercicios.EjExtra01.Actividad;
 
+import Herencias.Ejercicios.EjExtra01.Servicios.ServicioAlquiler;
+
+import java.util.Scanner;
+
 /*
 * 1. En un puerto se alquilan amarres para barcos de distinto tipo. Para cada Alquiler se guarda: el
 nombre, documento del cliente, la fecha de alquiler, fecha de devolución, la posición del
@@ -21,4 +25,36 @@ métodos necesarios que permitan al usuario elegir el barco que quiera alquilar 
 precio final de su alquiler.
 * */
 public class Main {
+    public static final Scanner scanner = new Scanner(System.in).useDelimiter("\n");
+    public static void main(String[] args) {
+
+        while (true) {
+            System.out.println("Menú de Alquiler de Barcos");
+            System.out.println("1. Alquilar Barco a Motor");
+            System.out.println("2. Alquilar Velero");
+            System.out.println("3. Alquilar Yate de Lujo");
+            System.out.println("4. Salir");
+
+            System.out.print("Seleccione una opción: ");
+            int opcion = scanner.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    ServicioAlquiler.alquilarBarcoMotor();
+                    break;
+                case 2:
+                    ServicioAlquiler.alquilarVelero();
+                    break;
+                case 3:
+                    ServicioAlquiler.alquilarYateLujo();
+                    break;
+                case 4:
+                    System.out.println("Gracias por utilizar nuestro servicio de alquiler.");
+                    scanner.close();
+                    return;
+                default:
+                    System.out.println("Opción no válida. Por favor, seleccione una opción válida.");
+            }
+        }
+    }
 }
