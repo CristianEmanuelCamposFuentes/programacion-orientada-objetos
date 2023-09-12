@@ -8,6 +8,9 @@ import java.time.format.DateTimeFormatter;
 import static Herencias.Ejercicios.EjExtra01.Actividad.Main.scanner;
 
 public class ServicioAlquiler {
+
+    // Crear un formateador para el formato "día-mes-anio"
+    public static DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
     public static void alquilarBarcoMotor() {
 
         // Solicitar al usuario que ingrese detalles del cliente y el alquiler.
@@ -15,34 +18,20 @@ public class ServicioAlquiler {
         String nombre = scanner.nextLine();
         scanner.nextLine();
 
-
         System.out.println("Ingrese el documento del cliente:");
         int documentoCliente = scanner.nextInt();
 
-        System.out.println("Ingrese la fecha de alquiler (AAAA-MM-DD):");
+        System.out.println("Ingrese la fecha de alquiler (dd-MM-aaaa):");
         String fechaInput = scanner.next();
 
-        // Parsear la fecha ingresada
-        LocalDate fechaAlquiler = LocalDate.parse(fechaInput);
+        // Parsear la fecha ingresada al formato LocalDate
+        LocalDate fechaAlquiler = LocalDate.parse(fechaInput, formato);
 
-        // Crear un formateador para el formato "día-mes-año"
-        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-
-        // Formatear la fecha y mostrarla
-        String fechaFormateada = fechaAlquiler.format(formato);
-//        System.out.println("Fecha de alquiler formateada: " + fechaFormateada);
-        System.out.println("Ingrese la fecha de devolución (AAAA-MM-DD):");
+        System.out.println("Ingrese la fecha de devolución (dd-MM-aaaa):");
         String fechaDev = scanner.next();
 
         // Parsear la fecha ingresada
-        LocalDate fechaDevolucion = LocalDate.parse(fechaDev);
-
-        // Crear un formateador para el formato "día-mes-año"
-//        DateTimeFormatter formatoD = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-
-        // Formatear la fecha y mostrarla
-        String fechaFormateadaD = fechaAlquiler.format(formato);
-
+        LocalDate fechaDevolucion = LocalDate.parse(fechaDev, formato);
 
         System.out.println("Ingrese la posición del amarre:");
         int posicionAmarre = scanner.nextInt();
@@ -66,15 +55,16 @@ public class ServicioAlquiler {
         // Solicitar al usuario que ingrese detalles del cliente y el alquiler.
         System.out.println("Ingrese el nombre del cliente:");
         String nombre = scanner.nextLine();
+        scanner.nextLine();
 
         System.out.println("Ingrese el documento del cliente:");
         int documentoCliente = scanner.nextInt();
 
-        System.out.println("Ingrese la fecha de alquiler (AAAA-MM-DD):");
-        LocalDate fechaAlquiler = LocalDate.parse(scanner.next());
+        System.out.println("Ingrese la fecha de alquiler (dd-mm-aaaa):");
+        LocalDate fechaAlquiler = LocalDate.parse(scanner.next(), formato);
 
-        System.out.println("Ingrese la fecha de devolución (AAAA-MM-DD):");
-        LocalDate fechaDevolucion = LocalDate.parse(scanner.next());
+        System.out.println("Ingrese la fecha de devolución (dd-mm-aaaa):");
+        LocalDate fechaDevolucion = LocalDate.parse(scanner.next(), formato);
 
         System.out.println("Ingrese la posición del amarre:");
         int posicionAmarre = scanner.nextInt();
@@ -98,15 +88,16 @@ public class ServicioAlquiler {
         // Solicitar al usuario que ingrese detalles del cliente y el alquiler.
         System.out.println("Ingrese el nombre del cliente:");
         String nombre = scanner.nextLine();
+        scanner.nextLine();
 
         System.out.println("Ingrese el documento del cliente:");
         int documentoCliente = scanner.nextInt();
 
         System.out.println("Ingrese la fecha de alquiler (AAAA-MM-DD):");
-        LocalDate fechaAlquiler = LocalDate.parse(scanner.next());
+        LocalDate fechaAlquiler = LocalDate.parse(scanner.next(),formato);
 
         System.out.println("Ingrese la fecha de devolución (AAAA-MM-DD):");
-        LocalDate fechaDevolucion = LocalDate.parse(scanner.next());
+        LocalDate fechaDevolucion = LocalDate.parse(scanner.next(), formato);
 
         System.out.println("Ingrese la posición del amarre:");
         int posicionAmarre = scanner.nextInt();
