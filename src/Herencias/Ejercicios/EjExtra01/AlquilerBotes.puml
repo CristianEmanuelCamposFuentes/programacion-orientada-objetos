@@ -1,0 +1,80 @@
+@startuml
+class Herencias.Ejercicios.EjExtra01.Entidades.Barco {
+- int matriculaBarco
+- double esloraMetros
+- int anioFabricacion
++ int getMatriculaBarco()
++ void setMatriculaBarco(int)
++ double getEsloraMetros()
++ void setEsloraMetros(double)
++ int getAnioFabricacion()
++ void setAnioFabricacion(int)
++ String toString()
++ double calcularModulo()
+}
+class Herencias.Ejercicios.EjExtra01.Actividad.Main {
++ {static} Scanner scanner
++ {static} void main(String[])
+}
+class Herencias.Ejercicios.EjExtra01.Entidades.Alquiler {
+- String nombre
+- int documentoCliente
+- LocalDate fechaAlquier
+- LocalDate fechaDevolucion
+- int posicionAmarre
+- Barco barco
++ String getNombre()
++ void setNombre(String)
++ int getDocumentoCliente()
++ void setDocumentoCliente(int)
++ LocalDate getFechaAlquier()
++ void setFechaAlquier(LocalDate)
++ LocalDate getFechaDevolucion()
++ void setFechaDevolucion(LocalDate)
++ int getPosicionAmarre()
++ void setPosicionAmarre(int)
++ Barco getBarco()
++ void setBarco(Barco)
++ String toString()
++ double calcularAlquiler()
+}
+class Herencias.Ejercicios.EjExtra01.Servicios.ServicioAlquiler {
+~ List<Barco> botesDisponibles
++ {static} DateTimeFormatter formato
++ void alquilarBarco()
++ void agregarBarco()
++ void actualizarBarco()
++ void eliminarBarco()
++ void llenarListaBotes()
++ void mostrarBotes()
+}
+class Herencias.Ejercicios.EjExtra01.Entidades.Velero {
+- int numeroMastiles
++ int getNumeroMastiles()
++ void setNumeroMastiles(int)
++ String toString()
++ double calcularModulo()
+}
+class Herencias.Ejercicios.EjExtra01.Entidades.YateLujo {
+- int camarotes
+- double potenciaCv
++ int getCamarotes()
++ void setCamarotes(int)
++ double getPotenciaCv()
++ void setPotenciaCv(double)
++ double calcularModulo()
++ String toString()
+}
+class Herencias.Ejercicios.EjExtra01.Entidades.BarcoMotor {
+- double potenciaCv
++ double getPotenciaCv()
++ void setPotenciaCv(double)
++ double calcularModulo()
++ String toString()
+}
+
+
+Herencias.Ejercicios.EjExtra01.Entidades.Barco <|-- Herencias.Ejercicios.EjExtra01.Entidades.Velero
+Herencias.Ejercicios.EjExtra01.Entidades.Barco <|-- Herencias.Ejercicios.EjExtra01.Entidades.YateLujo
+Herencias.Ejercicios.EjExtra01.Entidades.Barco <|-- Herencias.Ejercicios.EjExtra01.Entidades.BarcoMotor
+@enduml
