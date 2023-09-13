@@ -1,0 +1,8 @@
+package Herencias.Ejemplos.PokeApp.Logica;
+
+public interface IAgua {
+    public void atacarHidrobomba();
+    public void atacarBurbuja();
+    public void atacarPistolaAgua();
+
+}
