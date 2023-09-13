@@ -1,6 +1,9 @@
 package Herencias.Ejemplos.PokeApp.Logica;
 
 public class Bulbasaur extends Pokemon implements IHierba{
+    public Bulbasaur() {
+    }
+
     @Override
     protected void atacarPlacaje() {
         System.out.println("Bulbasaur aplica Placaje!!!");

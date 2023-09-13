@@ -1,6 +1,9 @@
 package Herencias.Ejemplos.PokeApp.Logica;
 
 public class Pikachu extends Pokemon implements IElectrico{
+    public Pikachu() {
+    }
+
     @Override
     protected void atacarPlacaje() {
         System.out.println("Pikachu aplica Placaje !!!");
