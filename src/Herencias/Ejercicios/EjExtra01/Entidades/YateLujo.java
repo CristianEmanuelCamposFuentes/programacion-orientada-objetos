@@ -33,4 +33,15 @@ public class YateLujo extends Barco{
     public double calcularModulo() {
         return super.calcularModulo() + potenciaCv + camarotes;
     }
+
+    @Override
+    public String toString() {
+        return "YateLujo{" +
+                "matriculaBarco=" + getMatriculaBarco() +
+                ", esloraMetros=" + getEsloraMetros() +
+                ", anioFabricacion=" + getAnioFabricacion() +
+                ", camarotes=" + camarotes +
+                ", potenciaCv=" + potenciaCv +
+                '}';
+    }
 }

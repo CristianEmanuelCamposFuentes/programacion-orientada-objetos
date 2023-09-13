@@ -19,7 +19,10 @@ public class Velero extends Barco{
     @Override
     public String toString() {
         return "Velero{" +
-                "numeroMastiles=" + numeroMastiles +
+                "matriculaBarco=" + getMatriculaBarco() +
+                ", esloraMetros=" + getEsloraMetros() +
+                ", anioFabricacion=" + getAnioFabricacion() +
+                ", numeroMastiles=" + numeroMastiles +
                 '}';
     }
 

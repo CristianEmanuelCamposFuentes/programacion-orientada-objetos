@@ -8,8 +8,26 @@ public class BarcoMotor extends Barco{
         this.potenciaCv = potenciaCv;
     }
 
+    public double getPotenciaCv() {
+        return potenciaCv;
+    }
+
+    public void setPotenciaCv(double potenciaCv) {
+        this.potenciaCv = potenciaCv;
+    }
+
     @Override
     public double calcularModulo() {
         return super.calcularModulo() + potenciaCv;
+    }
+
+    @Override
+    public String toString() {
+        return "BarcoMotor{" +
+                "matriculaBarco=" + getMatriculaBarco() +
+                ", esloraMetros=" + getEsloraMetros() +
+                ", anioFabricacion=" + getAnioFabricacion() +
+                ", potenciaCv=" + potenciaCv +
+                '}';
     }
 }
