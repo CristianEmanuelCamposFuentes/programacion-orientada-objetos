@@ -1,4 +1,8 @@
 package Herencias.Ejercicios.Ejercicio3.Servicios;
 
-public class ElectrodomesticoServicios {
+import Herencias.Ejercicios.Ejercicio3.Entidades.Electrodomestico;
+
+public interface ElectrodomesticoServicios {
+    void llenarElectrodomestico(Electrodomestico electrodomestico);
+    double calcularPrecioFinal(Electrodomestico electrodomestico);
 }
