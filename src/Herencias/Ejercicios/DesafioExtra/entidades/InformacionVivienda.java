@@ -1,22 +1,28 @@
 package Herencias.Ejercicios.DesafioExtra.entidades;
 
-public class InformaciónVivienda {
-
-
+public class InformacionVivienda {
     private int numDormitorios;
     private String tipoParedes;
     private String tipoPiso;
     private boolean iluminacion;
+    private boolean mejora;
 
-
-    public InformaciónVivienda(int numDormitorios, String tipoParedes, String tipoPiso, boolean iluminacion) {
+    public InformacionVivienda(int numDormitorios, String tipoParedes, String tipoPiso, boolean iluminacion, boolean mejora) {
         this.numDormitorios = numDormitorios;
         this.tipoParedes = tipoParedes;
         this.tipoPiso = tipoPiso;
         this.iluminacion = iluminacion;
+        this.mejora = mejora;
     }
 
-    public InformaciónVivienda() {
+    public InformacionVivienda() {
+        // Constructor por defecto, inicializa el número de dormitorios en 0
+        this.numDormitorios = 0;
+    }
+
+    public InformacionVivienda(boolean mejora) {
+        this(); // Llama al constructor por defecto para inicializar numDormitorios
+        this.mejora = mejora;
     }
 
     public int getNumDormitorios() {
@@ -51,6 +57,14 @@ public class InformaciónVivienda {
         this.iluminacion = iluminacion;
     }
 
+    public boolean isMejora() {
+        return mejora;
+    }
+
+    public void setMejora(boolean mejora) {
+        this.mejora = mejora;
+    }
+
     @Override
     public String toString() {
         return "InformaciónVivienda{" +
@@ -58,6 +72,8 @@ public class InformaciónVivienda {
                 ", tipoParedes='" + tipoParedes + '\'' +
                 ", tipoPiso='" + tipoPiso + '\'' +
                 ", iluminacion=" + iluminacion +
+                ", mejora=" + mejora +
                 '}';
     }
 }
+

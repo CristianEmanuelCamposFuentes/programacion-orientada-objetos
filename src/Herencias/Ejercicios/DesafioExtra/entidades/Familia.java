@@ -1,12 +1,13 @@
 package Herencias.Ejercicios.DesafioExtra.entidades;
 
+import Herencias.Ejercicios.DesafioExtra.Actividad.Main;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Familia {
-
 
     private String direccion;
     private int IDE;
@@ -15,16 +16,17 @@ public class Familia {
     private String localidad;
     private List<Integrante> integrantes;
     private boolean factorRiesgo;
+    private InformacionVivienda informacionVivienda;
 
-
-    Scanner leer = new Scanner(System.in);
-
-    public Familia(String direccion, int IDE, int numLote, String barrio, String localidad) {
+    public Familia(String direccion, int IDE, int numLote, String barrio, String localidad, List<Integrante> integrantes, boolean factorRiesgo, boolean mejora) {
         this.direccion = direccion;
         this.IDE = IDE;
         this.numLote = numLote;
         this.barrio = barrio;
         this.localidad = localidad;
+        this.integrantes = new ArrayList<>();
+        this.factorRiesgo = false;
+        this.informacionVivienda = new InformacionVivienda(mejora);
     }
 
     public String getDireccion() {
@@ -67,6 +69,34 @@ public class Familia {
         this.localidad = localidad;
     }
 
+    public List<Integrante> getIntegrantes() {
+        return integrantes;
+    }
+
+    public void setIntegrantes(List<Integrante> integrantes) {
+        this.integrantes = integrantes;
+    }
+
+    public boolean isFactorRiesgo() {
+        return factorRiesgo;
+    }
+
+    public void setFactorRiesgo(boolean factorRiesgo) {
+        this.factorRiesgo = factorRiesgo;
+    }
+
+    public InformacionVivienda getInformacionVivienda() {
+        return informacionVivienda;
+    }
+
+    public void setInformacionVivienda(InformacionVivienda informacionVivienda) {
+        this.informacionVivienda = informacionVivienda;
+    }
+
+    public void agregarIntegrante(Integrante integrante) {
+        this.integrantes.add(integrante);
+    }
+
     @Override
     public String toString() {
         return "Familia{" +
@@ -78,37 +108,15 @@ public class Familia {
                 '}';
     }
 
-    public int cantidadFactores() {
-
-        List<Integer> factores = new ArrayList<>();
-
-        Random random = new Random();
-        for (int i = 0; i < 12; i++) {
-            factores.add(random.nextInt(13));
-
-
-        }
-
-        int cantFactores = factores.size();
-         return  cantFactores;
-
-
-
+    public void mostrarInformacion() {
+        System.out.println("Información de la familia:");
+        System.out.println("Dirección: " + direccion);
+        System.out.println("IDE: " + IDE);
+        System.out.println("Número de lote: " + numLote);
+        System.out.println("Barrio: " + barrio);
+        System.out.println("Localidad: " + localidad);
+        System.out.println("Factor de riesgo: " + factorRiesgo);
+        System.out.println("Mejora en el hogar: " + informacionVivienda.isMejora());
+        System.out.println("Cantidad de integrantes: " + integrantes.size());
     }
-
-    public void tieneFactoresRiesgo(){
-
-        if(factorRiesgo){
-
-            System.out.println(cantidadFactores());
-        }else {
-            boolean mejora;
-            System.out.println("La familia tiene mejoras en su hogar?  Verdadero o Falso");
-            mejora = leer.nextBoolean();
-
-        }
-
-    }
-
-
 }
