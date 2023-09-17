@@ -27,23 +27,23 @@ public class Main {
             switch (opcion) {
                 case 1:
                     // Crear una nueva familia y agregarla a la lista de familias
-                    Familia familia = crearNuevaFamilia();
-                    familias.add(familia);
+//                    Familia familia = crearNuevaFamilia();
+//                    familias.add(familia);
                     break;
                 case 2:
                     // Implementa la lógica para mostrar cantidad de personas
                     break;
                 case 3:
                     // Implementa la lógica para mostrar distribución por sexo
-                    mostrarDistribucionPorSexo(familias);
+//                    mostrarDistribucionPorSexo(familias);
                     break;
                 case 4:
                     // Implementa la lógica para mostrar resumen de problemas de salud
-                    mostrarResumenProblemasSalud(familias);
+//                    mostrarResumenProblemasSalud(familias);
                     break;
                 case 5:
                     // Implementa la lógica para mostrar resumen de abordaje nutricional
-                    mostrarResumenAbordajeNutricional(familias);
+//                    mostrarResumenAbordajeNutricional(familias);
                     break;
                 case 0:
                     System.out.println("Saliendo del programa...");
