@@ -1,0 +1,56 @@
+@startuml
+class Herencias.Ejercicios.Ejercicio2.Entidades.Electrodomestico {
+- double precio
+- String color
+- char consumoEnergetico
+- double peso
++ double getPrecio()
++ void setPrecio(double)
++ String getColor()
++ void setColor(String)
++ char getConsumoEnergetico()
++ void setConsumoEnergetico(char)
++ double getPeso()
++ void setPeso(double)
+}
+class Herencias.Ejercicios.Ejercicio2.Principal.Main {
++ {static} Scanner scanner
++ {static} void main(String[])
+}
+class Herencias.Ejercicios.Ejercicio2.Entidades.Televisor {
+- int resolucion
+- boolean sintonizadorTDT
++ int getResolucion()
++ void setResolucion(int)
++ boolean isSintonizadorTDT()
++ void setSintonizadorTDT(boolean)
++ double precioFinal()
+}
+class Herencias.Ejercicios.Ejercicio2.Entidades.Lavadora {
+- int carga
++ int getCarga()
++ void setCarga(int)
++ double precioFinal()
+}
+class Herencias.Ejercicios.Ejercicio2.Servicios.TelevisorServices {
++ {static} Televisor crearTelevisor()
++ {static} double precioFinal(Televisor)
+}
+class Herencias.Ejercicios.Ejercicio2.Servicios.LavadoraServices {
++ {static} Lavadora crearLavadora()
++ double precioFinal(Lavadora)
+}
+class Herencias.Ejercicios.Ejercicio2.Servicios.ElectrodomesticoServices {
+- {static} String[] coloresDisponibles
++ {static} char comprobarConsumoEnergetico(char)
++ {static} String comprobarColor(String)
++ {static} void llenarElectrodomestico(Electrodomestico)
++ {static} double calcularPrecioFinal(Electrodomestico)
+}
+
+
+Herencias.Ejercicios.Ejercicio2.Entidades.Electrodomestico <|-- Herencias.Ejercicios.Ejercicio2.Entidades.Televisor
+Herencias.Ejercicios.Ejercicio2.Entidades.Electrodomestico <|-- Herencias.Ejercicios.Ejercicio2.Entidades.Lavadora
+Herencias.Ejercicios.Ejercicio2.Servicios.ElectrodomesticoServices <|-- Herencias.Ejercicios.Ejercicio2.Servicios.TelevisorServices
+Herencias.Ejercicios.Ejercicio2.Servicios.ElectrodomesticoServices <|-- Herencias.Ejercicios.Ejercicio2.Servicios.LavadoraServices
+@enduml
