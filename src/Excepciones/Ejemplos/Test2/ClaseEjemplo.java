@@ -19,7 +19,10 @@ public class ClaseEjemplo {
         } catch (Exception ex) {
             System.out.println("Error: " + ex.getMessage());
             ex.printStackTrace();
+        } finally {
+            System.out.println("Adios desde el finally !");
         }
+
         System.out.println("Fin del programa.");
     }
 }
