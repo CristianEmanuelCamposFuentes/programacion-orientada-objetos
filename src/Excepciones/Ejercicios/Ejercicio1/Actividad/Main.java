@@ -10,6 +10,7 @@ public class Main {
         Persona personaEjemplo = null;
 
         try {
+            personaEjemplo = new Persona(11);
             boolean mayorDeEdad = PS.esMayorDeEdad(personaEjemplo);
             System.out.println("Es mayor de edad? " + mayorDeEdad);
         } catch (MenorDeEdadException ex) {
