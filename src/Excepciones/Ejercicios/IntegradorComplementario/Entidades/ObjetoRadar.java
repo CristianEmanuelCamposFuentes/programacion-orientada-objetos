@@ -34,4 +34,7 @@ public class ObjetoRadar {
     public double getResistencia() {
         return resistencia;
     }
+
+    public void recibirDanio(int i) {
+    }
 }
