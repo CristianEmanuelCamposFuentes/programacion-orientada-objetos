@@ -1,0 +1,117 @@
+@startuml
+class Excepciones.Ejercicios.IntegradorJarvis.Entidades.Guantes {
+- String tipo
+- float consumoEnergia
++ String getTipo()
++ float getConsumoEnergia()
++ float usar(int,int)
+}
+class Excepciones.Ejercicios.IntegradorJarvis.Entidades.ObjetoRadar {
+- double coordenadaX
+- double coordenadaY
+- double coordenadaZ
+- boolean esHostil
+- double resistencia
++ double getCoordenadaX()
++ double getCoordenadaY()
++ double getCoordenadaZ()
++ boolean esHostil()
++ double getResistencia()
++ void recibirDanio(int)
+}
+interface Excepciones.Ejercicios.IntegradorJarvis.Interfaces.ControlEnergia {
+~ void encender()
+~ void apagar()
+~ boolean verificarBateria()
+~ boolean verificarGenerador()
+}
+class Excepciones.Ejercicios.IntegradorJarvis.Entidades.Bateria {
+- float cargaMaxima
+- float cargaActual
++ float getCargaMaxima()
++ float getCargaActual()
++ void cargarBateria(float)
++ void consumirEnergia(float)
++ float obtenerPorcentajeCarga()
+}
+class Excepciones.Ejercicios.IntegradorJarvis.Entidades.Botas {
+- String tipo
+- float consumoEnergia
++ String getTipo()
++ float getConsumoEnergia()
++ float usar(int,int)
+}
+class Excepciones.Ejercicios.IntegradorJarvis.Entidades.Sintetizador {
+- String mensaje
++ void susurrar(String)
++ String escuchar()
+}
+interface Excepciones.Ejercicios.IntegradorJarvis.Interfaces.ControlSalud {
+~ int obtenerNivelSalud()
+~ int obtenerNivelResistencia()
+~ void repararArmadura()
+}
+class Excepciones.Ejercicios.IntegradorJarvis.Servicios.JARVIS {
+- Armadura armadura
+- List<ObjetoRadar> radar
++ void caminar(int,int)
++ void disparar(int,int)
++ void agregarObjetoRadar()
++ void atacarEnemigos()
++ void mostrarEstado()
++ void activarGenerador()
++ void desactivarGenerador()
+}
+class Excepciones.Ejercicios.IntegradorJarvis.Entidades.Consola {
+- String mensaje
++ void escribirMensaje(String)
++ String leerMensaje()
+}
+class Excepciones.Ejercicios.IntegradorJarvis.Entidades.Generador {
+- boolean activo
++ void activarGenerador()
++ void desactivarGenerador()
++ boolean estaActivo()
+}
+class Excepciones.Ejercicios.IntegradorJarvis.Actividad.Main {
++ {static} void main(String[])
+}
+class Excepciones.Ejercicios.IntegradorJarvis.Entidades.Armadura {
+- String colorPrimario
+- String colorSecundario
+- int nivelResistencia
+- int nivelSalud
+- Bateria bateria
+- Generador generador
+- Guantes guantes
+- Botas botas
+- Consola consola
+- Sintetizador sintetizador
+- ObjetoRadar[] radar
+- JARVIS jarvis
++ String getColorPrimario()
++ void setColorPrimario(String)
++ String getColorSecundario()
++ void setColorSecundario(String)
++ int getNivelResistencia()
++ void setNivelResistencia(int)
++ int getNivelSalud()
++ void setNivelSalud(int)
++ Bateria getBateria()
++ void setBateria(Bateria)
++ Generador getGenerador()
++ void setGenerador(Generador)
++ Guantes getGuantes()
++ void setGuantes(Guantes)
++ Botas getBotas()
++ void setBotas(Botas)
++ Consola getConsola()
++ void setConsola(Consola)
++ Sintetizador getSintetizador()
++ void setSintetizador(Sintetizador)
++ ObjetoRadar[] getRadar()
++ void setRadar(ObjetoRadar[])
++ JARVIS getJarvis()
++ void setJarvis(JARVIS)
+}
+@enduml
